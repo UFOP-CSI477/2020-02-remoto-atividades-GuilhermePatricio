@@ -2,11 +2,11 @@
 
 ## Atualize os seus dados:
 
-- Nome:
-- Matrícula:
-- Curso:
-- Semestre/Ano correntes:
-- Link para o seu GitHub:
+- Nome:Guilherme Silva Patricio
+- Matrícula:17.2.8282
+- Curso:Sistemas de Informação
+- Semestre/Ano correntes:7 Semestre 2021
+- Link para o seu GitHub:https://github.com/GuilhermePatricio
 
 ## [Projeto final:](./Projeto/README.md) 
 
