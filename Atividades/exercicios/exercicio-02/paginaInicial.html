@@ -7,20 +7,52 @@
 
         <style type="text/css">
             
-            
             body{
-                margin-top: 0;
+                margin-top: 1;
             }
             
             h1{
-                
+                margin-top: 0;
                 font-size: 30pt;
                 border-style: solid;
+                border-left: 0;
+                border-right: 0;
                 border-color: black;
-                color:navy
-               
+                color:navy 
              }
-             
+
+            a{
+                text-decoration:none;
+                color: hsl(208, 100%, 97%);
+                background-color:navy;
+                padding: 10px;
+            }
+            
+            a:hover{
+                font-weight: bold;
+            }
+            
+            a:active{
+                color: black;
+            }
+
+            a:visited{
+                color: black;
+            }
+
+            .flex{
+                display:flex;
+                line-height: 40px;
+                background-color: navy;
+                justify-content: center;
+                
+            }
+            
+            #logo{
+                position: fixed;
+                top: 650px;
+                left: 1370px;
+            }
         </style>
 
     </head>
@@ -29,45 +61,52 @@
 
         <header>
             <h1>Sistema de Banco de Dados</h1>
-            <h2>Pagina Principal</h2>
         </header>
 
-        <div>
-            <a href="home.html">Home</a>
-        </div>
-            
-        <div>
-            <a href="estados.html">Estados</a>
-        </div>   
-            
-        <div>
-            <a href="cidades.html">Cidades</a>
-        </div>
+        <div class="flex">
 
-        <div>
-            <a href="produtos.html">Produtos</a>
-        </div>
-        
-        <div>
-            <a href="compras.html">Compras</a>
-        </div>
-        
-        <div>
-            <a href="perfil.html">Perfil</a>
-        </div>
+            <div>
+                <a href="home.html">Home</a>
+            </div>
+                
+            <div>
+                <a href="estados.html">Estados</a>
+            </div>   
+                
+            <div>
+                <a href="cidades.html">Cidades</a>
+            </div>
     
-        <div>
-            <a href="cadastroPessoas.html">Cadastro de Pessoas</a>
-        </div>
-        
-        <div>
-            <a href="relatorio.html">Relatorio</a>
-        </div>
+            <div>
+                <a href="produtos.html">Produtos</a>
+            </div>
             
-        <div>
-            <a href="sair.html">Sair</a>
+            <div>
+                <a href="compras.html">Compras</a>
+            </div>
+            
+            <div>
+                <a href="perfil.html">Perfil</a>
+            </div>
+        
+            <div>
+                <a href="cadastroPessoas.html">Cadastro de Pessoas</a>
+            </div>
+            
+            <div>
+                <a href="relatorio.html">Relatorio</a>
+            </div>
+                
+            <div>
+                <a href="sair.html">Sair</a>
+            </div>
+
         </div>
 
-        <img width="10%" src="./img/logo-decsi.png" alt="Logomarca do DECSI">
+       
+        <div> 
+            <img width="10%" src="./img/logo-decsi.png" alt="Logomarca do DECSI" id="logo">
+        </div>
+        
     <body>
 </html>
