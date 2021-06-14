@@ -1,0 +1,44 @@
+h1{
+    margin-top: 0;
+    color: navy;
+    border-style: solid;
+    border-top: 0ch;
+    border-left: 0ch;
+    border-right: 0ch;
+}
+
+label{
+    font-weight: bold;
+    color: navy;
+    
+}
+
+input[type="text"]{
+    color: white;
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(81, 81, 150);
+}
+
+::placeholder{
+    color: white;
+}
+
+form > div{
+    padding: 20px;
+    border: 1px solid rgb(203, 203, 248);
+}
+input[type="submit"]{
+    background-color: rgb(203, 203, 248); ;
+    width: 100px;
+    height: 30px;
+}
+input[type="reset"]{
+    background-color: rgb(203, 203, 248); ;
+    width: 100px;
+    height: 30px;
+}
+
+.controle{
+    font-size: 18px;
+}
