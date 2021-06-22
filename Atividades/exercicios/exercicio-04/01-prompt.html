@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt</title>
+
+    <script>
+
+        function Pessoa(nome,sobrenome,endereco,idade){
+            this.nome = nome;
+            this.sobrenome = sobrenome;
+            this.endereco = endereco;
+            this.idade = idade;
+        }
+
+        function carregaDados(){
+
+            const nome = window.prompt('Insira seu nome:');
+            const sobrenome = window.prompt('Insira o seu sobrenome:');
+            const endereco = window.prompt('Insira seu endereço:');
+            const idade = window.prompt('Insira sua idade:');
+
+            const pessoa = new Pessoa(nome,sobrenome,endereco,idade);
+            
+            document.getElementById("nome").innerHTML = pessoa.nome + '\n' + pessoa.sobrenome;
+            document.getElementById("endereco").innerHTML = pessoa.endereco;
+            document.getElementById("idade").innerHTML = pessoa.idade;
+
+        }
+
+    </script>
+</head>
+
+
+<body>
+    <script>
+        document.write('Clique para inserir seus dados!');
+    </script>
+
+    <div id="dados">
+        <div id="nome"></div>
+        <div id="endereco"></div>
+        <div id="idade"></div>
+    </div>
+    <input type="button" value="Carregar" onclick="carregaDados()">
+
+</body>
+</html>
