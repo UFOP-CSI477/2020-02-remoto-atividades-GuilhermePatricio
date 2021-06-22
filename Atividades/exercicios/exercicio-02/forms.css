@@ -29,12 +29,12 @@ form > div{
     border: 1px solid rgb(203, 203, 248);
 }
 input[type="submit"]{
-    background-color: rgb(203, 203, 248); ;
+    background-color: rgb(203, 203, 248);
     width: 100px;
     height: 30px;
 }
 input[type="reset"]{
-    background-color: rgb(203, 203, 248); ;
+    background-color: rgb(203, 203, 248);
     width: 100px;
     height: 30px;
 }
