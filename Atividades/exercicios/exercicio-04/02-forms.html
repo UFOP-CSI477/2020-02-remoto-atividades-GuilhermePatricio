@@ -22,7 +22,7 @@
 
     <script>
 
-        function Pessoa(nome,sobrenome,nascimento,endereco,cidade,nascimento,estado,cep){
+        function Pessoa(nome,sobrenome,nascimento,endereco,cidade,estado,cep){
             this.nome = nome;
             this.sobrenome = sobrenome;
             this.nascimento = nascimento;
@@ -43,14 +43,15 @@
             const cep = document.formDados.cep.value;
 
             const pessoa = new Pessoa(nome,sobrenome,nascimento,endereco,cidade,estado,cep);
-            console.log(pessoa);
-            
+          
+            window.alert('Dados salvos com sucesso!');
+
+            return pessoa;
         }
 
-        function VisualizarFormulario(){
-           
+        function VisualizarFormulario(dados){
+            window.alert(` Nome: ${dados.nome} ${dados.sobrenome} \n Data de nascimento: ${dados.nascimento} \n Endereço: ${dados.endereco} \n Cidade: ${dados.cidade} \n Estado: ${dados.estado} \n CEP: ${dados.cep}`);
         }
-      
 
     </script>
 </head>
@@ -58,6 +59,10 @@
 <body>
     <h1>Insira seus dados</h1>
 
+    <div id="dados">
+        <div id="nome"></div>
+    
+    </div>
     <form action="post" name="formDados">
        <div class="row">
             <div class="col">
@@ -97,9 +102,11 @@
         </div>
     </form>
 
+    <br>
 
-    <input type="button" class = "btn btn-secondary" value="Salvar" onclick="CarregarFormulario()">
-    <input type="button" class = "btn btn-secondary" value="Visualizar" onclick="VisualizarFormulario()">
+    <input type="button" class = "btn btn-secondary" value="Salvar" onclick="dados=CarregarFormulario()">
+
+    <input type="button" class = "btn btn-secondary" value="Visualizar" onclick="VisualizarFormulario(dados)">
 
    
 
