@@ -1,0 +1,88 @@
+
+h2{
+    
+    border-style: solid;
+    border-top: 0ch;
+    border-left: 0ch;
+    border-right: 0ch;
+    text-align: center;
+}
+
+.corpoCalculadora{
+    border: 1px solid;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 255px;
+    size: 150%;
+}
+
+button{
+    width: 40px;
+    background-color:rgb(58, 58, 58);
+    border-radius: 3px;
+    border-color: black;
+    color: white;
+    text-align: center;
+
+}
+
+button:hover{
+    background-color: rgb(114, 114, 114);
+}
+
+button:active{
+    box-shadow: 0 0 0 .2rem rgba(114, 114, 114, 0.5);
+}
+
+.gridBotoes{
+    display: grid;
+    grid-template-columns: repeat(4, 5ch);
+    grid-gap: 5px;
+    padding: 11px;
+    background-color:rgb(27, 27, 27);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.btIgual{
+    height: 95%;
+    grid-area: 2 / 5 / 6 / 5;
+}
+.C{
+    background-color: rgb(170, 3, 3);
+}
+
+.C:hover{
+    background-color: red;
+}
+
+.telaCalculadora{
+    pointer-events: none;
+    border-radius: 0;
+    border-color: black;
+    color: white;
+    background-color:rgb(16, 16, 16);
+}
+
+.display {
+    height: 120px;
+    border: 20px;
+    border-style: solid;
+    background:rgb(72, 72, 72); 
+    text-align: right;
+    border-radius: 4px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+#resultado{
+    font-size: 30px;
+    color:white;
+}
+
+#previa{
+    color: rgb(202, 202, 202);
+}

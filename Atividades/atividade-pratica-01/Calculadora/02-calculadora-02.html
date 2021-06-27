@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Calculadora</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="layout-calculadora.css">
+
+    <script src="calcula.js"></script>
+
+</head>
+<body>
+
+<h2>Calculadora</h2>
+
+<div class="card corpoCalculadora">
+
+    
+    <div class="display">
+        <div ><p id="previa"></p></div>
+        <div><p id="resultado"></p></div>
+    </div>
+
+    <div id = botoes class="gridBotoes">
+
+        <button type="button" value ="7" onclick="obterNumero(this)">7</button>
+        <button type="button" value = "8" onclick="obterNumero(this)">8</button>
+        <button type="button" value = "9" onclick="obterNumero(this)">9</button>
+        <button type="button" value = "/" onclick="obterOperacao(this)">&divide</button>
+        <button type="button" onclick="porcentagem()">%</button>
+
+        <button type="button" value = "4" onclick="obterNumero(this)">4</button>
+        <button type="button" value = "5" onclick="obterNumero(this)">5</button>
+        <button type="button" value = "6" onclick="obterNumero(this)">6</button>
+        
+        <button type="button" value = "+" onclick="obterOperacao(this)">&times</button>
+        <button type="button" value = "1" onclick="obterNumero(this)">1</button>
+        <button type="button" value = "2" onclick="obterNumero(this)">2</button>
+        <button type="button" value = "3" onclick="obterNumero(this)">3</button>
+        <button type="button" value = "-" onclick="obterOperacao(this)">-</button>
+        
+ 
+        <button class = "C" type="button" onclick = "limpar()">C</button>
+        <button type="button" value = "0" onclick="obterNumero(this)">0</button>
+        <button type="button" onclick = "adcionarPonto()">.</button>
+        <button type="button" value = "+" onclick="obterOperacao(this)">+</button>
+        <button type="button" class = "btIgual" value="=" onclick="calcularResultado()">=</button>
+       
+        
+    </div>
+   
+  
+
+</div>
+
+</body>
+</html>
+
