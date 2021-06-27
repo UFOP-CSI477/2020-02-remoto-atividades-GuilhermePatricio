@@ -61,17 +61,18 @@ function adicionarPonto(){
 //Coloca o numero selecionado no display da calculadora
 function obterNumero(numero){
 
-    if(isNaN(resultado.innerHTML)||calculadora.operacao==null){
+    if(isNaN(resultado.innerHTML)){
         resultado.innerHTML = numero.value;
-        previa.innerHTML = numero.value;
+       
     }
+    
 
     else{
         resultado.innerHTML += numero.value;
-        previa.innerHTML += numero.value;
+        
     }
 
-    
+    previa.innerHTML += numero.value;
 }
 
 //Coloca a operação aritmetica selecionada no display da calculadora, e salva qual operação deve ser realizada
