@@ -42,7 +42,6 @@ function limpar(){
     previa.innerHTML ="";
     calculadora.num = null;
     calculadora.operacao = null;
-    calculadora.calcular = false;
 }
 
 //Trata o caso de numeros decimais, adicionando o ponto quando se deve
@@ -62,15 +61,16 @@ function adicionarPonto(){
 //Coloca o numero selecionado no display da calculadora
 function obterNumero(numero){
 
-    if(isNaN(resultado.innerHTML)){
+    if(isNaN(resultado.innerHTML)||calculadora.operacao==null){
         resultado.innerHTML = numero.value;
-       
-    }
-    else{
-        resultado.innerHTML += numero.value;
+        previa.innerHTML = numero.value;
     }
 
-    previa.innerHTML += numero.value;
+    else{
+        resultado.innerHTML += numero.value;
+        previa.innerHTML += numero.value;
+    }
+
     
 }
 
@@ -110,7 +110,7 @@ function obterOperacao(operacao){
 }
 
 //Chama a operação aritmetica que foi selecionada e exibe o resultado no display
-function calcularResultado(){
+function recuperarResultado(){
 
     if(!(isNaN(resultado.innerHTML)) && calculadora.operacao != null){
         let resul = calculadora.operacao(calculadora.num,parseFloat(resultado.innerHTML));
@@ -120,10 +120,8 @@ function calcularResultado(){
     }
 
     else{
-        resultado.innerHTML = "= " + resultado.innerHTML;
+        resultado.innerHTML = "= " + previa.innerHTML;
     }
-
-    calculadora.calcular = false;
     calculadora.operacao = null;
 }
 
