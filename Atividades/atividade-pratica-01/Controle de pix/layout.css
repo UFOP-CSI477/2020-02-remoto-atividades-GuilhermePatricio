@@ -1,0 +1,35 @@
+.cardLayout{
+
+    border: 1px solid;
+    border-radius: 0;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 10px;
+}
+
+.espaco{
+    margin-top: 5px;
+}
+label{
+    font-weight: bold!important;
+}
+
+input[type="button"]{
+    margin: 4px auto !important;
+    width: 379px;
+    
+}
+
+.relatorioLayout{
+        border: 1px solid;
+        border-radius: 0;
+        position: absolute;
+        top: 126%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        padding: 10px;
+}

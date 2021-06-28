@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+ 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="layout.css">
+
+    <script src="api.js"></script>
+
+    <title>Controle de Pix</title>
+</head>
+
+<body onload="preencherSelectChaves(), carregarBancos()">
+   
+    <nav class="navbar navbar-dark bg-dark">
+        
+        <a class="navbar-brand mx-auto order-0">
+            <span class="navbar-brand mb-0 h1">Controle de  Pix</span> 
+        </a>
+
+    </nav>
+
+    <div class="card cardLayout">
+        <form name="formDados">
+
+            <div class="form-group col">
+                <label for="bancos">Selecione o Banco</label>
+                <select class="form-control" name="bancos" id="bancos">
+                    <option value="">Selecione</option>
+                </select>
+            </div>
+    
+            <div class="form-group col">
+                <label for="tipoChave">Selecione o tipo de chave</label>
+                <select class="form-control" name="tipoChave" id="tipoChave" onchange="definirChave(this)">
+                    <option value="">Selecione</option>
+                </select>
+            </div>
+    
+            <div class="col">
+                <label for ="chave">Chave</label>
+                <input type="text" class="form-control" placeholder="Digite a chave..." id="chave">
+            </div>
+    
+            <label>Operação:</label>
+            
+            <div>
+                <div class="form-check form-check-inline">
+                    <input class = "form-check-input" type="radio" name="operacao" id="envio" value = "E">
+                    <label class="form-check-label" for="envio">Envio</label>
+                
+                </div>
+    
+                <div class="form-check form-check-inline">
+                    <input class = "form-check-input"  type="radio" name="operacao" id="recebimento" value = "R">
+                    <label  class="form-check-label" for="recebimento">Recebimento</label>
+                </div>
+    
+            </div>
+                
+            <div class="row">
+                <div class="col">
+                    <label for ="valor">Valor</label>
+                    <input type="text" class="form-control" placeholder="Valor da transação" id="valor">
+                </div>
+        
+                <div class="col">
+                    <label for ="data">Data</label>
+                    <input type="text" class="form-control" placeholder="Data da transação" id="data">
+                </div>
+    
+        
+        </form>
+        
+       
+
+    
+        <div class="espaco">
+            <input type="button" class="btn btn-secondary" value="Adicionar" onclick="adicionarTransacao()">
+            <input type = "button"class="btn btn-danger" value="Finalizar" onclick="fazerRelatorio()" >
+        </div>
+        
+
+    <div class="card relatorioLayout">
+            
+        <h6>Relatorio:</h6>
+       
+        <div class="row">
+        
+            <div class="col">
+                <label for ="valorEnviado">Valor (Envio)</label>
+                <input type="text" class="form-control" placeholder="Valor total enviado" id="valorEnviado">
+            </div>
+    
+            <div class="col">
+                <label for ="valorRecebido">Valor (Recebimento)</label>
+                <input type="text" class="form-control" placeholder="Valor total recebido" id="valorRecebido">
+            </div>
+
+        </div>
+
+        <div class="col">
+            <label for ="saldo">Saldo Final</label>
+            <input type="text" class="form-control" placeholder="Diferença entre envios e recebimentos" id="saldo">
+        </div>
+
+    </div>
+
+</body>
+</html>
