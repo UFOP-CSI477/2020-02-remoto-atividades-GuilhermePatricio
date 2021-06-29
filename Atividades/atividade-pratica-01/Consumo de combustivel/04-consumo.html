@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Consumo de combustivel</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <script src="combustivel.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="ocultarTabelas()">
+
+    <div class="cabecalho">
+        <nav class="navbar navbar-dark bg-dark">
+        
+            <a class="navbar-brand mx-auto order-0">
+                <span class="navbar-brand mb-0 h1">Consumo de combustivel</span> 
+            </a>
+        </nav>
+    </div>
+  
+
+
+        <div class = "veiculos" id="Formulario">
+
+            <form name="formDados">
+
+                <div class="row">
+                    <div class="col">
+                        <label for ="combustivel">Quantidade de combustivel:</label>
+                        <input type="text" class="form-control" placeholder="Quantidade de combustivel abastecida" id="combustivel">
+                    </div>
+        
+                    <div class="col">
+                        <label for="kmRodados">Quantidade de quilômetros rodados:</label>
+                        <input type="text" class="form-control" placeholder="Quantidade de quilômetros rodados pelo veiculo"id="kmRodados">
+                    </div>
+            </form>
+
+            <div class="botoes">
+                <input type="button" value = "Adicionar veiculo" class="btn btn-secondary" onclick="adicionarVeiculo(combustivel.value,kmRodados.value)">
+    
+                <input id = "btnConcluir" type="button" value = "Concluir" class="btn btn-danger" onclick="elaborarRelatorio()">
+            </div>
+        </div>
+    
+       
+            
+
+    <div class="Tabela">
+        <div id="veiculos">
+            <table id="tabelaVeiculos" class = "table table-light table-bordered border-secondary">
+                <thead>
+                    <th>ID veiculo</th>
+                    <th>Quantidade de combustivel</th>
+                    <th>Quantidade de quilometros rodados</th>
+                    <th id="desempenho">Desempenho (Km/L)</th>
+                </thead>
+            </table>
+        </div>
+    
+        <div id="relatorio">
+            <table id="tabelaRelatorio" class="table table-light table-bordered border-secondary">
+                <thead>
+                    <th>QTD total de combustivel utilizada</th>
+                    <th>QTD total de quilometros rodados</th>
+                    <th>Média de consumo de combustível</th>
+                    <th>Média de quilômetros rodados</th>
+                    <th>Média de desempenho (Km/L)</th>
+                </thead>
+            </table>
+        </div>
+    </div>
+
+</div>
+    
+
+</body>
+</html>

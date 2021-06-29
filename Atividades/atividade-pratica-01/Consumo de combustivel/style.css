@@ -1,0 +1,44 @@
+.veiculos{
+
+    border: 1px solid;
+    border-radius: 0;
+    position: absolute;
+    top: 80px;
+    left: 16px;
+    
+    width: 1500px;
+    padding: 10px;
+}
+
+.cardTabela{
+
+    border: 1px solid;
+    border-radius: 0;
+    position: absolute;
+    top: 200%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1500px;
+    padding: 10px;
+}
+input[type="button"]{
+
+    margin: 20px auto !important;
+}
+
+table{
+
+    width: 100% !important;
+    margin: auto;
+  
+}
+th{
+    background-color: black!important;
+    color: white;
+    font-weight: bold;
+}
+
+#desempenho{
+    background-color: red !important;
+}
+
