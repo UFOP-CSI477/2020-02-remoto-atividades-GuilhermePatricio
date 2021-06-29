@@ -112,7 +112,7 @@ function elaborarRelatorio(){
 
     cellMediaConsumo.innerHTML = (dadosVeiculos.combustivel/dadosVeiculos.qtdVeiculos).toFixed(2);
     cellMediaKM.innerHTML = (dadosVeiculos.km/dadosVeiculos.qtdVeiculos).toFixed(2);
-    cellMediaDesempenho.innerHTML = (dadosVeiculos.desempenho/dadosVeiculos.qtdVeiculos).toFixed(2);
+    cellMediaDesempenho.innerHTML = (dadosVeiculos.km/dadosVeiculos.combustivel).toFixed(2);
 }
 
 
