@@ -16,6 +16,7 @@ function validarNum(campo){
         document.formDados.tempo.value = "";
         return false;
     }
+    return true;
 }
 //Limpa os campos
 function limparCampos(){
@@ -24,9 +25,12 @@ function limparCampos(){
     document.formDados.tempo.value = "";
 }
 
+//Limpa a informação das tabelas
 function limparTabelas(){
 
-    document.getElementById("btn-resultado").disabled = false;
+    document.getElementById("btnResultado").disabled = false;
+    ocultarCampos();
+
 
     var tabela = document.getElementById("tabelaLargada");
     var qtdLinhas = tabela.rows.length;
@@ -51,12 +55,16 @@ function Participante(largada,competidor,tempo){
     this.tempo = parseInt(tempo);
 }
 
-//adiciona um participante na tabela de largada
+//Adiciona um participante na tabela de largada
 function adicionarParticipante(largada,competidor,tempo){
     
     if (!(validarNum(largada) && validar(competidor) && validarNum(tempo))){
         return;
     }
+
+    habilitarCampo("dadosParticipantes");
+    habilitarCampo("btnResultado");
+    habilitarCampo("btnRecomecar");
 
     var tabela = document.getElementById("tabelaLargada");
     var qtdLinhas = tabela.rows.length;
@@ -78,6 +86,10 @@ function adicionarParticipante(largada,competidor,tempo){
 
 //Preenche a tabela de resultados
 function preencherTabelaResultado(){
+
+    habilitarCampo("resultado");
+    document.getElementById("btnRecomecar").disabled = false;
+
     //Ordela a lista de participantes pelo menor tempo
     listaParticipantes.sort(function(a,b){
         if(a.tempo > b.tempo){  
@@ -121,8 +133,28 @@ function preencherTabelaResultado(){
             cellResultado.innerHTML = "-";
         }
 
-        document.getElementById("btn-resultado").disabled = true; 
-
+        document.getElementById("btnResultado").disabled = true; 
     }
+}
+
+//Oculta as tabelas
+function ocultarCampos(){
+    
+    var tabelaParticipante = document.getElementById("dadosParticipantes");
+    var tabelaResultado = document.getElementById("resultado");
+    
+    tabelaParticipante.style = "display:none";
+    tabelaResultado.style = "display:none";
+
+    document.getElementById("btnResultado").style = "display:none";
+    document.getElementById("btnRecomecar").style = "display:none";
+    document.getElementById("btnRecomecar").disabled = true;
+}
+
+//Habilita determinada campo
+function habilitarCampo(campo){
+
+    var campo = document.getElementById(campo);
+    campo.style = "display:initial";
 
 }

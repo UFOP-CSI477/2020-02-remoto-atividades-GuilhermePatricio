@@ -15,7 +15,7 @@
     
 </head>
 
-<body>
+<body onload="ocultarCampos()">
 
     <nav class="navbar navbar-dark bg-dark">
         
@@ -46,7 +46,7 @@
     </div>
 
     <div class="botoes">
-        <input type="button" value = "Adiciona Participante" class="btn btn-secondary" onclick="adicionarParticipante(largada.value,competidor.value,tempo.value)">
+        <input type="button" value = "Adicionar Participante" class="btn btn-secondary" onclick="adicionarParticipante(largada.value,competidor.value,tempo.value)">
     </div>
     
     <div id="dadosParticipantes">
@@ -56,16 +56,14 @@
                 <th>Competidor (a)</th>
                 <th>Tempo (s)</th>
             </thead>
-            <tbody>
-            </tbody>
           </table>
     </div>
 
     <div class="botoes">
-        <input id = "btn-resultado" type="button" value="Resultado" class="btn btn-secondary"  onclick="preencherTabelaResultado()">
-        <input type="button" value="Recomeçar" class="btn btn-danger" onclick="limparTabelas()">
+        <input id = "btnResultado" type="button" value="Resultado" class="btn btn-danger"  onclick="preencherTabelaResultado()">
+
+        <input id = "btnRecomecar"type="button" value="Recomeçar" class="btn btn-secondary" onclick="limparTabelas()">
     </div>
-  
     
     <div id="resultado">
         <table id="tabelaResultado" class="table table-light table-bordered border-secondary">
@@ -76,8 +74,6 @@
                 <th>Tempo (s)</th>
                 <th>Resultado</th>
             </thead>
-            <tbody>
-            </tbody>
           </table>
     </div>
 
