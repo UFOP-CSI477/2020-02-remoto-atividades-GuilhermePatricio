@@ -1,4 +1,4 @@
-
+//Variavel que guarda os dados de todos os veiculos adicionados
 var dadosVeiculos = {
 
     combustivel:0,
@@ -90,6 +90,7 @@ function adicionarVeiculo(combustivel,km){
     limparCampos();
 }
 
+//Adiciona as informaçoes dos veiculos na tabela de relatorio
 function elaborarRelatorio(){
 
     document.getElementById("btnConcluir").disabled = true;
@@ -112,8 +113,6 @@ function elaborarRelatorio(){
     cellMediaConsumo.innerHTML = (dadosVeiculos.combustivel/dadosVeiculos.qtdVeiculos).toFixed(2);
     cellMediaKM.innerHTML = (dadosVeiculos.km/dadosVeiculos.qtdVeiculos).toFixed(2);
     cellMediaDesempenho.innerHTML = (dadosVeiculos.desempenho/dadosVeiculos.qtdVeiculos).toFixed(2);
-
-
 }
 
 
