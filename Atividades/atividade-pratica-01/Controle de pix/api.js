@@ -110,18 +110,18 @@ function preencherSelectChaves(){
 
 //Muda o placeholder de chave de acordo com a chave escolhida
 function definirChave(chave){
-    
+ 
     switch(chave.value){
         case("CPF"):
-            document.formDados.chave.value.placeholder = "Digite o CPF";break;
+            document.formDados.chave.placeholder = "Digite o CPF";break;
         case("CNPJ"):
-            document.formDados.chave.value.placeholder = "Digite o CNPJ";break;
+            document.formDados.chave.placeholder = "Digite o CNPJ";break;
         case("email"):
-            document.formDados.chave.value.placeholder = "Digite o e-mail";break;
+            document.formDados.chave.placeholder = "Digite o e-mail";break;
         case("NumCel"):
-            document.formDados.chave.value.placeholder = "Digite o Numero do celular";break;
+            document.formDados.chave.placeholder = "Digite o Numero do celular";break;
         case("chaveRand"):
-            document.formDados.chave.value.placeholder = "Digite a Chave";break;
+            document.formDados.chave.placeholder = "Digite a Chave";break;
     }
 }
 
