@@ -1,13 +1,4 @@
 
-h2{
-    
-    border-style: solid;
-    border-top: 0ch;
-    border-left: 0ch;
-    border-right: 0ch;
-    text-align: center;
-}
-
 .corpoCalculadora{
     border: 1px solid;
     border-radius: 5px;
@@ -50,12 +41,18 @@ button:active{
 .btIgual{
     height: 95%;
     grid-area: 2 / 5 / 6 / 5;
+    background-color: rgb(2, 71, 2);
 }
-.C{
+
+.btIgual:hover{
+    background-color: green;
+}
+
+.btC{
     background-color: rgb(170, 3, 3);
 }
 
-.C:hover{
+.btC:hover{
     background-color: red;
 }
 

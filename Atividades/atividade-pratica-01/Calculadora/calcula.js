@@ -45,7 +45,7 @@ function limpar(){
 }
 
 //Trata o caso de numeros decimais, adicionando o ponto quando se deve
-function adicionarPonto(){
+function ponto(){
     
     if(isNaN(resultado.innerHTML) || resultado.innerHTML == ""){
         resultado.innerHTML = "0.";
@@ -66,7 +66,6 @@ function obterNumero(numero){
        
     }
     
-
     else{
         resultado.innerHTML += numero.value;
         
@@ -91,7 +90,7 @@ function obterOperacao(operacao){
         }
 
         else if(calculadora.operacao != null){
-           calculadora.num= calculadora.operacao(calculadora.num,parseFloat(resultado.innerHTML));
+           calculadora.num = calculadora.operacao(calculadora.num,parseFloat(resultado.innerHTML));
         }
 
         resultado.innerHTML = operacao.value;
