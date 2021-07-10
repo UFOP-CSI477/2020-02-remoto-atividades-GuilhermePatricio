@@ -1,8 +1,13 @@
 <?php
 
-require '../App/Models/Estado.php';
+require '../vendor/autoload.php';
+
+use App\Models\Estado;
+use App\Database\Connection;
+use App\Database\AdapterSQLite;
+ 
 
 
+$connection = new Connection(new AdapterSQLite());
 
-$estado = new Estado(1,"Minas Gerais","MG");
-var_dump($estado);
+$connection->getAdapter()->open();

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+
 class Estado implements ModelInterface {
 
     private $id, $nome, $sigla;
@@ -18,12 +19,12 @@ class Estado implements ModelInterface {
 
     }
 
-    public function getAll() {
+    public function getAll(){
 
     }
 
-    public function get($id) {
-        
+    public function get($id){
+
     }
 
 }
