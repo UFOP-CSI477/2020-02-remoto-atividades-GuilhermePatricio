@@ -3,6 +3,7 @@
 namespace App\Models;
 
 
+
 class Estado implements ModelInterface {
 
     private $id, $nome, $sigla;

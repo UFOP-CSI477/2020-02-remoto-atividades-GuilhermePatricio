@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabela de produtos</title>
+    <title>Tabelas</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -15,19 +15,22 @@
 
 <body>
     
-    <a href="produtoInsert.php"><button class=" botoes btn btn-danger">Inserir</button></a>
-    
+ 
     <table class = "table">
         
         <thead>
             <th>ID</th>
             <th>Nome</th>
-            <th>Unidade</th>
+            <th>sigla</th>
 
             <?php
 
-                while($e = $produtos->fetch()) {
-                    echo "<tr>" ."<td>".$e["id"] ."</td>". "<td>" .$e['nome'] ."</td>". "<td>" .$e['unidade'] ."</td>"."</tr>";
+                $sql = "SELECT * FROM estados";
+                $result = $connection->getAdapter()->get()->query($sql);
+
+
+                while($e = $result->fetch()) {
+                    echo "<tr>" ."<td>".$e["id"] ."</td>". "<td>" .$e['nome'] ."</td>". "<td>" .$e['sigla'] ."</td>"."</tr>";
                    
                 }
 
@@ -36,7 +39,7 @@
         </thead>
       
     </table>
-    
    
 </body>
 </html>
+

@@ -1,6 +1,6 @@
 <?php
 
-    // Configuração:
+    
     $dbfile = "./db/database.sqlite";
     $dbuser = "";
     $dbpassword = "";
@@ -10,4 +10,3 @@
 
     $connection = new PDO($strConnection, $dbuser, $dbpassword);
 
-    // var_dump($connection);
