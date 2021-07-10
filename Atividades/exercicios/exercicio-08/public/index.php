@@ -6,8 +6,8 @@ use App\Models\Estado;
 use App\Database\Connection;
 use App\Database\AdapterSQLite;
  
-
+$estado = new Estado(1,"Minas Gerais","MG");
+var_dump($estado);
 
 $connection = new Connection(new AdapterSQLite());
-
-$connection->getAdapter()->open();
+var_dump($connection);
