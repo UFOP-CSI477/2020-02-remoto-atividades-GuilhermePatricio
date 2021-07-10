@@ -1,6 +1,5 @@
- <?php
-
- namespace App\Database;
+<?php
+namespace App\Database;
 
  class AdapterSQLite implements AdapterInterface{
 
