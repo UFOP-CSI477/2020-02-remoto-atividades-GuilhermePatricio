@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+use App\Models\Produto;
+
 Route::get('/', function () {
     return view('welcome');
 });
