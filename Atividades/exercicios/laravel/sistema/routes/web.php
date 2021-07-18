@@ -16,3 +16,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/produtos/todos', function(){
+
+    $produtos = Produto::all();
+    return view('lista', ['dados'=>$produtos ]);
+
+});
+
+Route::get('/produtos/{id}', function($id){
+
+    $produto = Produto::findOrFail($id);
+
+    return view('Lista', ['dados'=>$produto]);
+
+});
