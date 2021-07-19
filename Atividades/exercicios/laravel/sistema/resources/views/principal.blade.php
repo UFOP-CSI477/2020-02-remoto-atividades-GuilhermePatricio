@@ -17,6 +17,9 @@
                 <div class="navbar-nav">
                     <a class="nav-item nav-link active" href="{{route('principal')}}" >Home</a>
                     <a class="nav-item nav-link" href="{{route('produtos.index')}}">Produtos</a>
+                    <a class="nav-item nav-link" href="{{route('cidades.index')}}">Cidades</a> 
+                    <a class="nav-item nav-link" href="{{route('estados.index')}}">Estados</a>
+          
                     <a class="nav-item nav-link" href="sair.html">Sair</a>
                 </div>
             </div>
