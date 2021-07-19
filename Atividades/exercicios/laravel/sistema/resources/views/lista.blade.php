@@ -6,8 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista produtos</title>
 </head>
+
 <body>
-    {{$dados}}  
+   
+    <?php
+
+        for ($i = 0; $i < count($dados); $i++){
+            echo "<strong>Nome: </strong>" . $dados[$i]->nome;
+            echo " <strong>Unidade: </strong>" . $dados[$i]->um;
+        }
+    
+    ?>
+    
 
 </body>
 </html>
