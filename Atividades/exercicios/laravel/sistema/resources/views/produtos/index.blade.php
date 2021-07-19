@@ -2,10 +2,11 @@
 
 @section('conteudo')
 
+<link rel="stylesheet" href="tabela.css">
  
 <table class = "table table-bordered table-hover table-striped">
         
-        <thead class ="thead-dark">
+        <thead >
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
