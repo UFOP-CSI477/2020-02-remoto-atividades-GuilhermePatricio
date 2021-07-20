@@ -26,7 +26,7 @@
                 <tr>
                     <td>{{$c->id}}</td>
                     <td>{{$c->nome}}</td>
-                    <td>{{ $c->estado->id }}-{{ $c->estado->sigla }}</td>
+                    <td>{{ $c->estado->nome }}-{{ $c->estado->sigla }}</td>
                     <td><a href="{{ route('cidades.show', $c->id)}}">Exibir</a></td>
                 </tr>
             @endforeach
