@@ -20,12 +20,12 @@
 
         <tbody>
         
-            @foreach($pessoas as $e)
+            @foreach($pessoas as $p)
                 <tr>
-                    <td>{{$e->id}}</td>
-                    <td>{{$e->nome}}</td>
-                    <td>{{ $e->cidade->nome }}-{{ $e->cidade->sigla }}</td>
-                    <td><a href="{{ route('cidades.show', $e->id)}}">Exibir</a></td>
+                    <td>{{$p->id}}</td>
+                    <td>{{$p->nome}}</td>
+                    <td>{{ $p->cidade->nome }}</td>
+                    <td><a href="{{ route('cidades.show', $p->id)}}">Exibir</a></td>
                 </tr>
             @endforeach
         </tbody>
