@@ -24,8 +24,8 @@
                 <tr>
                     <td>{{$p->id}}</td>
                     <td>{{$p->nome}}</td>
-                    <td>{{ $p->cidade->nome }}</td>
-                    <td><a href="{{ route('cidades.show', $p->id)}}">Exibir</a></td>
+                    <td>{{$p->cidade->nome }}</td>
+                    <td><a href="{{ route('pessoas.show', $p->id)}}">Exibir</a></td>
                 </tr>
             @endforeach
         </tbody>

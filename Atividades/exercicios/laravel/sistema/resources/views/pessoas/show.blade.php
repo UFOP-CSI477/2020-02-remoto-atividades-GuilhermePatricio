@@ -6,7 +6,7 @@
 
 <p>Id: {{ $pessoa->id }}</p>
 <p>Nome: {{ $pessoa->nome }}</p>
-<p>Estado: {{ $pessoa->estado->nome }}</p>
+<p>Cidade: {{ $pessoa->cidade->nome }}</p>
 
 <a href="{{route('pessoas.edit', $pessoa->id)}}">Editar</a>
 <a href="{{ route('pessoas.index') }}">Voltar</a>

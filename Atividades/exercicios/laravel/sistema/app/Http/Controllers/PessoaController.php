@@ -15,7 +15,7 @@ class PessoaController extends Controller
      */
     public function index()
     {
-        $pessoas = Cidade::orderBy('nome')->get();
+        $pessoas = Pessoa::orderBy('nome')->get();
         return view('pessoas.index', [ 'pessoas' => $pessoas ]);
     }
 
@@ -27,7 +27,7 @@ class PessoaController extends Controller
     public function create()
     {
         
-            $cidades = Estado::orderBy('nome')->get();
+            $cidades = Cidade::orderBy('nome')->get();
             return view('cidades.create', ['cidades' => $cidades]);
        
     }
@@ -64,7 +64,7 @@ class PessoaController extends Controller
      */
     public function edit(Pessoa $pessoa)
     {
-        $cidades = Estado::orderBy('nome')->get();
+        $cidades = Cidade::orderBy('nome')->get();
         return view('pessoas.edit',
             ['pessoa' => $pessoa,
              'cidades' => $cidades]);
