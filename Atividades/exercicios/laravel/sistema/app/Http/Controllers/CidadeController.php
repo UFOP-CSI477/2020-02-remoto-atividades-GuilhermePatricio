@@ -95,9 +95,12 @@ class CidadeController extends Controller
      */
     public function destroy(Cidade $cidade)
     {
-        $cidade->delete();
-        session()->flash('mensagem', 'Cidade excluída com sucesso!');
+        if ( $cidade->pessoas->count() > 0 ) {
+            session()->flash('mensagem', 'Exclusão não permitida! Existem pessoas associadas.');
+        } else {
+            $cidade->delete();
+            session()->flash('mensagem', 'Cidade excluída com sucesso!');
+        }
         return redirect()->route('cidades.index');
-
     }
 }

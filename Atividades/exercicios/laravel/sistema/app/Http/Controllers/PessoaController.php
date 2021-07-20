@@ -26,10 +26,8 @@ class PessoaController extends Controller
      */
     public function create()
     {
-        
-            $cidades = Cidade::orderBy('nome')->get();
-            return view('pessoas.create', ['cidades' => $cidades]);
-       
+        $cidades = Cidade::orderBy('nome')->get();
+        return view('pessoas.create', ['cidades' => $cidades]);  
     }
 
     /**

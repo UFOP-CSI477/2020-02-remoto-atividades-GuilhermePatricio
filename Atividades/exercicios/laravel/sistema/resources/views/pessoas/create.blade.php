@@ -21,7 +21,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="cidade_id">cidade</label>
+                        <label for="cidade_id">Cidade</label>
 
                         <select name="cidade_id" id="cidade_id" class="form-control">
 
