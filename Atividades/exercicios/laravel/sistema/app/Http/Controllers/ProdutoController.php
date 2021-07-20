@@ -38,7 +38,6 @@ class ProdutoController extends Controller
     public function store(Request $request)
     {
 
-       
        $produto = new Produto;
        $produto->nome = $request->nome;
        $produto->um = $request->unidade;

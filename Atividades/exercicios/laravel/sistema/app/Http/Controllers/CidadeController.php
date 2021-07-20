@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Cidade;
 use App\Models\Estado;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class CidadeController extends Controller
 {
@@ -27,15 +26,10 @@ class CidadeController extends Controller
      */
     public function create()
     {
-       // if ( Auth::check() ) {
-            // if (Auth::user()->type == 1){
-            $estados = Estado::orderBy('nome')->get();
-            return view('cidades.create', ['estados' => $estados]);
-        //} 
-        //else {
-            //session()->flash('mensagem', 'Operação não permitida!');
-            //return redirect()->route('login');
-        //}
+    
+        $estados = Estado::orderBy('nome')->get();
+        return view('cidades.create', ['estados' => $estados]);
+
     }
 
     /**
