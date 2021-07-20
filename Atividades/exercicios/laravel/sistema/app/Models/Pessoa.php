@@ -12,7 +12,7 @@ class Pessoa extends Model
     protected $fillable = ['nome', 'cidade_id'];
 
     public function cidade() {
-        return $this->belongsTo(Pessoa::class);
+        return $this->belongsTo(Cidade::class);
     }
 
     public function compras() {
