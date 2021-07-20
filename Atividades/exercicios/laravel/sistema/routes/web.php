@@ -30,6 +30,7 @@ Route:: resource('/cidades', CidadeController::class);
 Route:: resource('/compras', CompraController::class);
 Route:: resource('/estados', EstadoController::class);
 
+
 Route::get('/produtos/todos', function(){
 
     $produtos = Produto::all();
