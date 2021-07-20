@@ -30,7 +30,7 @@ class CompraController extends Controller
     {
         $pessoas = Pessoa::orderBy('nome')->get();
         $produtos = Produto::orderBy('nome')->get();
-        return view('compras.create', ['pessoas' => $pessoas,'produtos' => $produtos]);
+        return view('compras.create', ['produtos' => $produtos,'pessoas' => $pessoas]);
     }
 
     /**

@@ -15,7 +15,6 @@ class CreateComprasTable extends Migration
     {
         Schema::create('compras', function (Blueprint $table) {
             $table->id();
-            $table->string('nome', 100);
             $table->unsignedBigInteger('pessoa_id');
             $table->unsignedBigInteger('produto_id');
             $table->date('data');

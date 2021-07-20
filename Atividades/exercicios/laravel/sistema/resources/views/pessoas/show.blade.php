@@ -8,6 +8,7 @@
 <p>Nome: {{ $pessoa->nome }}</p>
 <p>Cidade: {{ $pessoa->cidade->nome }}</p>
 
+
 <a href="{{route('pessoas.edit', $pessoa->id)}}">Editar</a>
 <a href="{{ route('pessoas.index') }}">Voltar</a>
 

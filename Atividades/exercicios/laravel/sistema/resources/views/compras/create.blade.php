@@ -25,11 +25,16 @@
 
                         <select name="produto_id" id="produto_id" class="form-control">
 
-                            @foreach($produtos as $e)
-                                <option value="{{$e->id}}">{{$e->nome}}</option>
+                            @foreach($produtos as $p)
+                                <option value="{{$p->id}}">{{$p->nome}}</option>
                             @endforeach
 
                         </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="data">Data</label>
+                        <input type="text" class="form-control" name="data" id="data">
                     </div>
 
                 </div>

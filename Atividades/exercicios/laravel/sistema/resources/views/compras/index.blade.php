@@ -13,6 +13,7 @@
                 <th>ID</th>
                 <th>Pessoa</th>
                 <th>Produto</th>
+                <th>Data</th>
                 <th>Exibir</th>
             </tr>
            
@@ -23,8 +24,9 @@
             @foreach($compras as $p)
                 <tr>
                     <td>{{$p->id}}</td>
-                    <td>{{$p->pessoa->nome}}</td>
+                    <td>{{$p->pessoa->nome }}</td>
                     <td>{{$p->produto->nome }}</td>
+                    <td>{{$p->data}}</td>
                     <td><a href="{{ route('compras.show', $p->id)}}">Exibir</a></td>
                 </tr>
             @endforeach
