@@ -27,14 +27,15 @@ class CidadeController extends Controller
      */
     public function create()
     {
-        if ( Auth::check() ) {
-            // if (Auth::user()->type == 1)
+       // if ( Auth::check() ) {
+            // if (Auth::user()->type == 1){
             $estados = Estado::orderBy('nome')->get();
             return view('cidades.create', ['estados' => $estados]);
-        } else {
-            session()->flash('mensagem', 'Operação não permitida!');
-            return redirect()->route('login');
-        }
+        //} 
+        //else {
+            //session()->flash('mensagem', 'Operação não permitida!');
+            //return redirect()->route('login');
+        //}
     }
 
     /**

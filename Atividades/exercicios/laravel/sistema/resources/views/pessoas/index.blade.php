@@ -4,9 +4,7 @@
 
 <link rel="stylesheet" href="tabela.css">
  
-<a href="{{ route('cidades.create') }}"><button class=" botoes btn btn-danger">Inserir</button></a>
-
-
+<a href="{{ route('pessoas.create') }}"><button class=" botoes btn btn-danger">Inserir</button></a>
 
 <table class = "table table-bordered table-hover table-striped">
         
@@ -14,7 +12,7 @@
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
-                <th>Estado</th>
+                <th>Cidade</th>
                 <th>Exibir</th>
             </tr>
            
@@ -22,12 +20,12 @@
 
         <tbody>
         
-            @foreach($cidades as $c)
+            @foreach($pessoas as $e)
                 <tr>
-                    <td>{{$c->id}}</td>
-                    <td>{{$c->nome}}</td>
-                    <td>{{ $c->estado->id }}-{{ $c->estado->sigla }}</td>
-                    <td><a href="{{ route('cidades.show', $c->id)}}">Exibir</a></td>
+                    <td>{{$e->id}}</td>
+                    <td>{{$e->nome}}</td>
+                    <td>{{ $e->cidade->nome }}-{{ $e->cidade->sigla }}</td>
+                    <td><a href="{{ route('cidades.show', $e->id)}}">Exibir</a></td>
                 </tr>
             @endforeach
         </tbody>

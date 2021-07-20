@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Pessoa extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['nome', 'cidade_id'];
+
+    public function cidade() {
+        return $this->belongsTo(Pessoa::class);
+    }
+
+    public function compras() {
+        return $this->hasMany(Compra::class);
+    }
 }
+

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pessoa;
+use App\Models\Cidade;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PessoaController extends Controller
 {
@@ -14,7 +16,8 @@ class PessoaController extends Controller
      */
     public function index()
     {
-        //
+        $pessoas = Cidade::orderBy('nome')->get();
+        return view('pessoas.index', [ 'pessoas' => $pessoas ]);
     }
 
     /**
@@ -24,7 +27,14 @@ class PessoaController extends Controller
      */
     public function create()
     {
-        //
+        if ( Auth::check() ) {
+            // if (Auth::user()->type == 1)
+            $cidades = Estado::orderBy('nome')->get();
+            return view('cidades.create', ['cidades' => $cidades]);
+        } else {
+            session()->flash('mensagem', 'Operação não permitida!');
+            return redirect()->route('login');
+        }
     }
 
     /**
@@ -35,7 +45,9 @@ class PessoaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Pessoa::create($request->all());
+        session()->flash('mensagem', 'Pessoa inserida com sucesso!');
+        return redirect()->route('pessoas.index');
     }
 
     /**
@@ -46,7 +58,7 @@ class PessoaController extends Controller
      */
     public function show(Pessoa $pessoa)
     {
-        //
+         return view('pessoas.show', ['pessoa' => $pessoa]);
     }
 
     /**
@@ -57,7 +69,10 @@ class PessoaController extends Controller
      */
     public function edit(Pessoa $pessoa)
     {
-        //
+        $cidades = Estado::orderBy('nome')->get();
+        return view('pessoas.edit',
+            ['pessoa' => $pessoa,
+             'cidades' => $cidades]);
     }
 
     /**
@@ -69,7 +84,12 @@ class PessoaController extends Controller
      */
     public function update(Request $request, Pessoa $pessoa)
     {
-        //
+        $pessoa->fill($request->all());
+        $pessoa->save();
+
+        session()->flash('mensagem', 'pessoa atualizada com sucesso!');
+        return redirect()->route('pessoas.index');
+
     }
 
     /**
@@ -80,6 +100,9 @@ class PessoaController extends Controller
      */
     public function destroy(Pessoa $pessoa)
     {
-        //
+        $pessoa->delete();
+        session()->flash('mensagem', 'pessoa excluída com sucesso!');
+        return redirect()->route('pessoas.index');
+
     }
 }
