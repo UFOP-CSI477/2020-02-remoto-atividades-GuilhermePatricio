@@ -21,7 +21,7 @@ use App\Http\Controllers\CompraController;
 use App\Http\Controllers\EstadoController;
 
 Route::get('/', function () {
-    return view('Principal');
+    return view('principal');
 })->name('principal');
 
 Route:: resource('/produtos', ProdutoController::class);
