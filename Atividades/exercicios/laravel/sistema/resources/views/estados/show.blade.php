@@ -8,19 +8,17 @@
 <p>Nome: {{ $estado->nome }}</p>
 <p>Sigla: {{ $estado->sigla }}</p>
 
-<a href="{{route('estados.edit', $estado->id)}}">Editar</a>
 
-<a href="{{route('estados.index')}}">Voltar</a>
+<a href="{{ route('estados.edit',$estado->id) }}"><button class=" botoes btn btn-danger">Editar</button></a>
+<a href="{{ route('estados.index') }}"><button class=" botoes btn btn-danger">Voltar</button></a>
 
-<form name="frmDelete"
-    action="{{ route('estados.destroy', $estado->id)}}"
-    method="post"
-    onsubmit="return confirm('Confirma a exclusão do estado?');">
+<form name="formDelete" action="{{route('estados.destroy',$estado->id)}}" method="post" onsubmit="return confirm('Deseja excluir esse estado?')">
 
+   
     @csrf
     @method('DELETE')
 
-    <input type="submit" value="Excluir">
+    <input class="btn btn-danger botoes" type="submit" value="excluir">
 
 </form>
 

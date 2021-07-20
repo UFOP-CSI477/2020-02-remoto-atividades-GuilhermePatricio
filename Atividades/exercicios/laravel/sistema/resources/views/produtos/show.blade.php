@@ -10,7 +10,6 @@
 
 
 <a href="{{ route('produtos.edit',$produto->id) }}"><button class=" botoes btn btn-danger">Editar</button></a>
-
 <a href="{{ route('produtos.index') }}"><button class=" botoes btn btn-danger">Voltar</button></a>
 
 <form name="formDelete" action="{{route('produtos.destroy',$produto->id)}}" method="post" onsubmit="return confirm('Deseja excluir esse produto?')">
