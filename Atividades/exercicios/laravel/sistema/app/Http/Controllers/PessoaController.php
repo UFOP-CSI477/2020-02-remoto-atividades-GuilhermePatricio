@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Pessoa;
 use App\Models\Cidade;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class PessoaController extends Controller
 {
@@ -27,14 +26,10 @@ class PessoaController extends Controller
      */
     public function create()
     {
-        if ( Auth::check() ) {
-            // if (Auth::user()->type == 1)
+        
             $cidades = Estado::orderBy('nome')->get();
             return view('cidades.create', ['cidades' => $cidades]);
-        } else {
-            session()->flash('mensagem', 'Operação não permitida!');
-            return redirect()->route('login');
-        }
+       
     }
 
     /**
