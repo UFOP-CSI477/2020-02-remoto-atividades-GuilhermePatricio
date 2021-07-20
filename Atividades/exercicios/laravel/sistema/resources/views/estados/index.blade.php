@@ -2,8 +2,8 @@
 
 @section('conteudo')
 
-    <a href="{{ route('estados.create') }}">Cadastrar</a>
-
+    <a href="{{ route('estados.create') }}"><button class=" botoes btn btn-danger">Inserir</button></a>
+    
     <table class="table table-bordered table-hover table-striped">
         <thead class="thead-dark">
             <tr>

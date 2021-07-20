@@ -18,7 +18,7 @@
     </div>
 
     <div class="text-right">
-        <input type="submit" value="Atualizar" class="btn btn-primary">
+        <input type="submit" value="Atualizar" class="btn btn-secondary">
         <input type="reset" value="Limpar" class="btn btn-danger">
     </div>
 
