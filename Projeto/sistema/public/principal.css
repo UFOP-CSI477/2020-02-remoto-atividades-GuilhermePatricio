@@ -1,0 +1,19 @@
+
+.bg{
+    background-image: url("book.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom; 
+    background-attachment: fixed;
+   
+}
+.pesquisa{
+
+    position: absolute;
+    top: 50%;
+    left: 63%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    padding: 10px;
+}
+

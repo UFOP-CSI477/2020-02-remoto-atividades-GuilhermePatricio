@@ -1,0 +1,17 @@
+
+
+.pesquisa{
+
+    border: 1px solid;
+    border-radius: 0;
+    position: absolute;
+    top: 200%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1500px;
+    padding: 10px;
+}
+input[type="button"]{
+
+    margin: 200px auto !important;
+}
