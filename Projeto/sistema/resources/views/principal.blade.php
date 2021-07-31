@@ -73,7 +73,6 @@
 
             
            
-
-              <link rel="stylesheet" href="/principal.css">
+    
     </body>
 </html>

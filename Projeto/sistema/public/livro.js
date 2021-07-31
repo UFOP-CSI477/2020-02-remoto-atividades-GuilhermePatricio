@@ -1,10 +1,7 @@
- // Buscar elemento pai
  var elemento_pai = document.body;
-    
- // Criar elemento
- var elemento = document.createElement('div');
-
- elemento.id = "elemento";
+ var div = document.createElement('div');
+ div.id = "elemento";
+ div.className = "card";
 
 function preencheLivros(data){
 
@@ -18,37 +15,70 @@ function preencheLivros(data){
 
 
     for(let index in data){
-       titulo = data[index].volumeInfo.title;
-       autor =  data[index].volumeInfo.authors;
+        titulo = data[index].volumeInfo.title;
+        autor =  data[index].volumeInfo.authors;
 
-       
+        if(data[index].volumeInfo.readingModes.image == true){
+            thumb =  data[index].volumeInfo.imageLinks.thumbnail;
+        }
 
-       criaCard(titulo);
+        else{
+            continue;
+        }
+            
+       criaCard(titulo,autor,thumb);
     
-    
+}
 
 }
 
+function criaCard(titulo,autor,thumb){
+
+    var elemento_pai = document.body;
+    var div = document.createElement('div');
+    div.id = "elemento";
+    div.className = "card";
+
+    var pThumb = document.createElement('img');
+    pThumb.id = "thumb";
+    pThumb.className = "card-img-top";
+    pThumb.src = thumb;
+    
+    var cardBody = document.createElement('div');
+    cardBody.id = "cardBody";
+    cardBody.className = "card-body";
+
+    var pTitulo = document.createElement('h5');
+    pTitulo.id = "titulo";
+    pTitulo.className = "card-title";
+    var textTitulo = document.createTextNode(titulo);
+    
+    var pAutor = document.createElement('p');
+    pAutor.id = "autor";
+    pAutor.className = "card-text";
+    var textAutor = document.createTextNode(autor);
+
+    var pAdicionar = document.createElement('a');
+    pAdicionar.id = "adiciona";
+    pAdicionar.className = "btn btn-primary";
+    pAdicionar.href = "#";
+
+
+    pTitulo.appendChild(textTitulo);
+    pAutor.appendChild(textAutor);
+    
+
+    elemento_pai.appendChild(div);
+    div.appendChild(pThumb);
+    div.appendChild(cardBody);
+    cardBody.appendChild(pTitulo);
+    cardBody.appendChild(pAutor);
+    cardBody.appendChild(pAdicionar);
+
+    
+    
 }
 
-function criaCard(titulo){
-
-    var T = document.createElement('p');
-    
-    T.id = "titulo";
-
-    // Criar o nó de texto
-    var texto = document.createTextNode(titulo);
-    
-    // Anexar o nó de texto ao elemento h1
-    
-    T.appendChild(texto);
-    
-    // Agora sim, inserir (anexar) o elemento filho (titulo) ao elemento pai (body)
-    elemento_pai.appendChild(elemento);
-    elemento.appendChild(T);
-    
-}
 function pesquisarLivro(livro){
 
     if(livro ==""){

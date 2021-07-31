@@ -34,10 +34,16 @@
     margin-top: 200px;
    
 }
+
+#thumb{
+    max-width:300px;
+    max-height:300px;
+    width: auto;
+    height: auto;
+}
 p{
-   
-    display: inline-block;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
+    display: inline;
 }
 
 
