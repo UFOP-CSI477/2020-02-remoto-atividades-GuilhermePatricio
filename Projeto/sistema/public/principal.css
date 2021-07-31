@@ -17,3 +17,28 @@
     padding: 10px;
 }
 
+#resultados{
+    margin-top: 50%;
+    visibility: hidden;
+}
+
+#alerta{
+    visibility: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    width: 6em;
+
+}
+
+#elemento{
+    margin-top: 200px;
+   
+}
+p{
+   
+    display: inline-block;
+    margin-bottom: 10px; 
+}
+
+
+

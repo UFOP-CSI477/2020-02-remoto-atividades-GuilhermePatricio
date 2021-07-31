@@ -17,6 +17,8 @@
 
         <link rel="stylesheet" href="/principal.css">
 
+        <script src="livro.js" defer></script>
+
     </head>
 
     <body class="bg">
@@ -38,7 +40,7 @@
             <div>
             <div class = "pesquisa">
 
-                <form action = "validar.php" method = "POST" class="was-validated">
+                <form  method = "POST" class="was-validated">
                     <div class="row">   
                         <div class="col">
                         
@@ -54,12 +56,24 @@
                         </div>
 
                         <div class="col">
-                            <input class="btn btn-secondary " type="button" value="Pesquisar" name="btnPesquisar">
+                            <input class="btn btn-secondary " type="button" value="Pesquisar" name="btnPesquisar" onclick = "pesquisarLivro(livro.value)">
                         </div>
                     </div>
                 </form>
 
+              
+
+
             </div>
+
+            <div id = "alerta" class="alert alert-danger">
+                Insira o titulo do livro que deseja buscar!
+            </div>
+
+
             
+           
+
+              <link rel="stylesheet" href="/principal.css">
     </body>
 </html>
