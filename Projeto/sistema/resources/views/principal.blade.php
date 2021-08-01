@@ -21,7 +21,7 @@
 
     </head>
 
-    <body class="bg">
+    <body id = "bg" class="bg">
 
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <a class="navbar-brand logo" href="{{route('principal')}}">
@@ -38,9 +38,14 @@
             </nav>
 
             <div>
-            <div class = "pesquisa">
 
-                <form  method = "POST" class="was-validated">
+            <div>
+
+
+
+            <div id = "pesquisa" class = "pesquisa">
+
+                <form  class="was-validated">
                     <div class="row">   
                         <div class="col">
                         
@@ -68,11 +73,7 @@
 
             <div id = "alerta" class="alert alert-danger">
                 Insira o titulo do livro que deseja buscar!
-            </div>
-
-
-            
-           
+            </div>           
     
     </body>
 </html>

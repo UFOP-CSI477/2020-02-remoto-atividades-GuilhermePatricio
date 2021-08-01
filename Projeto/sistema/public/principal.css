@@ -4,8 +4,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom; 
+    
     background-attachment: fixed;
-   
 }
 .pesquisa{
 
@@ -17,34 +17,51 @@
     padding: 10px;
 }
 
-#resultados{
-    margin-top: 50%;
-    visibility: hidden;
-}
-
 #alerta{
     visibility: hidden;
-    margin-left: auto;
-    margin-right: auto;
-    width: 6em;
-
+    width: auto;
 }
 
-#elemento{
+#pai{
+
+    margin-top: 450px;
+    display: grid;  
+    grid-template-columns: repeat( 5, 1fr);
+    grid-gap: 40px;
+    text-align: center;
+    margin-left:40px;
+    margin-right: 40px;
+}
+
+/*
+#card{
+  background-color: brown;
+  
+}
+p,h5{
+    color: white;
+}
+*/
+.backupGrid{
     margin-top: 200px;
-   
+   justify-content: space-around;
+
+   background-color: white;
+    margin-top: 300px;
+    display: grid;
+    margin-left:40px;
+    margin-right:40px;
+    grid-template-columns: repeat( 4, 1fr);
+    grid-gap: 40px;
+    text-align: center;
 }
 
 #thumb{
-    max-width:300px;
-    max-height:300px;
-    width: auto;
-    height: auto;
+    
+  height: auto;
+  width: auto;
 }
-p{
-    margin-bottom: 10px;
-    display: inline;
-}
+
 
 
 
