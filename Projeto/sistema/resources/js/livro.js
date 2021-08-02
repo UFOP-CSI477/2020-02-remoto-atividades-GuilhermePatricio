@@ -66,52 +66,13 @@ function criaCard(titulo,autor,thumb,index){
     btAdicionar.id = "adiciona";
     btAdicionar.type = "button";
     btAdicionar.className = "btn btn-danger";
-    btAdicionar.value = "Adicionar";
-    btAdicionar.onclick = function(){
-
-        html = `<form id = "dadosLivro" action="teste.blade.php" method = "POST">
-                    <input id = "_token" value ="" type = "hidden">
-                    <input id = "titulo" type="hidden" name = "titulo" value = "">
-    
-                </form>
-                
-                `
-                ;
-       var tk = document.getElementById("csrf-token").content;
-       console.log(tk);
-        document.getElementById("n").innerHTML = html;
-        document.getElementById("titulo").value = titulo;
-        document.getElementById("_token").value = tk;
-        document.getElementById("dadosLivro").submit();
-        /*var f = document.createElement('form');
-        f.action = "/livros";
-        f.method = "POST";
-        f.id = "dadosLivro";
+    btAdicionar. onclick = function(){
         
-        var i =  document.createElement('input');
-        i.type = "text";
-        i.className = "form-control";
-        i.name = "titulo";
-        i.value = titulo;
-        
-        var sub =  document.createElement('input');
-        sub.type = "submit";
-        sub.className = "btn btn-danger";
-        sub.value = "salvar";
-        sub.form = "dadosLivro";
-
-        elemento_pai.appendChild(f);
-        f.appendChild(i);
-        f.appendChild(sub);
-        */
-        console.log(titulo);
-        console.log(autor);
     }
-
-    hTitulo.appendChild(textTitulo);
-    pAutor.appendChild(textAutor);
    
-    
+    hTitulo.appendChild(textTitulo);
+    pAutor.appendChild(textAutor);;
+
     elemento_pai.appendChild(div);
     div.appendChild(card);
     card.appendChild(imgThumb);
@@ -119,12 +80,6 @@ function criaCard(titulo,autor,thumb,index){
     cardBody.appendChild(hTitulo);
     cardBody.appendChild(pAutor);
     cardBody.appendChild(btAdicionar);
-
-}
-
-function salvarLivro(){
-
-  console.log("oi");
 
 }
 

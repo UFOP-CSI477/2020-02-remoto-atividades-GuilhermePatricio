@@ -1,26 +1,37 @@
-<!DOCTYPE html>
-<html lang="br">
+@extends('principal')
 
-    <head>
+@section('conteudo')
 
-        <title>Livros pesquisados</title>
+<div >
 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <div id = "pesquisa" class = "pesquisa">
+    <form  class="was-validated">
+        <div class="row">   
+            <div class="col">
+            
+                <input type="text" name = "livro" placeholder="Pesquise um livro" class="form-control" id="livro" required>
 
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+                <div class="valid-feedback">
+                    Tudo certo!
+                </div>
 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+                <div class="invalid-feedback">
+                    Por favor, informe o nome do livro!
+                </div>
+            </div>
 
-        <link rel="stylesheet" href="/principal.css">
+            <div class="col">
+                <input class="btn btn-secondary " type="button" value="Pesquisar" name="btnPesquisar" onclick = "pesquisarLivro(livro.value)">
+            </div>
+        </div>
+    </form>
 
-    </head>
+    </div>
 
-    <body >
+    <div id = "alerta" class="alert alert-danger">
+        Insira o titulo do livro que deseja buscar!
+    </div>
 
-          
-    </body>
-</html>
+</div>
+
+@endsection

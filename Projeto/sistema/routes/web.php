@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+use App\Http\Controllers\LivroController;
+
 Route::get('/', function () {
-    return view('principal');
+    return view('livros.pesquisa');
 })->name('principal');
+
+Route:: resource('/livros', LivroController::class);
