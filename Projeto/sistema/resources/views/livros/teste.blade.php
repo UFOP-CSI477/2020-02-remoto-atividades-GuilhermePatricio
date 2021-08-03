@@ -17,20 +17,14 @@
     
 <body onload="backgroud()" >
    
-<form action="{{route(livros.store)}}" method = "POST">
-    @csfr
-    <?php
+<form action="">
+<?php
         
-        $titulo = $_POST['titulo'];
-        echo $titulo;
-
-        if(empty($titulo)){
-            die('Informe os dados corretamente!');
-        }
-            
-    ?>
-      <input type="text" name = "titulo" class="form-control" id="titulo" value = '$titulo' required>
-     <input class="btn btn-secondary botoes" type="submit" value="Adicionar" name="btnAdicionar">
+        echo "oi";
+?>
+   
+   
+    
 </form>
     
 </body>

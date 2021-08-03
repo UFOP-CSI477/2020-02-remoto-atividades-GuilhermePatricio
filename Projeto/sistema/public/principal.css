@@ -4,7 +4,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom; 
-    
     background-attachment: fixed;
 }
 .pesquisa{
@@ -22,9 +21,20 @@
     width: auto;
 }
 
-#pai{
+#grid{
 
     margin-top: 450px;
+    display: grid;  
+    grid-template-columns: repeat( 5, 1fr);
+    grid-gap: 40px;
+    text-align: center;
+    margin-left:40px;
+    margin-right: 40px;
+}
+
+#grid2{
+
+    margin-top: 100px;
     display: grid;  
     grid-template-columns: repeat( 5, 1fr);
     grid-gap: 40px;
@@ -38,9 +48,11 @@
   background-color: brown;
   
 }
+
 p,h5{
     color: white;
 }
+
 */
 .backupGrid{
     margin-top: 200px;

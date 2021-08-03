@@ -44,5 +44,12 @@
             <div id = "n">
 
             </div>
+
+            <form id = "dadosLivro" action="{{route('livros.store')}}" method = "POST">
+                   @csrf
+                    <input id = "titulo" type="hidden" name = "titulo" value = "">
+                    <input id = "autor" type="hidden" name = "autor" value = "">
+                    <input id = "thumb" type="hidden" name = "thumb" value = "">
+            </form>
     </body>
 </html>
