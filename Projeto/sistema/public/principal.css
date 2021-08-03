@@ -4,6 +4,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom; 
+    
     background-attachment: fixed;
 }
 .pesquisa{
@@ -21,7 +22,7 @@
     width: auto;
 }
 
-#grid{
+#pai{
 
     margin-top: 450px;
     display: grid;  
@@ -65,11 +66,9 @@
   background-color: brown;
   
 }
-
 p,h5{
     color: white;
 }
-
 */
 .backupGrid{
     margin-top: 200px;

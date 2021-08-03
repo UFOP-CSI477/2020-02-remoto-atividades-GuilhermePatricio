@@ -20,9 +20,3 @@ Route::get('/', function () {
 })->name('principal');
 
 Route:: resource('/livros', LivroController::class);
-
-Route::post('teste/', function(){
-
-    return view('livros.teste');
-
-})->name("livros.teste");

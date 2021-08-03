@@ -4,7 +4,6 @@
 
 <body onload="backgroud()">
 
-    <div class = "row" id = "grid2">
 
         @foreach($livros as $l)
 

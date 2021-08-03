@@ -17,7 +17,7 @@ class CreateLivrosTable extends Migration
             $table->id();
             $table->string('titulo',100);
             $table->string('autor',100);
-            $table->string('thumb',200);
+            $table->string('thumb');
             $table->timestamps();
         });
     }

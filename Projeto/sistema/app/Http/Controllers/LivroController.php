@@ -6,22 +6,7 @@ use App\Models\Livro;
 use Illuminate\Http\Request;
 
 class LivroController extends Controller
-{   
-       /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function teste(Request $request)
-    {
-        echo "teste";
-        /*Livro::create($request->all());
-        session()->flash('mensagem', 'Livro adicionado com sucesso!');
-        return redirect()->route('livros.pesquisa');
-        */
-    }
-
+{
     /**
      * Display a listing of the resource.
      *
@@ -29,10 +14,11 @@ class LivroController extends Controller
      */
     public function index()
     {
-        
+        /*
         $livros = Livro::orderby('titulo')->get();
         return view('livros.index', ['livros' => $livros]);
-        
+        */
+        return view('livros.index');
     }
 
     /**
@@ -54,11 +40,10 @@ class LivroController extends Controller
      */
     public function store(Request $request)
     {
-        echo "store";
         Livro::create($request->all());
         session()->flash('mensagem', 'Livro adicionado com sucesso!');
-        return redirect()->route('principal');
-        
+        return redirect()->route('livros.pesquisa');
+    
     }
 
     /**
@@ -69,7 +54,7 @@ class LivroController extends Controller
      */
     public function show(Livro $livro)
     {
-        return view('livros.show', [ 'livro' => $livro]);
+        //
     }
 
     /**

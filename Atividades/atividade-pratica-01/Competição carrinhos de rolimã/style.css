@@ -1,0 +1,40 @@
+
+#Formulario{
+    margin-top:20px;
+}
+h2{
+    border-style: solid;
+    border-top: 0ch;
+    border-left: 0ch;
+    border-right: 0ch;
+    text-align: center;
+}
+
+form > div{
+    padding:  0 10px;
+    width: 810px;
+    margin: auto !important ;
+}
+
+.botoes{
+    margin: 15px auto !important;
+    width: 768px;
+}
+
+label{
+    font-weight: bold!important;
+}
+
+
+table{
+
+    width: 50% !important;
+    margin: auto;
+    
+}
+
+th{
+    background-color: black!important;
+    color: white;
+    font-weight: bold;
+}
