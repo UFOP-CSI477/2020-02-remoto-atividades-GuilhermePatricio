@@ -43,6 +43,23 @@
     margin-right: 40px;
 }
 
+#fav{
+    height: 38px;
+    width: 38px;
+    position:absolute;
+    left:86%;
+}
+
+#estrela{
+    
+    margin-bottom: 5px;
+}
+
+#book{
+
+    margin-left: 10px;
+}
+
 /*
 #card{
   background-color: brown;
@@ -72,7 +89,10 @@ p,h5{
     
   height: auto;
   width: auto;
+  
 }
+
+
 
 
 

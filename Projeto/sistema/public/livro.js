@@ -83,12 +83,6 @@ function criaCard(titulo,autor,thumb,index){
 
 }
 
-function salvarLivro(){
-
-  console.log("oi");
-
-}
-
 function pesquisarLivro(livro){
     
     let elemento = document.getElementById("grid");
@@ -110,6 +104,17 @@ function pesquisarLivro(livro){
 }
  
 function backgroud(){
+
     document.body.style.backgroundImage = "url()";
-    document.getElementById("bg").style.backgroundImage = "url()";
+    document.title = "Meus livros";
+}
+
+function addFavorito(){
+    
+    var doc = document.getElementById('fav');
+    doc.onclick = function(){
+        doc.style.background = "green";
+    }
+   
+
 }
