@@ -20,8 +20,6 @@
         <link rel="stylesheet" href="/principal.css">
 
         <script src="livro.js" defer></script>
-        
-        <meta id="csrf-token" content="{{ csrf_token() }}">
 
     </head>
  
@@ -42,8 +40,12 @@
            
             @yield('conteudo')
             
-            <div id = "n">
+            <form id = "dadosLivro" action="{{route('livros.store')}}" method = "POST">
+                   @csrf
+                    <input id = "titulo" type="hidden" name = "titulo" value = "">
+                    <input id = "autor" type="hidden" name = "autor" value = "">
+                    <input id = "thumb" type="hidden" name = "thumb" value = "">
+            </form>
 
-            </div>
     </body>
 </html>

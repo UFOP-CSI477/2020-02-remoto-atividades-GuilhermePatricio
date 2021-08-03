@@ -4,14 +4,18 @@
 
 <body onload="backgroud()">
 
-
+    <div class = "row" id = "grid2">
         @foreach($livros as $l)
 
             <div class="card" name = "card" style="height:490px">
 
-                <button id = "fav" href="#" type = "button" class="btn btn-warning bi bi-star" onclick = "addFavorito()">
-               
-                </button>
+                <button id = "fav" href="#" type = "button" class="btn btn-warning bi bi-star"></button>
+
+                <script> document.getElementById("fav").onclick = function(){
+                     
+                }; 
+                
+                </script>
 
                 <img id = "thumb" class="card-img-top" src="{{$l->thumb}}" alt="Card image cap">
                 <div class="card-body">

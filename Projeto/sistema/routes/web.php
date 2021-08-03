@@ -20,3 +20,4 @@ Route::get('/', function () {
 })->name('principal');
 
 Route:: resource('/livros', LivroController::class);
+

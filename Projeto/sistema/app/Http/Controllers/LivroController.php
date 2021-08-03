@@ -14,11 +14,10 @@ class LivroController extends Controller
      */
     public function index()
     {
-        /*
+        
         $livros = Livro::orderby('titulo')->get();
         return view('livros.index', ['livros' => $livros]);
-        */
-        return view('livros.index');
+        
     }
 
     /**
@@ -42,7 +41,7 @@ class LivroController extends Controller
     {
         Livro::create($request->all());
         session()->flash('mensagem', 'Livro adicionado com sucesso!');
-        return redirect()->route('livros.pesquisa');
+        return redirect()->route('principal');
     
     }
 
@@ -54,7 +53,7 @@ class LivroController extends Controller
      */
     public function show(Livro $livro)
     {
-        //
+        return view('livros.show', [ 'livro' => $livro]);
     }
 
     /**
