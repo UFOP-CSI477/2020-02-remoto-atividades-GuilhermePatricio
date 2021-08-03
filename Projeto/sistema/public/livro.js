@@ -111,10 +111,7 @@ function backgroud(){
 
 function addFavorito(){
     
-    var doc = document.getElementById('fav');
-    doc.onclick = function(){
-        doc.style.background = "green";
-    }
+   
    
 
 }

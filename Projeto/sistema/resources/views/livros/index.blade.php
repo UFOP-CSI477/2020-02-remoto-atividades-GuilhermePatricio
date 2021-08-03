@@ -8,7 +8,7 @@
 
         @foreach($livros as $l)
 
-            <div id = {{$l}} class="card" name = "card" style="height:490px">
+            <div class="card" name = "card" style="height:490px">
 
                 <button id = "fav" href="#" type = "button" class="btn btn-warning bi bi-star" onclick = "addFavorito()">
                

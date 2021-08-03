@@ -20,6 +20,7 @@
         <link rel="stylesheet" href="/principal.css">
 
         <script src="livro.js" defer></script>
+        
         <meta id="csrf-token" content="{{ csrf_token() }}">
 
     </head>
