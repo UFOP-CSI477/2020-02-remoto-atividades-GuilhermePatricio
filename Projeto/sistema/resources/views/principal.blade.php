@@ -21,6 +21,7 @@
 
         <script src="livro.js" defer></script>
 
+        <link rel = "icon" class = "bi bi-book">
     </head>
  
     <body id = "bg" class="bg">
