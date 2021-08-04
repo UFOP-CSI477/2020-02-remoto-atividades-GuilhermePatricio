@@ -46,8 +46,8 @@
 .fav{
     height: 38px;
     width: 38px;
-    position:absolute;
-    left:86%;
+    position:relative;
+    right:30%;
 }
 
 #estrela{
@@ -69,11 +69,11 @@ p,h5{
     color: white;
 }
 */
+
 .backupGrid{
     margin-top: 200px;
-   justify-content: space-around;
-
-   background-color: white;
+    justify-content: space-around;
+    background-color: white;
     margin-top: 300px;
     display: grid;
     margin-left:40px;
@@ -90,6 +90,43 @@ p,h5{
   
 }
 
+.estrelas{
+    display: flex;
+    align-items: center;
+    width: 160px;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin: 40px auto;
+    position: relative;
+  }
 
-
-
+  .estrelas input {
+    display: none;
+  }
+  
+  .estrelas > label {
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    transition: 0.2s ease;
+    color: orange;
+  }
+ 
+  .estrelas label:hover {
+    color:rgb(206, 146, 34);
+    
+    transition: 0.2s ease;
+  }
+  
+  .estrelas label::before {
+    content: '\2606';
+    position: absolute;
+    top: 0px;
+    line-height: 26px;
+  }
+  
+  .estrelas input:checked ~ label:before {
+    content:'\2605';
+  }
+  
+  

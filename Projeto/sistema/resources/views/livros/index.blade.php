@@ -30,20 +30,29 @@
                 
             </form>
 
-
             <form action="{{route('livros.edit',$l->id)}}">
 
-                <div class="nota">
-                    <input type="submit" id="estrela1" name="nota" value="1" /><label for="estrela1"></label>
-                    <input type="submit" id="estrela2" name="nota" value="2" /><label for="estrela3"></label>
-                    <input type="submit" id="estrela3" name="nota" value="3" /><label for="estrela3"></label>
-                    <input type="submit" id="estrela4" name="nota" value="4" /><label for="estrela4"></label>
-                    <input type="submit" id="estrela5" name="nota" value="5" /><label for="estrela5"></label>
+                <div class="estrelas">
+                    <input type="radio" name="estrela" id="estrela5" value="5"/>
+                    <label for="estrela5"></label>
+
+                    <input type="radio" name="estrela" id="estrela4" value="4"/>
+                    <label for="estrela4"></label>
+                
+                    <input type="radio" name="estrela" id="estrela3" value="3"/>
+                    <label for="estrela3"></label>
+                
+                    <input type="radio" name="estrela" id="estrela2" value="2"/>
+                    <label for="estrela2"></label>
+                
+                    <input type="radio" name="estrela" id="estrela1" value="1"/>
+                    <label for="estrela1"></label>
                 </div>
+                                
+            </form>-->
 
-            </form>
-
-
+            
+           
         @endforeach
 
 </div>
