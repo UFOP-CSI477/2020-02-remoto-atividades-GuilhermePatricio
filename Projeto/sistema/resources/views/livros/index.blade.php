@@ -2,35 +2,36 @@
 
 @section('conteudo')
 
+
 <body onload="backgroud()">
 
     <div class = "row" id = "grid2">
+   
         @foreach($livros as $l)
 
-            <div class="card" name = "card" style="height:490px">
+            <form class="card"  name = "card" style="height:490px" form method = "post" onsubmit="return confirm('Deseja remover esse livro?')" action = "{{route('livros.destroy', $l->id)}}">
 
-                <button id = "fav" href="#" type = "button" class="btn btn-warning bi bi-star"></button>
+            @csrf
+            @method('DELETE')
 
-                <script> document.getElementById("fav").onclick = function(){
-                     
-                }; 
-                
-                </script>
-
+                <button id = "{{$l->id}}" class = "fav btn btn-warning bi bi-star" onclick = "addFavorito({{$l->id}})"></button>
                 <img id = "thumb" class="card-img-top" src="{{$l->thumb}}" alt="Card image cap">
+                
                 <div class="card-body">
 
                     <h5 class="card-title">{{$l->titulo}}</h5>
                     <p class="card-text">{{$l->autor}}</p>
-                    <a href="#" type = "button" class="btn btn-danger">Ver mais</a>
+
+                    <a href="{{$l->url}}" type = "button" class="btn btn-primary">Ver mais</a>                 
+                    <input value = "Remover" type = "submit" class="btn btn-danger">
         
                 </div>
+                
+            </form>
 
-            </div>
+        @endforeach
 
-         @endforeach
-
-    </div>
+</div>
    
 
     

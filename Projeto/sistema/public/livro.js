@@ -13,7 +13,8 @@ function preencheLivros(data){
     for(let index in data){
         titulo = data[index].volumeInfo.title;
         autor =  data[index].volumeInfo.authors;
-
+        url = data[index].volumeInfo.previewLink;
+            
         if(data[index].volumeInfo.imageLinks){
             thumb =  data[index].volumeInfo.imageLinks.thumbnail;
         }
@@ -22,39 +23,39 @@ function preencheLivros(data){
             thumb = "thumb.jpeg";
         }
             
-       criaCard(titulo,autor,thumb,index);
+       criaCard(titulo,autor,thumb,index,url);
     
     }
 
 }
 
-function criaCard(titulo,autor,thumb,index){
+function criaCard(titulo,autor,thumb,index,url){
     
-    var card = document.createElement('div');
+    let card = document.createElement('div');
     card.id = index;
     card.className = "card";
     card.style = style="height:490px";
 
-    var imgThumb = document.createElement('img');
+    let imgThumb = document.createElement('img');
     imgThumb.id = "thumb";
     imgThumb.className = "card-img-top";
     imgThumb.src = thumb;
     
-    var cardBody = document.createElement('div');
+    let cardBody = document.createElement('div');
     cardBody.id = "cardBody";
     cardBody.className = "card-body";
 
-    var hTitulo = document.createElement('h5');
+    let hTitulo = document.createElement('h5');
     hTitulo.id = "titulo";
     hTitulo.className = "card-title";
-    var textTitulo = document.createTextNode(titulo);
+    let textTitulo = document.createTextNode(titulo);
     
-    var pAutor = document.createElement('p');
+    let pAutor = document.createElement('p');
     pAutor.id = "autor";
     pAutor.className = "card-text";
-    var textAutor = document.createTextNode(autor);
+    let textAutor = document.createTextNode(autor);
 
-    var btAdicionar = document.createElement('input');
+    let btAdicionar = document.createElement('input');
     btAdicionar.id = "adiciona";
     btAdicionar.type = "button";
     btAdicionar.className = "btn btn-danger";
@@ -64,6 +65,7 @@ function criaCard(titulo,autor,thumb,index){
         document.getElementById("titulo").value = titulo;
         document.getElementById("autor").value = autor;
         document.getElementById("thumb").value = thumb;
+        document.getElementById("url").value = url;
         document.getElementById("dadosLivro").submit();
     
     }
@@ -108,9 +110,15 @@ function backgroud(){
     document.title = "Meus livros";
 }
 
-function addFavorito(){
+function addFavorito(id){
     
-   
-d   
+    let fav = document.getElementById(id).className;
 
+    if(fav == "fav btn btn-warning bi bi-star-fill"){
+        document.getElementById(id).className = "fav btn btn-warning bi bi-star";
+    }
+
+    else{
+        document.getElementById(id).className = "fav btn btn-warning bi bi-star-fill";
+    }
 }

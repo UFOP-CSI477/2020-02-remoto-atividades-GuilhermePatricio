@@ -43,7 +43,7 @@
     margin-right: 40px;
 }
 
-#fav{
+.fav{
     height: 38px;
     width: 38px;
     position:absolute;
@@ -89,8 +89,6 @@ p,h5{
   width: auto;
   
 }
-
-
 
 
 

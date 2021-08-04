@@ -45,6 +45,7 @@
                     <input id = "titulo" type="hidden" name = "titulo" value = "">
                     <input id = "autor" type="hidden" name = "autor" value = "">
                     <input id = "thumb" type="hidden" name = "thumb" value = "">
+                    <input id = "url" type="hidden" name = "url" value = "">
             </form>
 
     </body>

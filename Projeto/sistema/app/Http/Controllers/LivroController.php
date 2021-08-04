@@ -53,7 +53,7 @@ class LivroController extends Controller
      */
     public function show(Livro $livro)
     {
-        return view('livros.show', [ 'livro' => $livro]);
+        //return view('livros.show', [ 'livro' => $livro]);
     }
 
     /**
@@ -87,6 +87,9 @@ class LivroController extends Controller
      */
     public function destroy(Livro $livro)
     {
-        //
+        $livro->delete();
+        session()->flash('mensagem', 'Estado excluído com sucesso!');
+    
+        return redirect()->route('livros.index');
     }
 }
