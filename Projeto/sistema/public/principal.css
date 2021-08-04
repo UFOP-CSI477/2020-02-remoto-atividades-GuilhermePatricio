@@ -46,8 +46,8 @@
 .fav{
     height: 38px;
     width: 38px;
-    position:relative;
-    right:30%;
+    position:absolute;
+    left: 86%;
 }
 
 #estrela{

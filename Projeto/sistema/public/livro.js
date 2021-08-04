@@ -120,5 +120,7 @@ function addFavorito(id){
 
     else{
         document.getElementById(id).className = "fav btn btn-warning bi bi-star-fill";
+       
+        
     }
 }

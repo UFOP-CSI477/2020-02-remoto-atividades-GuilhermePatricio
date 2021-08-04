@@ -21,3 +21,4 @@ Route::get('/', function () {
 
 Route:: resource('/livros', LivroController::class);
 
+Route::put('livros/{livro}', 'App\Http\Controllers\LivroController@verifica')->name('livros.verifica');

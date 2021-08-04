@@ -9,12 +9,12 @@
    
         @foreach($livros as $l)
 
-            <form class="card"  name = "card" style="height:490px" method = "post" onsubmit="return confirm('Deseja remover esse livro?')" action = "{{route('livros.destroy', $l->id)}}">
+            <form id = "ts" class="card"  name = "card" style="height:490px" method = "post" onsubmit="return confirm('Deseja remover esse livro?')" action = "{{route('livros.verifica', $l->id)}}" >
 
             @csrf
             @method('DELETE')
 
-                <button id = "{{$l->id}}" class = "fav btn btn-warning bi bi-star" onclick = "addFavorito({{$l->id}})"></button>
+                <button id = "{{$l->id}}" name = "editar" class = "fav btn btn-warning bi bi-star" onclick = "addFavorito({{$l->id}})"></button>
                 
                 <img id = "thumb" class="card-img-top" src="{{$l->thumb}}" alt="Card image cap">
                 
@@ -24,13 +24,13 @@
                     <p class="card-text">{{$l->autor}}</p>
 
                     <a href="{{$l->url}}" type = "button" class="btn btn-primary">Ver mais</a>                 
-                    <input value = "Remover" type = "submit" class="btn btn-danger">
+                    <input value = "Remover" name = "remover" type = "submit" class="btn btn-danger">
                 
                 </div>
                 
             </form>
 
-            <form action="{{route('livros.edit',$l->id)}}">
+            <!--   <form action="{{route('livros.edit',$l->id)}}">
 
                 <div class="estrelas">
                     <input type="radio" name="estrela" id="estrela5" value="5"/>
@@ -49,7 +49,9 @@
                     <label for="estrela1"></label>
                 </div>
                                 
-            </form>-->
+            </form> -->
+         
+
 
             
            

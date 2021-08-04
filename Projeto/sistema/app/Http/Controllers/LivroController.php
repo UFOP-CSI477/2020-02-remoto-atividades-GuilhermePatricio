@@ -9,6 +9,24 @@ class LivroController extends Controller
 {
     /**
      * Display a listing of the resource.
+     *@param  \Illuminate\Http\Request
+     * @return \Illuminate\Http\Response
+     */
+    public function verifica(Request $request)
+    {
+        if ($_POST ["editar"]) {
+            edit($request);
+            // O usuário clica no botão Salvar, manipula de acordo
+        }
+        
+        if ($_POST ["remover"]) {
+            store($request);
+        }
+         
+    }
+
+    /**
+     * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
@@ -64,7 +82,7 @@ class LivroController extends Controller
      */
     public function edit(Livro $livro)
     {
-        //
+        return redirect()->route('principal');
     }
 
     /**
