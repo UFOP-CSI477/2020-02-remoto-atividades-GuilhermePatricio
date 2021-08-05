@@ -5,14 +5,16 @@
 
 <body onload="backgroud()">
 
+    <h2 class="pb-2 border-bottom">Meus livros</h2>
+
     <div class = "row" id = "grid2">
    
         @foreach($livros as $l)
-        
+            
             <form id = "{{$l->id}}" class="card"  name = "card" style="height:530px" method = "post" action = "{{route('livros.verificaOpcao',$l->id)}}">
 
             @csrf
-
+            
                 @if($l->favorito == 1)
                     <button name = "editar" value = "Editar"class = "fav btn btn-warning bi bi-star-fill" onclick ="confirma(form.id,'removerFav')" ></button>
                 @else
@@ -71,9 +73,6 @@
 
                 @endswitch
                     
-
-                           
-
                 </div>
               
                 <button  name = "avaliar" value = "Avaliar" class = "btn btn-warning av" onclick ="confirma(form.id,'avaliar')">Avaliar</button>

@@ -1,3 +1,4 @@
+
 var elemento_grid = document.body;
 var div = document.createElement('div');
 div.id = "grid";
@@ -62,20 +63,24 @@ function criaCard(titulo,autor,thumb,index,url){
     btAdicionar.value = "Adicionar";
     btAdicionar.onclick = function(){
 
-        document.getElementById("titulo").value = titulo;
-        document.getElementById("autor").value = autor;
-        document.getElementById("thumb").value = thumb;
-        document.getElementById("url").value = url;
-        document.getElementById("favorito").value = 0;
-        document.getElementById("nota").value = 0;
-        document.getElementById("dadosLivro").submit();
+        if(confirm("deseja adicionar esse livro?")){
+
+            alert("Livro adicionado com sucesso!");
+            document.getElementById("titulo").value = titulo;
+            document.getElementById("autor").value = autor;
+            document.getElementById("thumb").value = thumb;
+            document.getElementById("url").value = url;
+            document.getElementById("favorito").value = 0;
+            document.getElementById("nota").value = 0;
+            document.getElementById("dadosLivro").submit();
+            
+        }
+}
     
-    }
 
     hTitulo.appendChild(textTitulo);
     pAutor.appendChild(textAutor);
    
-    
     elemento_grid.appendChild(div);
     div.appendChild(card);
     card.appendChild(imgThumb);
@@ -99,6 +104,7 @@ function pesquisarLivro(livro){
     }
     
     document.getElementById("alerta").style = "visibility:hidden";
+    
     fetch(`https://www.googleapis.com/books/v1/volumes?q=` + livro)
         .then(response => response.json())
         .then(data => preencheLivros(data.items))
@@ -119,7 +125,7 @@ function confirma(id,classe){
 
             document.getElementById(id).onsubmit = function() {
         
-                return confirm("deseja remover esse livro dos favoritos ?");
+                return confirm("deseja remover esse livro dos favoritos?");
              };
         }
 
@@ -127,7 +133,7 @@ function confirma(id,classe){
 
             document.getElementById(id).onsubmit = function() {
         
-                return confirm("deseja adicionar esse livro aos favoritos ?");
+                return confirm("deseja adicionar esse livro aos favoritos?");
              };
         }
         
@@ -135,7 +141,7 @@ function confirma(id,classe){
 
             document.getElementById(id).onsubmit = function() {
         
-                return confirm("deseja remover esse livro ?");
+                return confirm("deseja remover esse livro?");
              };
         }
 
@@ -143,7 +149,7 @@ function confirma(id,classe){
 
             document.getElementById(id).onsubmit = function() {
         
-                return confirm("deseja avaliar esse livro ?");
+                return confirm("deseja avaliar esse livro?");
              };
         }
 

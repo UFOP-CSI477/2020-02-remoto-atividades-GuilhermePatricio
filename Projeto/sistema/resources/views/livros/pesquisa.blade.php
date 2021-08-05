@@ -2,29 +2,29 @@
 
 @section('conteudo')
 
-<div >
-
+<div>
+    
     <div id = "pesquisa" class = "pesquisa">
-    <form  class="was-validated">
-        <div class="row">   
-            <div class="col">
-            
-                <input type="text" name = "livro" placeholder="Pesquise um livro" class="form-control" id="livro" required>
+        <form  class="was-validated">
+            <div class="row">   
+                <div class="col">
+                
+                    <input type="text" name = "livro" placeholder="Pesquise um livro" class="form-control" id="livro" required>
 
-                <div class="valid-feedback">
-                    Tudo certo!
+                    <div class="valid-feedback">
+                        Tudo certo!
+                    </div>
+
+                    <div class="invalid-feedback">
+                        Por favor, informe o nome do livro que deseja pesquisar!
+                    </div>
                 </div>
 
-                <div class="invalid-feedback">
-                    Por favor, informe o nome do livro!
+                <div class="col">
+                    <input class="btn btn-secondary " type="button" value="Pesquisar" name="btnPesquisar" onclick = "pesquisarLivro(livro.value)">
                 </div>
             </div>
-
-            <div class="col">
-                <input class="btn btn-secondary " type="button" value="Pesquisar" name="btnPesquisar" onclick = "pesquisarLivro(livro.value)">
-            </div>
-        </div>
-    </form>
+        </form>
 
     </div>
 

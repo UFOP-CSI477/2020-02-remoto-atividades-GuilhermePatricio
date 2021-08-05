@@ -17,7 +17,8 @@ use App\Http\Controllers\LivroController;
 
 Route::get('/', function () {
     return view('livros.pesquisa');
-})->name('principal');
+})->name('livros.pesquisa');
+
 
 Route:: resource('/livros', LivroController::class);
 

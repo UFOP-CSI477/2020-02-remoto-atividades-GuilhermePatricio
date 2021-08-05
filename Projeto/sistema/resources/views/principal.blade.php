@@ -27,7 +27,7 @@
     <body id = "bg" class="bg">
     
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a class="navbar-brand logo" href="{{route('principal')}}">
+                <a class="navbar-brand logo" href="{{route('livros.pesquisa')}}">
                     <i id = "book" class="bi bi-book"></i>
                 FavBook
                     </a>
@@ -38,10 +38,17 @@
                     </div>
             </nav>
 
-           
+            @if(session('mensagem'))
+
+                <div class="alert alert-success">
+                    {{ session('mensagem') }}
+                </div>
+
+            @endif
+
             @yield('conteudo')
             
-            <form id = "dadosLivro" action="{{route('livros.store')}}" method = "POST">
+            <form id = "dadosLivro" action="{{route('livros.store')}}" method = "POST" target = "frame">
                    @csrf
                     <input id = "titulo" type="hidden" name = "titulo" value = "">
                     <input id = "autor" type="hidden" name = "autor" value = "">
@@ -51,6 +58,7 @@
                     <input id = "nota" type="hidden" name = "nota" value = "">
             </form>
 
+            <iframe name="frame" style="display:none"></iframe>
             
     </body>
 </html>

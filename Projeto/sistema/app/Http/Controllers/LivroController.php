@@ -16,7 +16,7 @@ class LivroController extends Controller
     public function index()
     {
         
-        $livros = Livro::orderby('titulo')->get();
+        $livros = Livro::orderby('favorito','desc')->get();
         return view('livros.index', ['livros' => $livros]);
         
     }
@@ -40,10 +40,20 @@ class LivroController extends Controller
      */
     public function store(Request $request)
     {
+        /*$livros = Livro::orderby('titulo')->get();
+        
+        foreach($livros as $l){
+            if($request->titulo == $l->titulo){
+                return;           
+            }
+            else{
+                Livro::create($request->all());
+                return;
+            }
+        }
+*/
         Livro::create($request->all());
-        session()->flash('mensagem', 'Livro adicionado com sucesso!');
-        return redirect()->route('principal');
-    
+        
     }
 
     /**
@@ -66,6 +76,7 @@ class LivroController extends Controller
         $livro->fill($request->all());
         $livro->save();
 
+        session()->flash('mensagem', 'Livro adicionado aos favoritos com sucesso!');
     }
 /**
      * Update the specified resource in storage.
@@ -80,6 +91,7 @@ class LivroController extends Controller
         $livro->fill($request->all());
         $livro->save();
 
+        session()->flash('mensagem', 'Livro avaliado com sucesso!');
     }
     /**
      * Remove the specified resource from storage.
@@ -91,7 +103,7 @@ class LivroController extends Controller
     {   
        
         $livro->delete();
-        session()->flash('mensagem', 'Estado excluído com sucesso!');
+        session()->flash('mensagem', 'Livro excluído com sucesso!');
     
     }
 

@@ -1,4 +1,7 @@
 
+h2{
+    padding: 20px;
+}
 .bg{
     background-image: url("book.jpg");
     background-repeat: no-repeat;
@@ -20,6 +23,14 @@
 #alerta{
     visibility: hidden;
     width: auto;
+    height: auto;
+}
+
+#alertaAdd{
+    
+    width: auto;
+    height: auto;
+    position: fixed;
 }
 
 #grid{
@@ -34,7 +45,7 @@
 
 #grid2{
 
-    margin-top: 100px;
+    margin-top: 55px;
     display: grid;  
     grid-template-columns: repeat( 5, 1fr);
     grid-gap: 40px;
