@@ -16,11 +16,11 @@ function preencheLivros(data){
         url = data[index].volumeInfo.previewLink;
             
         if(data[index].volumeInfo.imageLinks){
-            thumb =  data[index].volumeInfo.imageLinks.thumbnail;
+            thumb = data[index].volumeInfo.imageLinks.thumbnail;
         }
 
         else{
-            thumb = "thumb.jpeg";
+            thumb = "thumb.png";
         }
             
        criaCard(titulo,autor,thumb,index,url);
@@ -67,6 +67,7 @@ function criaCard(titulo,autor,thumb,index,url){
         document.getElementById("thumb").value = thumb;
         document.getElementById("url").value = url;
         document.getElementById("favorito").value = 0;
+        document.getElementById("nota").value = 0;
         document.getElementById("dadosLivro").submit();
     
     }
@@ -135,6 +136,14 @@ function confirma(id,classe){
             document.getElementById(id).onsubmit = function() {
         
                 return confirm("deseja remover esse livro ?");
+             };
+        }
+
+        else if(classe == "avaliar"){
+
+            document.getElementById(id).onsubmit = function() {
+        
+                return confirm("deseja avaliar esse livro ?");
              };
         }
 

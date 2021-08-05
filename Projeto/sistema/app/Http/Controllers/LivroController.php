@@ -47,35 +47,13 @@ class LivroController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Livro  $livro
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Livro $livro)
-    {
-        //return view('livros.show', [ 'livro' => $livro]);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Livro  $livro
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Livro $livro)
-    {
-        return redirect()->route('principal');
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Livro  $livro
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Livro $livro)
+    public function updateFav(Request $request, Livro $livro)
     {
         if($livro->favorito == 1){
             $livro->favorito = 0;
@@ -89,7 +67,20 @@ class LivroController extends Controller
         $livro->save();
 
     }
+/**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Livro  $livro
+     * @return \Illuminate\Http\Response
+     */
+    public function updateNota(Request $request, Livro $livro)
+    {
+        $livro->nota = $request->estrela;
+        $livro->fill($request->all());
+        $livro->save();
 
+    }
     /**
      * Remove the specified resource from storage.
      *
@@ -102,7 +93,6 @@ class LivroController extends Controller
         $livro->delete();
         session()->flash('mensagem', 'Estado excluído com sucesso!');
     
-        //return redirect()->route('livros.index');
     }
 
     
@@ -115,16 +105,22 @@ class LivroController extends Controller
     public function verificaOpcao(Request $request,Livro $livro)
 
     {
+     
         if ($request->editar == 'Editar') {
             
-            $this->update($request,$livro);
+            $this->updateFav($request,$livro);
         }
         
-        if ($request->remover == 'Remover') {
+        else if ($request->remover == 'Remover') {
 
             $this->destroy($livro);
         }
         
+        else if ($request->avaliar == 'Avaliar') {
+
+            $this->updateNota($request,$livro);
+          
+        }
         return redirect()->route('livros.index');
     }
 }
