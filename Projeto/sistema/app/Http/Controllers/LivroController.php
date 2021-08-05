@@ -7,23 +7,6 @@ use Illuminate\Http\Request;
 
 class LivroController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *@param  \Illuminate\Http\Request
-     * @return \Illuminate\Http\Response
-     */
-    public function verifica(Request $request)
-    {
-        if ($_POST ["editar"]) {
-            edit($request);
-            // O usuário clica no botão Salvar, manipula de acordo
-        }
-        
-        if ($_POST ["remover"]) {
-            store($request);
-        }
-         
-    }
 
     /**
      * Display a listing of the resource.
@@ -94,7 +77,17 @@ class LivroController extends Controller
      */
     public function update(Request $request, Livro $livro)
     {
-        //
+        if($livro->favorito == 1){
+            $livro->favorito = 0;
+        }
+
+        else{
+            $livro->favorito = 1;
+        }
+
+        $livro->fill($request->all());
+        $livro->save();
+
     }
 
     /**
@@ -104,10 +97,34 @@ class LivroController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Livro $livro)
-    {
+    {   
+       
         $livro->delete();
         session()->flash('mensagem', 'Estado excluído com sucesso!');
     
+        //return redirect()->route('livros.index');
+    }
+
+    
+    /**
+     * Display a listing of the resource.
+     * @param  \App\Models\Livro
+     * @param  \Illuminate\Http\Request
+     * @return \Illuminate\Http\Response
+     */
+    public function verificaOpcao(Request $request,Livro $livro)
+
+    {
+        if ($request->editar == 'Editar') {
+            
+            $this->update($request,$livro);
+        }
+        
+        if ($request->remover == 'Remover') {
+
+            $this->destroy($livro);
+        }
+        
         return redirect()->route('livros.index');
     }
 }

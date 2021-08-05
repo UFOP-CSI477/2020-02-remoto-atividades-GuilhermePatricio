@@ -66,6 +66,7 @@ function criaCard(titulo,autor,thumb,index,url){
         document.getElementById("autor").value = autor;
         document.getElementById("thumb").value = thumb;
         document.getElementById("url").value = url;
+        document.getElementById("favorito").value = 0;
         document.getElementById("dadosLivro").submit();
     
     }
@@ -110,17 +111,32 @@ function backgroud(){
     document.title = "Meus livros";
 }
 
-function addFavorito(id){
-    
-    let fav = document.getElementById(id).className;
+function confirma(id,classe){
 
-    if(fav == "fav btn btn-warning bi bi-star-fill"){
-        document.getElementById(id).className = "fav btn btn-warning bi bi-star";
-    }
 
-    else{
-        document.getElementById(id).className = "fav btn btn-warning bi bi-star-fill";
-       
+        if(classe == "removerFav"){
+
+            document.getElementById(id).onsubmit = function() {
         
-    }
+                return confirm("deseja remover esse livro dos favoritos ?");
+             };
+        }
+
+        else if(classe == "adicionarFav"){
+
+            document.getElementById(id).onsubmit = function() {
+        
+                return confirm("deseja adicionar esse livro aos favoritos ?");
+             };
+        }
+        
+        else if(classe == "removerLivro"){
+
+            document.getElementById(id).onsubmit = function() {
+        
+                return confirm("deseja remover esse livro ?");
+             };
+        }
+
 }
+

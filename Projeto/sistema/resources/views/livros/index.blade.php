@@ -9,12 +9,15 @@
    
         @foreach($livros as $l)
 
-            <form id = "ts" class="card"  name = "card" style="height:490px" method = "post" onsubmit="return confirm('Deseja remover esse livro?')" action = "{{route('livros.verifica', $l->id)}}" >
+            <form id = "{{$l->id}}" class="card"  name = "card" style="height:490px" method = "post" action = "{{route('livros.verificaOpcao',$l->id)}}">
 
             @csrf
-            @method('DELETE')
 
-                <button id = "{{$l->id}}" name = "editar" class = "fav btn btn-warning bi bi-star" onclick = "addFavorito({{$l->id}})"></button>
+                @if($l->favorito == 1)
+                    <button name = "editar" value = "Editar"class = "fav btn btn-warning bi bi-star-fill" onclick ="confirma(form.id,'removerFav')" ></button>
+                @else
+                    <button name = "editar" value = "Editar"class = "btn btn-warning bi bi-star fav" onclick ="confirma(form.id,'adicionarFav')" ></button>
+                @endif
                 
                 <img id = "thumb" class="card-img-top" src="{{$l->thumb}}" alt="Card image cap">
                 
@@ -24,7 +27,7 @@
                     <p class="card-text">{{$l->autor}}</p>
 
                     <a href="{{$l->url}}" type = "button" class="btn btn-primary">Ver mais</a>                 
-                    <input value = "Remover" name = "remover" type = "submit" class="btn btn-danger">
+                    <button name = "remover" value = "Remover"class = "btn btn-danger" onclick ="confirma(form.id,'removerLivro')" >Remover</button>
                 
                 </div>
                 

@@ -19,6 +19,7 @@ class CreateLivrosTable extends Migration
             $table->string('autor',100);
             $table->string('thumb',200);
             $table->string('url',200);
+            $table->boolean('favorito');
             $table->timestamps();
         });
     }
