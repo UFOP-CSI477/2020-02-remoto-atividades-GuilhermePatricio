@@ -21,8 +21,10 @@
 
         <script src="livro.js" defer></script>
 
-        <link rel = "icon" class = "bi bi-book">
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" href="https://raw.githubusercontent.com/twbs/icons/main/icons/book-fill.svg">
+      
+
+        </svg>
     </head>
  
     <body id = "bg" class="bg">
@@ -33,7 +35,7 @@
                 FavBook
                     </a>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="navbar-nav">
+                        <div class="navbar-nav" >
                         <a class="nav-item nav-link" href="{{route('livros.index')}}">Meus Livros</a>
                         </div>
                     </div>
