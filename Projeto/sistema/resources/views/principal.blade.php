@@ -22,6 +22,7 @@
         <script src="livro.js" defer></script>
 
         <link rel = "icon" class = "bi bi-book">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     </head>
  
     <body id = "bg" class="bg">
@@ -50,6 +51,7 @@
             
             <form id = "dadosLivro" action="{{route('livros.store')}}" method = "POST" target = "frame">
                    @csrf
+                    <input id = "livroID" type="hidden" name = "livroID" value = "">
                     <input id = "titulo" type="hidden" name = "titulo" value = "">
                     <input id = "autor" type="hidden" name = "autor" value = "">
                     <input id = "thumb" type="hidden" name = "thumb" value = "">
@@ -59,6 +61,7 @@
             </form>
 
             <iframe name="frame" style="display:none"></iframe>
+            
             
     </body>
 </html>

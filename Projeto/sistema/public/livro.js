@@ -10,8 +10,11 @@ function preencheLivros(data){
     let thumb;
     let titulo;
     let autor;
+    let id;
 
     for(let index in data){
+
+        id = data[index].id;
         titulo = data[index].volumeInfo.title;
         autor =  data[index].volumeInfo.authors;
         url = data[index].volumeInfo.previewLink;
@@ -24,13 +27,13 @@ function preencheLivros(data){
             thumb = "thumb.png";
         }
             
-       criaCard(titulo,autor,thumb,index,url);
+       criaCard(titulo,autor,thumb,index,url,id);
     
     }
 
 }
 
-function criaCard(titulo,autor,thumb,index,url){
+function criaCard(titulo,autor,thumb,index,url,id){
     
     let card = document.createElement('div');
     card.id = index;
@@ -61,11 +64,12 @@ function criaCard(titulo,autor,thumb,index,url){
     btAdicionar.type = "button";
     btAdicionar.className = "btn btn-danger";
     btAdicionar.value = "Adicionar";
+
     btAdicionar.onclick = function(){
 
-        if(confirm("deseja adicionar esse livro?")){
-
-            alert("Livro adicionado com sucesso!");
+        if(confirm('Deseja adicionar esse livro')){
+            
+            document.getElementById("livroID").value = id;
             document.getElementById("titulo").value = titulo;
             document.getElementById("autor").value = autor;
             document.getElementById("thumb").value = thumb;
@@ -73,7 +77,10 @@ function criaCard(titulo,autor,thumb,index,url){
             document.getElementById("favorito").value = 0;
             document.getElementById("nota").value = 0;
             document.getElementById("dadosLivro").submit();
-            
+        }
+        
+        else {
+            return;
         }
 }
     

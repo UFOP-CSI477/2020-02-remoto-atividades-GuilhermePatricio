@@ -14,7 +14,9 @@ class CreateLivrosTable extends Migration
     public function up()
     {
         Schema::create('livros', function (Blueprint $table) {
+            
             $table->id();
+            $table->string('livroID',100);
             $table->string('titulo',100);
             $table->string('autor',100);
             $table->string('thumb',200);

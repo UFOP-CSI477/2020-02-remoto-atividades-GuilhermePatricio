@@ -25,6 +25,9 @@
                 </div>
             </div>
         </form>
+        <div id = "alerta" class="alert alert-danger">
+        Insira o titulo do livro que deseja buscar!
+    </div>
 
     </div>
 

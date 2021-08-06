@@ -40,21 +40,26 @@ class LivroController extends Controller
      */
     public function store(Request $request)
     {
-        /*$livros = Livro::orderby('titulo')->get();
-        
-        foreach($livros as $l){
-            if($request->titulo == $l->titulo){
-                return;           
-            }
-            else{
-                Livro::create($request->all());
-                return;
+       
+        if($livros = Livro::orderby('titulo')->get()){
+            
+            foreach($livros as $l){
+               
+                if(strcmp($request->livroID, $l->livroID) == 0){
+
+                    echo "<script> alert('Esse livro já foi adicionado!'); </script>";
+                    return;           
+                }
             }
         }
-*/
-        Livro::create($request->all());
         
+        echo "<script> alert('Livro adicionado com sucesso!'); </script>";
+        Livro::create($request->all());   
     }
+        
+        
+        
+    
 
     /**
      * Update the specified resource in storage.
