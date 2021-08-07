@@ -14,9 +14,21 @@ class EquipamentoController extends Controller
      */
     public function index()
     {
-        $equipamentos = Livro::orderby('nome')->get();
+        $equipamentos = Equipamento::orderby('nome')->get();
         return view('equipamentos.index', ['equipamentos' => $equipamentos]);
     }
+
+      /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function indexAdmin()
+    {
+        $equipamentos = Equipamento::orderby('nome')->get();
+        return view('equipamentos.indexAdmin', ['equipamentos' => $equipamentos]);
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -25,7 +37,7 @@ class EquipamentoController extends Controller
      */
     public function create()
     {
-        //
+        return view('equipamentos.create');
     }
 
     /**
@@ -36,7 +48,9 @@ class EquipamentoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Equipamento::create($request->all());
+        session()->flash('mensagem', 'Equipamento inserido com sucesso!');
+        return redirect()->route('equipamentos.indexAdmin');
     }
 
     /**

@@ -1,0 +1,28 @@
+table{
+    margin-top: 5px!important;
+    width: 50% !important;
+    margin: auto;
+    
+}
+
+th{
+    background-color: black!important;
+    color: white;
+    font-weight: bold;
+}
+
+.botoes{
+    margin: 10px 385px !important;
+}
+
+#addEquip{
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 500px;
+ 
+}
+
+#btnCadastrar{
+    margin-top: 15px;
+    margin-left: 5px; 
+}

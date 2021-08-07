@@ -21,8 +21,12 @@
 
         <script src="" defer></script>
 
+        
+
         <link rel="icon" href="https://raw.githubusercontent.com/twbs/icons/main/icons/gear.svg" id = "icon">
         
+        <link rel="stylesheet" href="/css/equipamentos.css">
+
     </head>
  
     <body >
@@ -60,7 +64,7 @@
                             
                             <div class="dropdown-divider"></div>
                                     
-                            <a class="dropdown-item" href="#">Equipamentos</a>
+                            <a class="dropdown-item" href="{{route('equipamentos.indexAdmin')}}">Equipamentos</a>
                             <a class="dropdown-item" href="#">Manutenções</a>
                             <a class="dropdown-item" href="#">Usuários</a>
                             <a class="dropdown-item" href="#"> Relatorio de Manutenções</a>
@@ -77,7 +81,6 @@
 
 
         @yield('conteudo')
-
 
 
     </body>
