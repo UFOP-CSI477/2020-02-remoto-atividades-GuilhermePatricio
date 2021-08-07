@@ -68,7 +68,7 @@ function criaCard(titulo,autor,thumb,index,url,id){
     btAdicionar.onclick = function(){
 
         if(confirm('Deseja adicionar esse livro')){
-            
+           
             document.getElementById("livroID").value = id;
             document.getElementById("titulo").value = titulo;
             document.getElementById("autor").value = autor;
@@ -107,10 +107,15 @@ function pesquisarLivro(livro){
     
     if(livro ==""){
         document.getElementById("alerta").style = "visibility:visible";
+
+        setTimeout(function() { 
+            document.getElementById("alerta").style = "visibility:hidden";
+        },3500);
+
         return;
     }
     
-    document.getElementById("alerta").style = "visibility:hidden";
+   
     
     fetch(`https://www.googleapis.com/books/v1/volumes?q=` + livro)
         .then(response => response.json())

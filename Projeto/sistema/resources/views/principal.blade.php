@@ -21,7 +21,7 @@
 
         <script src="livro.js" defer></script>
 
-        <link rel="icon" href="https://raw.githubusercontent.com/twbs/icons/main/icons/book-fill.svg">
+        <link rel="icon" href="https://raw.githubusercontent.com/twbs/icons/main/icons/book-fill.svg" id = "icon">
       
 
         </svg>
@@ -43,9 +43,16 @@
 
             @if(session('mensagem'))
 
-                <div class="alert alert-success">
+            
+                <div id = "msg" class="alert alert-success">
                     {{ session('mensagem') }}
                 </div>
+
+                <script>
+                    setTimeout(function() { 
+                        document.getElementById("msg").style = "visibility:hidden";
+                    },3000);
+                </script>
 
             @endif
 

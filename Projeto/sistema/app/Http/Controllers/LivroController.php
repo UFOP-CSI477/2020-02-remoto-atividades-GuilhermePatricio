@@ -57,10 +57,6 @@ class LivroController extends Controller
         Livro::create($request->all());   
     }
         
-        
-        
-    
-
     /**
      * Update the specified resource in storage.
      *
@@ -72,16 +68,18 @@ class LivroController extends Controller
     {
         if($livro->favorito == 1){
             $livro->favorito = 0;
+            session()->flash('mensagem', 'Livro retirado dos favoritos com sucesso!');
         }
 
         else{
             $livro->favorito = 1;
+            session()->flash('mensagem', 'Livro adicionado aos favoritos com sucesso!');
         }
 
         $livro->fill($request->all());
         $livro->save();
 
-        session()->flash('mensagem', 'Livro adicionado aos favoritos com sucesso!');
+        
     }
 /**
      * Update the specified resource in storage.
