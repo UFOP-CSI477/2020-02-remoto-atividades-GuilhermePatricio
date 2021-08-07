@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Equipamento extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['nome'];
+
+    public function registro() {
+        return $this->belongsTo(Registro::class);
+    }
+
+
 }

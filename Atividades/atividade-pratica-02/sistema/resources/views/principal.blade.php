@@ -30,7 +30,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand logo" href="">
                 <i id = "book" class="bi bi-gear"></i>
-                    Sistema de Manutenções
+                    Sistema de Manutenção
             </a>
 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -43,7 +43,7 @@
                         <div class="dropdown-menu">
 
                             <a class="dropdown-item" href="{{route('equipamentos.index')}}">Lista de equipamentos</a>
-                            <a class="dropdown-item" href="#">Manutenções cadastradas para os equipamentos</a>
+                            <a class="dropdown-item" href="{{route('relatorios.index')}}">Manutenções cadastradas para os equipamentos</a>
                                 
                         </div>
 

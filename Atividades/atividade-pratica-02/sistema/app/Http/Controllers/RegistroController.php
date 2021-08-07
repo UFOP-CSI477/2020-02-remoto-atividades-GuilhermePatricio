@@ -14,7 +14,8 @@ class RegistroController extends Controller
      */
     public function index()
     {
-        //
+        $relatorios = Livro::orderby('nome')->get();
+        return view('relatorios.index', ['relatorios' => $relatorios]);
     }
 
     /**
