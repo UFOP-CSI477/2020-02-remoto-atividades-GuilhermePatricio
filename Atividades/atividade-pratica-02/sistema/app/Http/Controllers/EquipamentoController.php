@@ -14,7 +14,8 @@ class EquipamentoController extends Controller
      */
     public function index()
     {
-        //
+        $equipamentos = Livro::orderby('nome')->get();
+        return view('equipamentos.index', ['equipamentos' => $equipamentos]);
     }
 
     /**

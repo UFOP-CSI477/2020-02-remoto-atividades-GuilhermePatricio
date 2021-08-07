@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+use App\Http\Controllers\EquipamentoController;
+use App\Http\Controllers\RelatorioController;   
+
 Route::get('/', function () {
     return view('principal');
 })->name('principal');
+
+Route:: resource('/equipamentos', EquipamentoController::class);
+
+Route:: resource('/relatorios', RelatorioController::class);

@@ -1,0 +1,17 @@
+table{
+
+    width: 98% !important;
+    margin: auto;
+    
+}
+
+th{
+    background-color: black!important;
+    color: white;
+    font-weight: bold;
+}
+
+.botoes{
+    margin: 10px 15px !important;
+    
+}

@@ -27,62 +27,58 @@
  
     <body >
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a class="navbar-brand logo" href="">
-                    <i id = "book" class="bi bi-gear"></i>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand logo" href="">
+                <i id = "book" class="bi bi-gear"></i>
                     Sistema de Manutenções
-                </a>
+            </a>
 
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav" >
-            
-                        <li class="nav-item dropdown">
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav" >
+                
+                    <li class="nav-item dropdown">
 
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Área Geral - Suporte</a>
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Área Geral - Suporte</a>
 
-                            <div class="dropdown-menu">
+                        <div class="dropdown-menu">
 
-                                <a class="dropdown-item" href="#">Lista de equipamentos</a>
-                                <a class="dropdown-item" href="#">Manutenções cadastradas para os equipamentos</a>
-                               
-                            </div>
+                            <a class="dropdown-item" href="{{route('equipamentos.index')}}">Lista de equipamentos</a>
+                            <a class="dropdown-item" href="#">Manutenções cadastradas para os equipamentos</a>
+                                
+                        </div>
 
-                        </li>
-                        
-                        <li class="nav-item dropdown">
+                    </li>
+                            
+                    <li class="nav-item dropdown">
 
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Área Administrativa</a>
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Área Administrativa</a>
 
-                            <div class="dropdown-menu">
+                        <div class="dropdown-menu">
 
-                                <a class="dropdown-item" href="#">Novo usuário</a>
-                                <a class="dropdown-item" href="#">Acesso</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Equipamentos</a>
-                                <a class="dropdown-item" href="#">Manutenções</a>
-                                <a class="dropdown-item" href="#">Usuários</a>
-                                <a class="dropdown-item" href="#"> Relatorio de Manutenções</a>
+                            <a class="dropdown-item" href="#">Novo usuário</a>
+                            <a class="dropdown-item" href="#">Acesso</a>
+                            
+                            <div class="dropdown-divider"></div>
+                                    
+                            <a class="dropdown-item" href="#">Equipamentos</a>
+                            <a class="dropdown-item" href="#">Manutenções</a>
+                            <a class="dropdown-item" href="#">Usuários</a>
+                            <a class="dropdown-item" href="#"> Relatorio de Manutenções</a>
+                                
+                        </div>
 
-                               
-                            </div>
-
-                        </li> 
-                          
-                    </div>
-                        
+                    </li> 
+                            
                 </div>
-    </nav>
+                            
+            </div>
+
+        </nav>
+
+
+        @yield('conteudo')
 
 
 
-
-
-
-
-
-
-
-    
-    
     </body>
 </html>
