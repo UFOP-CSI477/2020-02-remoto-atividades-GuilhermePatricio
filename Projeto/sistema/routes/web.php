@@ -20,6 +20,10 @@ Route::get('/', function () {
 })->name('livros.pesquisa');
 
 
-Route:: resource('/livros', LivroController::class);
+Route:: resource('/livros', LivroController::class)->middleware('auth');
 
-Route::post('livro/{livro}', 'App\Http\Controllers\LivroController@verificaOpcao')->name('livros.verificaOpcao');
+Route::post('livro/{livro}','App\Http\Controllers\LivroController@verificaOpcao')->name('livros.verificaOpcao');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
