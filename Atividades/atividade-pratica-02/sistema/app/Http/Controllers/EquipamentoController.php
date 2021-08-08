@@ -15,7 +15,7 @@ class EquipamentoController extends Controller
      */
     public function index()
     {
-        $equipamentos = Equipamento::orderby('nome')->get();
+        $equipamentos = Equipamento::orderby('nome',)->get();
         return view('equipamentos.index', ['equipamentos' => $equipamentos]);
     }
 
@@ -142,6 +142,13 @@ class EquipamentoController extends Controller
     {
         if(Auth::check()){
 
+            if ( $equipamento->registros->count() > 0 ) {
+                session()->flash('mensagem', 'Exclusão não permitida! Existem registros associados.');
+            } else {
+                $equipamento->delete();
+                session()->flash('mensagem', 'Equipamento excluído com sucesso!');
+            }
+            return redirect()->route('equipamento.indexAdmin');
         }
 
         session()->flash('mensagem', 'Operação negada, faça o login para continuar!');

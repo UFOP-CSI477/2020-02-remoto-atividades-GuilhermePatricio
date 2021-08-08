@@ -97,8 +97,8 @@ class ProdutoController extends Controller
             session()->flash('mensagem', 'Exclusão não permitida! Existem compras associadas.');
         } else {
             $produto->delete();
-            session()->flash('mensagem', 'Compra excluída com sucesso!');
+            session()->flash('mensagem', 'Produto excluída com sucesso!');
         }
-        return redirect()->route('compras.index');
+        return redirect()->route('produto.index');
     }
 }
