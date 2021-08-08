@@ -11,11 +11,11 @@ class Registro extends Model
 
     protected $fillable = ['data_limite','equipamento_id', 'user_id','tipo','descricao'];
 
-    public function usuarios() {
-        return $this->belongsTo(Usuario::class);
+    public function user() {
+        return $this->belongsTo(User::class);
     }
 
-    public function equipamentos() {
+    public function equipamento() {
         return $this->belongsTo(Equipamento::class);
     }
 }

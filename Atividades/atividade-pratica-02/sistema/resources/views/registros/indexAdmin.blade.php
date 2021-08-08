@@ -28,8 +28,8 @@
             
                 <tr>
                     <td>{{$r->data_limite}}</td>
-                    <td>{{$r->equipamento_id}}</td>
-                    <td>{{$r->user_id}}</td>
+                    <td>{{$r->equipamento->nome}}</td>
+                    <td>{{$r->user->name}}</td>
 
                     @if($r->tipo == 1)
 

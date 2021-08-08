@@ -2,9 +2,9 @@
 
 @section('conteudo')
 
-<link rel="stylesheet" href="/css/tabela.css">
+<a href="{{ route('registros.create') }}"><button class=" btInserirReg btn btn-danger">Inserir</button></a>
  
-<table class = "table table-bordered table-hover table-striped">
+<table id= "tabelaRegis" class = "table table-bordered table-hover table-striped">
         
         <thead >
 
@@ -20,12 +20,14 @@
 
         <tbody>
         
-            @foreach($relatorio as $r)
+            @foreach($registros as $r)
 
+            
                 <tr>
                     <td>{{$r->data_limite}}</td>
                     <td>{{$r->equipamento->nome}}</td>
-                    <td>{{$r->usuario->nome}}</td>
+                    <td>{{$r->user->name}}</td>
+
                     @if($r->tipo == 1)
 
                         <td>1 - Preventiva</td>
