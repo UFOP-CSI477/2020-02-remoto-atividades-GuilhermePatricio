@@ -11,7 +11,7 @@
 
     <label for ="nome"><strong>Nome</strong></label>
         
-        <input type="text" name = "nome" class="form-control" placeholder="Nome do produto" id="nome" required>
+        <input type="text" name="nome" class="form-control" placeholder="Nome do produto" id="nome" value ="{{$equipamento->nome}}" required>
       
         <div class="valid-feedback">
             Tudo certo!
@@ -22,7 +22,7 @@
         </div>
                 
         <div>
-            <input id = "btnAtualizar" class="btn btn-secondary" type="submit" value="Atualzar">
+            <input id = "btnAtualizar" class="btn btn-secondary" type="submit" value="Atualizar">
         </div>
         
 

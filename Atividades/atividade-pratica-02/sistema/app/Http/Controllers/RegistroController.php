@@ -21,7 +21,6 @@ class RegistroController extends Controller
         return view('registros.index', ['registros' => $registro]);
     }
 
-
      /**
      * Display a listing of the resource.
      *
@@ -104,7 +103,9 @@ class RegistroController extends Controller
     public function edit(Registro $registro)
     {
         if(Auth::check()){
-            return view('registros.edit', [ 'registro' => $registro ]);
+            $equipamentos = Equipamento::orderBy('nome')->get();
+            $users = User::orderBy('nome')->get();
+            return view('registros.edit', [ 'registro' => $registro,'equipamentos' => $equipamentos,'users' => $users]);
         }
 
         session()->flash('mensagem', 'Operação negada, faça o login para continuar!');
