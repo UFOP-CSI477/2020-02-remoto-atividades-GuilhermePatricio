@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\EquipamentoController;
 use App\Http\Controllers\RegistroController;   
+use App\Http\Controllers\UserController;   
 
 Route::get('/', function () {
     return view('principal');
@@ -23,6 +24,8 @@ Route::get('/', function () {
 Route:: resource('/equipamentos', EquipamentoController::class);
 
 Route:: resource('/registros', RegistroController::class);
+
+Route:: resource('/usuarios', UserController::class);
 
 Route::get('/indexEquipamentoAdmin','App\Http\Controllers\EquipamentoController@indexAdmin')->name('equipamentos.indexAdmin');
 

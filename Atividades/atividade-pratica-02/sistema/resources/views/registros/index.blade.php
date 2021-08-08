@@ -1,8 +1,6 @@
 @extends('principal')
 
 @section('conteudo')
-
-<a href="{{ route('registros.create') }}"><button class=" btInserirReg btn btn-danger">Inserir</button></a>
  
 <table id= "tabelaRegis" class = "table table-bordered table-hover table-striped">
         

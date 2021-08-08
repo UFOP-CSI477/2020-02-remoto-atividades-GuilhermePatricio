@@ -32,7 +32,7 @@
     <body >
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand logo" href="">
+            <a class="navbar-brand logo" href="{{route('principal')}}">
                 <i id = "book" class="bi bi-gear"></i>
                     Sistema de Manutenção
             </a>
@@ -71,12 +71,13 @@
                                 @endif
                                 
                                 @else     
+                                   
                                     <a class="dropdown-item" href="{{route('equipamentos.indexAdmin')}}">Equipamentos</a>
                                     <a class="dropdown-item" href="{{route('registros.indexAdmin')}}">Manutenções</a>
-                                    <a class="dropdown-item" href="#">Usuários</a>
+                                    <a class="dropdown-item" href="{{route('usuarios.index')}}">Usuários</a>
                                     <a class="dropdown-item" href="#"> Relatorio de Manutenções</a>
-
-                                    <li class="nav-item dropdown">
+                                    
+                                    <li id = "perfil" class="nav-item dropdown">
                                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                             {{ Auth::user()->name }}
                                         </a>

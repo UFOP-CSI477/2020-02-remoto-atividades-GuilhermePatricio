@@ -1,7 +1,7 @@
 @extends('principal')
 
 @section('conteudo')
-
+ 
 <table id ="tabelaEquip" class = "table table-bordered table-hover table-striped">
         
         <thead >
@@ -15,11 +15,11 @@
 
         <tbody>
         
-            @foreach($equipamentos as $e)
+            @foreach($users as $u)
 
                 <tr>
-                    <td>{{$e->id}}</td>
-                    <td>{{$e->nome}}</td>
+                    <td>{{$u->id}}</td>
+                    <td>{{$u->name}}</td>
                 </tr>
 
             @endforeach
