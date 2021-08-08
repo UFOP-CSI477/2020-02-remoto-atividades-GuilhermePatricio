@@ -2,19 +2,19 @@
 
 @section('conteudo')
 
-<h2 class="pb-2 border-bottom">Editar registros</h2>
+<h2 class="pb-2 border-bottom">Adicionar registro</h2>
 
 <form id = "addEquip" action = "{{ route('registros.store') }}" method = "POST" class="was-validated">
 
     @csrf
 
-    <div class = "row">
+    <div class = "row linha">
 
         
         <div class="col">
 
             <label for ="data"><strong>Data limite:</strong></label>
-            <input type="text" name = "nome" class="form-control" placeholder="dd/mm/aaaa" id="data" required>
+            <input type="text" name = "data_limite" class="form-control" placeholder="dd/mm/aaaa" id="data" required>
             
             <div class="valid-feedback">
                 Tudo certo!
@@ -29,7 +29,7 @@
         <div class = "col">
 
             <label for="equip"><strong>Equipamento:</strong></label>
-            <select name="pessoa_id" id="equip" class="form-control" require>
+            <select name="equipamento_id" id="equip" class="form-control" require>
 
             @foreach($equipamentos as $e)
                 <option value="{{$e->id}}">{{$e->nome}}</option>
@@ -51,7 +51,7 @@
         <div class = "col">
 
             <label for="equip"><strong>Usuário:</strong></label>
-            <select name="user" id="user" class="form-control" require>
+            <select name="user_id" id="user" class="form-control" require>
 
             @foreach($users as $u)
                 <option value="{{$u->id}}">{{$u->name}}</option>
@@ -90,7 +90,7 @@
 
             <label for ="desc"><strong>Descrição:</strong></label>
             
-            <input type="text" name = "desc" class="form-control" placeholder="Descrição da manutenção/problema" id="desc" required>
+            <input type="text" name = "descricao" class="form-control" placeholder="Descrição da manutenção/problema" id="desc" required>
             
             <div class="valid-feedback">
                 Tudo certo!

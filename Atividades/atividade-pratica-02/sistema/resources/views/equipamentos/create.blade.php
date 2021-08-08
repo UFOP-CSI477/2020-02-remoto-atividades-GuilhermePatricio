@@ -2,6 +2,8 @@
 
 @section('conteudo')
 
+<h2 class="pb-2 border-bottom">Adicionar equipamento</h2>
+
 <form  id = "addEquip" action = "{{ route('equipamentos.store') }}" method = "POST" class="was-validated">
 
     @csrf

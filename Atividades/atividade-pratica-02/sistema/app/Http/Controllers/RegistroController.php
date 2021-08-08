@@ -74,6 +74,7 @@ class RegistroController extends Controller
                 return;
             }
          */
+        
             Registro::create($request->all());
             session()->flash('mensagem', 'Registro inserido com sucesso!');
             return redirect()->route('registros.indexAdmin');
