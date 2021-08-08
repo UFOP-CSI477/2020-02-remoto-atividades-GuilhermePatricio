@@ -20,11 +20,13 @@ Route::get('/', function () {
     return view('principal');
 })->name('principal');
 
-Route::get('/indexAdmin','App\Http\Controllers\EquipamentoController@indexAdmin')->name('equipamentos.indexAdmin');
-
 Route:: resource('/equipamentos', EquipamentoController::class);
 
-Route:: resource('/relatorios', RegistroController::class);
+Route:: resource('/registros', RegistroController::class);
+
+Route::get('/indexEquipamentoAdmin','App\Http\Controllers\EquipamentoController@indexAdmin')->name('equipamentos.indexAdmin');
+
+Route::get('/indexRegistroAdmin','App\Http\Controllers\RegistroController@indexAdmin')->name('registros.indexAdmin');
 
 Auth::routes();
 

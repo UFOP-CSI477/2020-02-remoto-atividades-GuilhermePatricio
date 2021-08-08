@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Registro;
+use App\Models\Equipamento;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RegistroController extends Controller
 {
@@ -46,7 +49,10 @@ class RegistroController extends Controller
     {
         if(Auth::check()){
 
-            return view('registros.create');
+            $equipamentos = Equipamento::orderBy('nome')->get();
+            $users = User::orderBy('nome')->get();
+    
+            return view('registros.create',['equipamentos' => $equipamentos,'users' => $users]);
         }
 
         session()->flash('mensagem', 'Operação negada, faça o login para continuar!');

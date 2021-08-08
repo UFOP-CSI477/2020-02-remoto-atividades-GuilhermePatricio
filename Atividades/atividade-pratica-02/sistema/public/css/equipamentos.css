@@ -1,8 +1,21 @@
-table{
+h2{
+    padding: 20px;
+}
+
+.row{
+    width: 1500px;
+}
+
+#tabelaRegis{
+    margin-top: 5px!important;
+    width: 90% !important;
+    margin: auto;
+}
+
+#tabelaEquip{
     margin-top: 5px!important;
     width: 50% !important;
     margin: auto;
-    
 }
 
 th{
@@ -13,6 +26,11 @@ th{
 
 .botoes{
     margin: 10px 385px !important;
+}
+
+.btInserirReg{
+
+    margin: 10px 78px !important;
 }
 
 #addEquip{

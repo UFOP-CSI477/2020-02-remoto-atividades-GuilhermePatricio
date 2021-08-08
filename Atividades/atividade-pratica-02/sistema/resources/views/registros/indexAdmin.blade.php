@@ -2,9 +2,9 @@
 
 @section('conteudo')
 
-<a href="{{ route('registros.create') }}"><button class=" botoes btn btn-danger">Inserir</button></a>
+<a href="{{ route('registros.create') }}"><button class=" btInserirReg btn btn-danger">Inserir</button></a>
  
-<table class = "table table-bordered table-hover table-striped">
+<table id= "tabelaRegis" class = "table table-bordered table-hover table-striped">
         
         <thead >
 
@@ -23,7 +23,7 @@
 
         <tbody>
         
-            @foreach($registro as $r)
+            @foreach($registros as $r)
 
                 <tr>
                     <td>{{$r->data_limite}}</td>

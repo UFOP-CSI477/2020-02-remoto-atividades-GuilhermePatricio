@@ -47,7 +47,7 @@
                         <div class="dropdown-menu">
 
                             <a class="dropdown-item" href="{{route('equipamentos.index')}}">Lista de equipamentos</a>
-                            <a class="dropdown-item" href="{{route('relatorios.index')}}">Manutenções cadastradas para os equipamentos</a>
+                            <a class="dropdown-item" href="{{route('registros.index')}}">Manutenções cadastradas para os equipamentos</a>
                                 
                         </div>
 

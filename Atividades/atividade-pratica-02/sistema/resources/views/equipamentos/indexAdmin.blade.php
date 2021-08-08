@@ -1,12 +1,10 @@
 @extends('principal')
 
 @section('conteudo')
-
-
  
 <a href="{{ route('equipamentos.create') }}"><button class=" botoes btn btn-danger">Inserir</button></a>
 
-<table id = "tabAdmin" class = "table table-bordered table-hover table-striped">
+<table id = "tabelaEquip" class = "table table-bordered table-hover table-striped">
         
         <thead>
 
