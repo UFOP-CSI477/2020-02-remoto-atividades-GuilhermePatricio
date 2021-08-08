@@ -75,7 +75,7 @@
                                     <a class="dropdown-item" href="#">Manutenções</a>
                                     <a class="dropdown-item" href="#">Usuários</a>
                                     <a class="dropdown-item" href="#"> Relatorio de Manutenções</a>
-                                    
+
                                     <li class="nav-item dropdown">
                                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                             {{ Auth::user()->name }}
@@ -94,22 +94,30 @@
                                         </div>
                                     </li>
                             @endguest
-                            
-                            
-                                
-                           
+                                 
                         </div>
 
                     </li>
                   
-                       
-                            
                 </div>
                             
             </div>
 
         </nav>
 
+        @if(session('mensagem'))
+        
+            <div id = "msg" class="alert alert-success">
+                {{ session('mensagem') }}
+            </div>
+
+            <script>
+                setTimeout(function() { 
+                    document.getElementById("msg").style = "display:none";
+                },3000);
+            </script>
+
+        @endif
 
         @yield('conteudo')
 

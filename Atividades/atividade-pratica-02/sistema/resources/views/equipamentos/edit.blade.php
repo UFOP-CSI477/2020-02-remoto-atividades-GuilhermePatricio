@@ -2,9 +2,10 @@
 
 @section('conteudo')
 
-<form  id = "addEquip" action = "{{ route('equipamentos.store') }}" method = "POST" class="was-validated">
+<form  id = "addEquip" action = "{{ route('equipamentos.update',$equipamento->id) }}" method = "POST" class="was-validated">
 
     @csrf
+    @method('PUT')
 
     <label for ="nome"><strong>Nome</strong></label>
         
@@ -19,7 +20,7 @@
         </div>
                 
         <div>
-            <input id = "btnCadastrar" class="btn btn-secondary" type="submit" value="Adicionar" name="btnAdicionar">
+            <input id = "btnAtualizar" class="btn btn-secondary" type="submit" value="Atualzar">
         </div>
         
 

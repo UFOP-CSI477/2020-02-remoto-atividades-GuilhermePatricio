@@ -104,7 +104,7 @@ class EquipamentoController extends Controller
     public function edit(Equipamento $equipamento)
     {
         if(Auth::check()){
-
+            return view('equipamentos.edit', [ 'equipamento' => $equipamento ]);
         }
 
         session()->flash('mensagem', 'Operação negada, faça o login para continuar!');
@@ -121,7 +121,11 @@ class EquipamentoController extends Controller
     public function update(Request $request, Equipamento $equipamento)
     {
         if(Auth::check()){
+            $equipamento->fill($request->all());
+            $equipamento->save();
 
+            session()->flash('mensagem', 'Equipamento atualizado com sucesso!');
+            return redirect()->route('equipamentos.indexAdmin');
         }
 
         session()->flash('mensagem', 'Operação negada, faça o login para continuar!');

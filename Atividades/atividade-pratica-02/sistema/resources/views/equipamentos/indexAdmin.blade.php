@@ -6,7 +6,7 @@
  
 <a href="{{ route('equipamentos.create') }}"><button class=" botoes btn btn-danger">Inserir</button></a>
 
-<table class = "table table-bordered table-hover table-striped">
+<table id = "tabAdmin" class = "table table-bordered table-hover table-striped">
         
         <thead>
 
@@ -26,8 +26,8 @@
                 <tr>
                     <td >{{$e->id}}</td>
                     <td>{{$e->nome}}</td>
-                    <td><a type = "button" class = "btn btn-danger" href="">Editar</a></td>
-                    <td><a type = "button" class = "btn btn-danger" href="">Excluir</a></td>
+                    <td><a type = "button" class = "btn btn-secondary bt" href="{{route('equipamentos.edit',$e->id)}}">Editar</a></td>
+                    <td><a type = "button" class = "btn btn-secondary bt" href="">Excluir</a></td>
                 </tr>
 
             @endforeach

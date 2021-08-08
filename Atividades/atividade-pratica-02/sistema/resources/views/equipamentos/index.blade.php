@@ -4,7 +4,7 @@
 
 <link rel="stylesheet" href="/css/tabela.css">
  
-<table class = "table table-bordered table-hover table-striped">
+<table id ="tabGeral" class = "table table-bordered table-hover table-striped">
         
         <thead >
 
