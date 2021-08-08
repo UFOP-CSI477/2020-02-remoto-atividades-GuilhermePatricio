@@ -17,8 +17,8 @@ class RegistroController extends Controller
      */
     public function index()
     {
-        $relatorios = Livro::orderby('data_limite')->get();
-        return view('relatorios.index', ['relatorios' => $relatorios]);
+        $registro = Registro::orderby('data_limite')->get();
+        return view('registros.index', ['registros' => $registro]);
     }
 
 
