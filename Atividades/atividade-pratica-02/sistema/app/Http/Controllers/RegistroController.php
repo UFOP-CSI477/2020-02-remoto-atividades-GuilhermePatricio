@@ -14,8 +14,27 @@ class RegistroController extends Controller
      */
     public function index()
     {
-        $relatorios = Livro::orderby('nome')->get();
+        $relatorios = Livro::orderby('data_limite')->get();
         return view('relatorios.index', ['relatorios' => $relatorios]);
+    }
+
+
+     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function indexAdmin()
+    {   
+        if(Auth::check()){
+
+            $registros = Registro::orderby('data_limite')->get();
+            return view('registros.indexAdmin', ['registros' => $registros]);
+        }
+
+        session()->flash('mensagem', 'Operação negada, faça o login para continuar!');
+        return redirect()->route('login');
+         
     }
 
     /**
@@ -25,7 +44,13 @@ class RegistroController extends Controller
      */
     public function create()
     {
-        //
+        if(Auth::check()){
+
+            return view('registros.create');
+        }
+
+        session()->flash('mensagem', 'Operação negada, faça o login para continuar!');
+        return redirect()->route('login');
     }
 
     /**
@@ -36,7 +61,20 @@ class RegistroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if(Auth::check()){
+
+            /*if($request->nome == ""){
+                session()->flash('mensagem', 'Digite o nome do equipamento!');
+                return;
+            }
+         */
+            Registro::create($request->all());
+            session()->flash('mensagem', 'Registro inserido com sucesso!');
+            return redirect()->route('registros.indexAdmin');
+        }
+
+        session()->flash('mensagem', 'Operação negada, faça o login para continuar!');
+        return redirect()->route('login');
     }
 
     /**
@@ -47,7 +85,7 @@ class RegistroController extends Controller
      */
     public function show(Registro $registro)
     {
-        //
+        
     }
 
     /**
@@ -58,7 +96,12 @@ class RegistroController extends Controller
      */
     public function edit(Registro $registro)
     {
-        //
+        if(Auth::check()){
+            return view('registros.edit', [ 'registro' => $registro ]);
+        }
+
+        session()->flash('mensagem', 'Operação negada, faça o login para continuar!');
+        return redirect()->route('login');
     }
 
     /**
@@ -70,7 +113,16 @@ class RegistroController extends Controller
      */
     public function update(Request $request, Registro $registro)
     {
-        //
+        if(Auth::check()){
+            $registro->fill($request->all());
+            $registro->save();
+
+            session()->flash('mensagem', 'Registro atualizado com sucesso!');
+            return redirect()->route('registros.indexAdmin');
+        }
+
+        session()->flash('mensagem', 'Operação negada, faça o login para continuar!');
+        return redirect()->route('login');
     }
 
     /**
@@ -81,6 +133,16 @@ class RegistroController extends Controller
      */
     public function destroy(Registro $registro)
     {
-        //
+        if(Auth::check()){
+
+            $registro->delete();
+            session()->flash('mensagem', 'Registro excluido com sucesso!');
+
+            return redirect()->route('registros.indexAdmin');
+        }
+
+        session()->flash('mensagem', 'Operação negada, faça o login para continuar!');
+        return redirect()->route('login');
     }
 }
+

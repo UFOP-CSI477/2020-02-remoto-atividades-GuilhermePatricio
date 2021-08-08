@@ -46,7 +46,21 @@
                     
                     <td>{{$r->descricao}}</td>
 
-                
+                    <td><a type = "button" class = "btn btn-secondary bt" href="{{route('registros.edit',$r->id)}}">Editar</a></td>
+
+                    <td>
+
+                        <form action="{{route('registros.destroy',$r->id)}}"  method="post" onsubmit="return confirm('Deseja excluir esse registro?')">
+
+                        @csrf
+                        @method('DELETE')
+
+                            <button type = "submit" class = "btn btn-secondary bt">Excluir</button>
+
+                        </form>
+
+                    </td>
+
                 </tr>
 
             @endforeach

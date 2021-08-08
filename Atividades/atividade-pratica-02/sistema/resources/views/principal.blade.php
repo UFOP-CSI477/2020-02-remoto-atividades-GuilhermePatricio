@@ -72,7 +72,7 @@
                                 
                                 @else     
                                     <a class="dropdown-item" href="{{route('equipamentos.indexAdmin')}}">Equipamentos</a>
-                                    <a class="dropdown-item" href="#">Manutenções</a>
+                                    <a class="dropdown-item" href="{{route('registros.indexAdmin')}}">Manutenções</a>
                                     <a class="dropdown-item" href="#">Usuários</a>
                                     <a class="dropdown-item" href="#"> Relatorio de Manutenções</a>
 
