@@ -35,11 +35,12 @@
                         @csrf
                         @method('DELETE')
 
-                        <button type = "submit" class = "btn btn-secondary bt">Excluir</button>
+                            <button type = "submit" class = "btn btn-secondary bt">Excluir</button>
 
                         </form>
 
-                    </td>
+                    </td
+                    >
                 </tr>
 
             @endforeach

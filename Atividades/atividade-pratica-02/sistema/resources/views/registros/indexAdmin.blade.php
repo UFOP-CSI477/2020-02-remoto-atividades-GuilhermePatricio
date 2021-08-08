@@ -46,8 +46,7 @@
                     
                     <td>{{$r->descricao}}</td>
 
-
-                    
+                
                 </tr>
 
             @endforeach
