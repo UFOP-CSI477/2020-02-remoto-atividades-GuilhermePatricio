@@ -144,11 +144,13 @@ class EquipamentoController extends Controller
 
             if ( $equipamento->registros->count() > 0 ) {
                 session()->flash('mensagem', 'Exclusão não permitida! Existem registros associados.');
-            } else {
+            }
+            
+            else {
                 $equipamento->delete();
                 session()->flash('mensagem', 'Equipamento excluído com sucesso!');
             }
-            return redirect()->route('equipamento.indexAdmin');
+            return redirect()->route('equipamentos.indexAdmin');
         }
 
         session()->flash('mensagem', 'Operação negada, faça o login para continuar!');

@@ -11,11 +11,11 @@ class Registro extends Model
 
     protected $fillable = ['equipamento_id', 'user_id', 'descricao','data_limite','tipo'];
 
-    public function usarios() {
-        return $this->hasMany(Usuario::class);
+    public function usuarios() {
+        return $this->belongsTo(Usuario::class);
     }
 
     public function equipamentos() {
-        return $this->hasMany(Equipamento::class);
+        return $this->belongsTo(Equipamento::class);
     }
 }

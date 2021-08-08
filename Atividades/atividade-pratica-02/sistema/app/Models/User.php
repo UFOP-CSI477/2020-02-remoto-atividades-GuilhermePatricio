@@ -24,8 +24,8 @@ class User extends Authenticatable
         'password',
     ];
 
-    public function registro() {
-        return $this->belongsTo(Registro::class);
+    public function registros() {
+        return $this->hasMany(Registro::class);
     }
     /**
      * The attributes that should be hidden for arrays.

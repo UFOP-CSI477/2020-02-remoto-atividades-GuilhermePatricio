@@ -27,7 +27,19 @@
                     <td >{{$e->id}}</td>
                     <td>{{$e->nome}}</td>
                     <td><a type = "button" class = "btn btn-secondary bt" href="{{route('equipamentos.edit',$e->id)}}">Editar</a></td>
-                    <td><a type = "button" class = "btn btn-secondary bt" href="">Excluir</a></td>
+
+                    <td>
+
+                        <form action="{{route('equipamentos.destroy',$e->id)}}"  method="post" onsubmit="return confirm('Deseja excluir esse equipamento?')">
+
+                        @csrf
+                        @method('DELETE')
+
+                        <button type = "submit" class = "btn btn-secondary bt">Excluir</button>
+
+                        </form>
+
+                    </td>
                 </tr>
 
             @endforeach
@@ -37,3 +49,4 @@
     </table>
 
 @endsection
+
