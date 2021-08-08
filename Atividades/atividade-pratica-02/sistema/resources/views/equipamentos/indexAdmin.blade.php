@@ -14,6 +14,7 @@
                 <th style="width:20px">ID</th>
                 <th style="width:100px">Nome</th>
                 <th style="width:50px">Atualizar</th>
+                <th style="width:50px">Apagar</th>
             </tr>
 
         </thead>
@@ -25,7 +26,8 @@
                 <tr>
                     <td >{{$e->id}}</td>
                     <td>{{$e->nome}}</td>
-                    <td><a href="{{ route('equipamentos.show', $e->id) }}">Exibir</a></td>
+                    <td><a type = "button" class = "btn btn-danger" href="">Editar</a></td>
+                    <td><a type = "button" class = "btn btn-danger" href="">Excluir</a></td>
                 </tr>
 
             @endforeach

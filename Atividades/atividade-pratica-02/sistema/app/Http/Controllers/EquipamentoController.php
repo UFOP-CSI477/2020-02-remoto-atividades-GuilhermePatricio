@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Equipamento;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EquipamentoController extends Controller
 {
@@ -24,9 +25,16 @@ class EquipamentoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function indexAdmin()
-    {
-        $equipamentos = Equipamento::orderby('nome')->get();
-        return view('equipamentos.indexAdmin', ['equipamentos' => $equipamentos]);
+    {   
+        if(Auth::check()){
+
+            $equipamentos = Equipamento::orderby('nome')->get();
+            return view('equipamentos.indexAdmin', ['equipamentos' => $equipamentos]);
+        }
+
+        session()->flash('mensagem', 'Operação negada, faça o login para continuar!');
+        return redirect()->route('login');
+         
     }
 
 
@@ -36,8 +44,14 @@ class EquipamentoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('equipamentos.create');
+    {   
+        if(Auth::check()){
+
+            return view('equipamentos.create');
+        }
+
+        session()->flash('mensagem', 'Operação negada, faça o login para continuar!');
+        return redirect()->route('login');
     }
 
     /**
@@ -48,9 +62,21 @@ class EquipamentoController extends Controller
      */
     public function store(Request $request)
     {
-        Equipamento::create($request->all());
-        session()->flash('mensagem', 'Equipamento inserido com sucesso!');
-        return redirect()->route('equipamentos.indexAdmin');
+
+        if(Auth::check()){
+
+            if($request->nome == ""){
+                session()->flash('mensagem', 'Digite o nome do equipamento!');
+                return;
+            }
+         
+            Equipamento::create($request->all());
+            session()->flash('mensagem', 'Equipamento inserido com sucesso!');
+            return redirect()->route('equipamentos.indexAdmin');
+        }
+
+        session()->flash('mensagem', 'Operação negada, faça o login para continuar!');
+        return redirect()->route('login');
     }
 
     /**
@@ -61,7 +87,12 @@ class EquipamentoController extends Controller
      */
     public function show(Equipamento $equipamento)
     {
-        //
+        if(Auth::check()){
+
+        }
+
+        session()->flash('mensagem', 'Operação negada, faça o login para continuar!');
+        return redirect()->route('login');
     }
 
     /**
@@ -72,7 +103,12 @@ class EquipamentoController extends Controller
      */
     public function edit(Equipamento $equipamento)
     {
-        //
+        if(Auth::check()){
+
+        }
+
+        session()->flash('mensagem', 'Operação negada, faça o login para continuar!');
+        return redirect()->route('login');
     }
 
     /**
@@ -84,7 +120,12 @@ class EquipamentoController extends Controller
      */
     public function update(Request $request, Equipamento $equipamento)
     {
-        //
+        if(Auth::check()){
+
+        }
+
+        session()->flash('mensagem', 'Operação negada, faça o login para continuar!');
+        return redirect()->route('login');
     }
 
     /**
@@ -95,6 +136,11 @@ class EquipamentoController extends Controller
      */
     public function destroy(Equipamento $equipamento)
     {
-        //
+        if(Auth::check()){
+
+        }
+
+        session()->flash('mensagem', 'Operação negada, faça o login para continuar!');
+        return redirect()->route('login');
     }
 }

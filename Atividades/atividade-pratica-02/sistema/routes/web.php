@@ -25,3 +25,7 @@ Route::get('/indexAdmin','App\Http\Controllers\EquipamentoController@indexAdmin'
 Route:: resource('/equipamentos', EquipamentoController::class);
 
 Route:: resource('/relatorios', RegistroController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
