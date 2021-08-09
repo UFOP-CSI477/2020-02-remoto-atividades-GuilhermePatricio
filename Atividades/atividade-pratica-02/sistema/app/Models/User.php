@@ -24,7 +24,7 @@ class User extends Authenticatable
         'password',
     ];
 
-    public function registros() {
+    public function registro() {
         return $this->hasMany(Registro::class);
     }
     /**

@@ -75,7 +75,7 @@
                                     <a class="dropdown-item" href="{{route('equipamentos.indexAdmin')}}">Equipamentos</a>
                                     <a class="dropdown-item" href="{{route('registros.indexAdmin')}}">Manutenções</a>
                                     <a class="dropdown-item" href="{{route('usuarios.index')}}">Usuários</a>
-                                    <a class="dropdown-item" href="#"> Relatorio de Manutenções</a>
+                                    <a class="dropdown-item" href="{{route('equipamentos.relatorio')}}"> Relatorio de Manutenções</a>
                                     
                                     <li id = "perfil" class="nav-item dropdown">
                                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

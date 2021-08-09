@@ -31,6 +31,8 @@ Route::get('/indexEquipamentoAdmin','App\Http\Controllers\EquipamentoController@
 
 Route::get('/indexRegistroAdmin','App\Http\Controllers\RegistroController@indexAdmin')->name('registros.indexAdmin');
 
+Route::get('/relatorio','App\Http\Controllers\EquipamentoController@relatorio')->name('equipamentos.relatorio');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -37,6 +37,23 @@ class EquipamentoController extends Controller
          
     }
 
+     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function relatorio()
+    {   
+        if(Auth::check()){
+
+            $equipamentos = Equipamento::orderby('nome')->get();
+            return view('equipamentos.relatorio', ['equipamentos' => $equipamentos]);
+        }
+
+        session()->flash('mensagem', 'Operação negada, faça o login para continuar!');
+        return redirect()->route('login');
+         
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -142,7 +159,7 @@ class EquipamentoController extends Controller
     {
         if(Auth::check()){
 
-            if ( $equipamento->registros->count() > 0 ) {
+            if ($equipamento->registros->count() > 0 ) {
                 session()->flash('mensagem', 'Exclusão não permitida! Existem registros associados.');
             }
             

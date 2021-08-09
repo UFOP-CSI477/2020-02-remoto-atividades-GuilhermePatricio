@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Auth;
 
 class UserController extends Controller
 {
@@ -13,9 +14,16 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $user = User::orderby('nome')->get();
-        return view('usuarios.index', ['users' => $user]);
+    {   
+
+          
+        if(Auth::check()){
+            $user = User::orderby('nome')->get();
+            return view('usuarios.index', ['users' => $user]);
+        }
+
+        session()->flash('mensagem', 'Operação negada, faça o login para continuar!');
+        return redirect()->route('login');
     }
 
     /**
