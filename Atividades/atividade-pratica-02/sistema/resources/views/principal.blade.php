@@ -25,7 +25,7 @@
 
         <link rel="icon" href="https://raw.githubusercontent.com/twbs/icons/main/icons/gear.svg" id = "icon">
         
-        <link rel="stylesheet" href="/css/equipamentos.css">
+        <link rel="stylesheet" href="/css/style.css">
 
     </head>
  
