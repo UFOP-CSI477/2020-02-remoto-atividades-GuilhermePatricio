@@ -7,6 +7,8 @@
 
     <h2 class="pb-2 border-bottom">Meus livros</h2>
 
+    <a href="{{ route('livros.pesquisa') }}"><button class="voltar btn btn-dark bi bi-arrow-left"></button></a>
+
     <div class = "row" id = "grid2">
    
         @foreach($livros as $l)

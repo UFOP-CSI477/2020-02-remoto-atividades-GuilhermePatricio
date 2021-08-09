@@ -24,7 +24,7 @@ function preencheLivros(data){
         }
 
         else{
-            thumb = "thumb.png";
+            thumb = "/img/thumb.png";
         }
             
        criaCard(titulo,autor,thumb,index,url,id);

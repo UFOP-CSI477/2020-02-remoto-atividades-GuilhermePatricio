@@ -17,9 +17,9 @@
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
-        <link rel="stylesheet" href="/principal.css">
+        <link rel="stylesheet" href="/css/style.css">
 
-        <script src="livro.js" defer></script>
+        <script src="/js/livro.js" defer></script>
 
         <link rel="icon" href="https://raw.githubusercontent.com/twbs/icons/main/icons/book-fill.svg" id = "icon">
       
@@ -38,6 +38,7 @@
                         <div class="navbar-nav" >
                             <a class="nav-item nav-link" href="{{route('livros.index')}}">Meus Livros</a>
                             @guest
+
                                 @if (Route::has('login'))
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -46,12 +47,13 @@
 
                                 @if (Route::has('register'))
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Registrar-se') }}</a>
                                     </li>
                                 @endif
+
                             @else
                                 <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="n " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         {{ Auth::user()->name }}
                                     </a>
 
@@ -82,7 +84,7 @@
 
                 <script>
                     setTimeout(function() { 
-                        document.getElementById("msg").style = "visibility:hidden";
+                        document.getElementById("msg").style = "display:none";
                     },3000);
                 </script>
 
