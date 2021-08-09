@@ -49,6 +49,11 @@ th{
 
 .container{
     margin-top: 100px;
+   
+}
+
+.form-group{
+    padding: 5px;
 }
 
 #btnCadastrar,#btnAtualizar{

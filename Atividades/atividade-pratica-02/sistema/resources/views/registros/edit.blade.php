@@ -34,7 +34,7 @@
             <select name="equipamento_id" id="equip" class="form-control" value ="{{$registro->equipamento->nome}}"require>
 
             @foreach($equipamentos as $e)
-                <option value="{{$e->id}}">{{$e->nome}}</option>
+                <option value="{{$e->id}}">Selecione</option>
             @endforeach
 
             </select>

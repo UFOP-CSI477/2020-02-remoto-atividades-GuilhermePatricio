@@ -159,7 +159,7 @@ class EquipamentoController extends Controller
     {
         if(Auth::check()){
 
-            if ($equipamento->registros->count() > 0 ) {
+            if ($equipamento->registro->count() > 0 ) {
                 session()->flash('mensagem', 'Exclusão não permitida! Existem registros associados.');
             }
             
