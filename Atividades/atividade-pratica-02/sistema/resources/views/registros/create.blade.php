@@ -30,10 +30,12 @@
 
             <label for="equip"><strong>Equipamento:</strong></label>
             <select name="equipamento_id" id="equip" class="form-control" require>
+            
+                <option>Selecione</option>
 
-            @foreach($equipamentos as $e)
-                <option value="{{$e->id}}">{{$e->nome}}</option>
-            @endforeach
+                @foreach($equipamentos as $e)
+                    <option value="{{$e->id}}">{{$e->nome}}</option>
+                @endforeach
 
             </select>
 
@@ -52,10 +54,12 @@
 
             <label for="equip"><strong>Usuário:</strong></label>
             <select name="user_id" id="user" class="form-control" require>
-
-            @foreach($users as $u)
-                <option value="{{$u->id}}">{{$u->name}}</option>
-            @endforeach
+           
+                <option>Selecione</option>
+                
+                @foreach($users as $u)
+                    <option value="{{$u->id}}">{{$u->name}}</option>
+                @endforeach
 
             </select>
 
