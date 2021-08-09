@@ -4,6 +4,8 @@
 
 <h2 class="pb-2 border-bottom">Adicionar equipamento</h2>
 
+<a href="{{ route('equipamentos.indexAdmin') }}"><button class="voltar btn btn-danger bi bi-arrow-left"></button></a>
+
 <form  id = "addEquip" action = "{{ route('equipamentos.store') }}" method = "POST" class="was-validated">
 
     @csrf

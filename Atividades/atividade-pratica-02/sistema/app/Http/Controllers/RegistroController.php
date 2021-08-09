@@ -67,13 +67,27 @@ class RegistroController extends Controller
     public function store(Request $request)
     {
         if(Auth::check()){
-
-            /*if($request->nome == ""){
-                session()->flash('mensagem', 'Digite o nome do equipamento!');
-                return;
+            
+            $data = explode("-",$request->data_limite);
+            $d = $data[0];
+            $m = $data[1];
+            $y = $data[2];
+            
+            if (count($data) == 3 && checkdate($m,$d,$y)){
+                session()->flash('mensagem', 'Por favor, digite uma data valida!');
+                return $this->create();
             }
-         */
-        
+            
+            if($request->equipamento_id == "" || $request->user_id =="" || $request->tipo == ""){
+                session()->flash('mensagem', 'Por favor, selecione uma opção!');
+                return $this->create();
+            }
+
+            if($request->descricao == ""){
+                session()->flash('mensagem','Por favor, informe uma descrição!');
+                return $this->create();
+            }
+            
             Registro::create($request->all());
             session()->flash('mensagem', 'Registro inserido com sucesso!');
             return redirect()->route('registros.indexAdmin');
@@ -83,18 +97,7 @@ class RegistroController extends Controller
         return redirect()->route('login');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Registro  $registro
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Registro $registro)
-    {
-        
-    }
-
-    /**
+  /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Registro  $registro
@@ -122,6 +125,27 @@ class RegistroController extends Controller
     public function update(Request $request, Registro $registro)
     {
         if(Auth::check()){
+
+            $data = explode("-",$request->data_limite);
+            $d = $data[0];
+            $m = $data[1];
+            $y = $data[2];
+            
+            if (count($data) == 3 && checkdate($m,$d,$y)){
+                session()->flash('mensagem', 'Por favor, digite uma data valida!');
+                return $this->edit($registro);
+            }
+            
+            if($request->equipamento_id == "" || $request->user_id =="" || $request->tipo == ""){
+                session()->flash('mensagem', 'Por favor, selecione uma opção!');
+                return $this->edit($registro);
+            }
+
+            if($request->descricao == ""){
+                session()->flash('mensagem','Por favor, informe uma descrição!');
+                return $this->edit($registro);
+            }
+            
             $registro->fill($request->all());
             $registro->save();
 

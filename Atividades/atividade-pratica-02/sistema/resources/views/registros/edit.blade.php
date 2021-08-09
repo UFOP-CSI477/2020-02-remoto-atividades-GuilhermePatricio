@@ -4,6 +4,8 @@
 
 <h2 class="pb-2 border-bottom">Adicionar registro</h2>
 
+<a href="{{ route('registros.indexAdmin') }}"><button class="voltar btn btn-danger bi bi-arrow-left"></button></a>
+
 <form id = "addEquip" action = "{{ route('registros.update', $registro->id) }}" method = "POST" class="was-validated">
 
     @csrf
@@ -15,8 +17,7 @@
         <div class="col">
 
             <label for ="data"><strong>Data limite:</strong></label>
-            <input type="text" name="data_limite" class="form-control" placeholder="dd/mm/aaaa" id="data"value =
-            "{{$registro->data_limite}}" required>
+            <input type="date" name = "data_limite" class="form-control" placeholder="dd/mm/aaaa" id="data" min="2000-01-01" max="2050-01-01" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" value = "{{$registro->data_limite}}" required>
             
             <div class="valid-feedback">
                 Tudo certo!
@@ -31,7 +32,7 @@
         <div class = "col">
 
             <label for="equip"><strong>Equipamento:</strong></label>
-            <select name="equipamento_id" id="equip" class="form-control" value ="{{$registro->equipamento->nome}}"require>
+            <select name="equipamento_id" id="equip" class="form-control" value ="{{$registro->equipamento->nome}}"required>
 
                 @foreach($equipamentos as $e)
                     <option value="{{$e->id}}">{{$e->nome}}</option>
@@ -39,7 +40,7 @@
 
             </select>
 
-            <div class="valid-feedback">
+            <div class="valid-feedback">    
                 Tudo certo!
             </div>
 
@@ -53,7 +54,7 @@
         <div class = "col">
 
             <label for="equip"><strong>Usuário:</strong></label>
-            <select name="user_id" id="user" class="form-control" value ="{{$registro->user->nome}}" require>
+            <select name="user_id" id="user" class="form-control" value ="{{$registro->user->nome}}" required>
 
                 @foreach($users as $u)
                     <option value="{{$u->id}}">{{$u->name}}</option>
@@ -75,8 +76,16 @@
 
             <label for ="tipo"><strong>Tipo de manutenção:</strong></label>
             
-            <input type="text" name = "tipo" class="form-control" placeholder="1-Preventiva, 2-Corretiva, 3-Urgente" id="tipo" value ="{{$registro->tipo}}" required>
-                
+            <select name="tipo" id="equip" class="form-control" required>
+
+                <option value="{{$registro->tipo}}">{{$registro->tipo}}</option>
+                <option value = "1">1-Preventiva</option>
+                <option value = "2">2-Corretiva</option>
+                <option value = "3">3-Urgente</option>
+
+            
+            </select>
+                 
             <div class="valid-feedback">
                 Tudo certo!
             </div>

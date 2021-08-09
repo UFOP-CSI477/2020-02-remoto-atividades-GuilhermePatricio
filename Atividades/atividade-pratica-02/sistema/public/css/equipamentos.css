@@ -13,6 +13,7 @@ h2{
 #perfil{
     margin-left: 155%;
 }
+
 #tabelaRegis{
     margin-top: 5px!important;
     width: 90% !important;
@@ -38,6 +39,15 @@ th{
 .btInserirReg{
 
     margin: 10px 78px !important;
+}
+
+.voltar{
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-bottom: -10px;
+    font-size: 14px;
+    width: auto;
+    height: 32px;
 }
 
 #addEquip{

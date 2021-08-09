@@ -84,28 +84,12 @@ class EquipamentoController extends Controller
 
             if($request->nome == ""){
                 session()->flash('mensagem', 'Digite o nome do equipamento!');
-                return;
+                return $this->create();
             }
          
             Equipamento::create($request->all());
             session()->flash('mensagem', 'Equipamento inserido com sucesso!');
             return redirect()->route('equipamentos.indexAdmin');
-        }
-
-        session()->flash('mensagem', 'Operação negada, faça o login para continuar!');
-        return redirect()->route('login');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Equipamento  $equipamento
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Equipamento $equipamento)
-    {
-        if(Auth::check()){
-
         }
 
         session()->flash('mensagem', 'Operação negada, faça o login para continuar!');
@@ -121,6 +105,7 @@ class EquipamentoController extends Controller
     public function edit(Equipamento $equipamento)
     {
         if(Auth::check()){
+
             return view('equipamentos.edit', [ 'equipamento' => $equipamento ]);
         }
 
@@ -138,6 +123,12 @@ class EquipamentoController extends Controller
     public function update(Request $request, Equipamento $equipamento)
     {
         if(Auth::check()){
+
+            if($request->nome == ""){
+                session()->flash('mensagem', 'Digite o nome do equipamento!');
+                return $this->edit($equipamento);
+            }
+
             $equipamento->fill($request->all());
             $equipamento->save();
 
