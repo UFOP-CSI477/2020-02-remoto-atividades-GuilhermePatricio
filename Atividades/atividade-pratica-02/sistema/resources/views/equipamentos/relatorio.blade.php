@@ -38,7 +38,7 @@
                         <td>{{$e->registro->count()}}</td>
         
                     @else
-                        <td>0</td>
+                        <td>-</td>
                         <td>0</td>
                     @endif
                     
