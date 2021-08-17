@@ -28,6 +28,7 @@
 <!-- Descrever os principais desafios encontrados no desenvolvimento do trabalho, quais foram as dificuldades e como elas foram superadas e resolvidas. -->
 
  Os principais desafios foram:
+ 
     - Criar uma interface apropriada e funcional: esse problema foi resolvido obser-vando interfaces de outras aplicações que ofereciam funcionalidades similares, além da 
       tentativa e erro, para observar como a interface se encaixaria da melhor forma.
     
