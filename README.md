@@ -10,5 +10,5 @@
 
 ## [Projeto final:](./Projeto/README.md) 
 
-Apresente uma breve descrição do seu projeto.
+Esse trabalho visa criar um banco de dados de livros, onde o usuário pode exibir quais livros possui, quais seus livros favoritos e qual a nota atribuída para eles.
 
