@@ -40,8 +40,9 @@
 ### 5. Instruções para instalação e execução
 <!-- Descrever o que deve ser feito para instalar (ou baixar) a aplicação, o que precisa ser configurando (parâmetros, banco de dados e afins) e como executá-la. -->
   
-  Executar o comando php artisan serve dentro da pasta sistema.
-  Utilizar o banco de dados SQLite.
+  -Executar o comando php artisan serve dentro da pasta sistema.
+  
+  -Utilizar o banco de dados SQLite.
 
 ### 6. Referências
 <!-- Referências podem ser incluídas, caso necessário. Utilize o padrão ABNT. -->
