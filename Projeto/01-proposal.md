@@ -17,7 +17,7 @@
 <!-- Descrever e limitar o escopo da aplicação. -->
 ### 2. Escopo
 
-  Este projeto deve ter as seguintes funcionalidades:
+ O projeto deve ter as seguintes funcionalidades:
     - Pesquisar livros.
     - Adicionar os livros que você possui ao seu perfil.
     - Visualizar informações sobre os livros.
