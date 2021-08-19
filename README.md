@@ -10,5 +10,5 @@
 
 ## [Projeto final:](./Projeto/README.md) 
 
-Criação de um banco de dados de livros, onde o usuário pode exibir quais livros possui e quais seus livros favoritos, além de poder atribuir uma nota para os mesmos.
+Um banco de dados de livros, onde o usuário pode exibir quais livros possui e quais seus livros favoritos, além de poder atribuir uma nota para os mesmos.
 
