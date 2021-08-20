@@ -32,7 +32,7 @@
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <a class="navbar-brand logo" href="{{route('livros.pesquisa')}}">
                     <i id = "book" class="bi bi-book"></i>
-                FavBook
+                FavBooks
                     </a>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav" >
