@@ -7,7 +7,7 @@
 
 ### Resumo
 
-  Esse trabalho visa criar um banco de dados de livros, onde o usuário pode exibir quais livros possui, quais seus livros favoritos, e qual a nota atribuída para eles.
+  Esse trabalho visa criar um banco de dados de livros, onde o usuário pode: exibir quais livros possui, exibir quais seus livros favoritos, e atribuir uma nota para os livros       lidos.
 
 ### 1. Funcionalidades implementadas
 <!-- Descrever as funcionalidades que eram previstas e foram implementas. -->
