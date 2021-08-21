@@ -82,9 +82,8 @@ function criaCard(titulo,autor,thumb,index,url,id){
         else {
             return;
         }
-}
+    }
     
-
     hTitulo.appendChild(textTitulo);
     pAutor.appendChild(textAutor);
    
@@ -114,8 +113,6 @@ function pesquisarLivro(livro){
 
         return;
     }
-    
-   
     
     fetch(`https://www.googleapis.com/books/v1/volumes?q=` + livro)
         .then(response => response.json())

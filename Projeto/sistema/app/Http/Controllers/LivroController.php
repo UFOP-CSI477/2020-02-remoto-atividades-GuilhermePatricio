@@ -96,6 +96,7 @@ class LivroController extends Controller
 
         session()->flash('mensagem', 'Livro avaliado com sucesso!');
     }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -120,8 +121,8 @@ class LivroController extends Controller
     public function verificaOpcao(Request $request,Livro $livro)
 
     {
-     
-        if ($request->editar == 'Editar') {
+
+        if ($request->favoritar == 'Favoritar') {
             
             $this->updateFav($request,$livro);
         }

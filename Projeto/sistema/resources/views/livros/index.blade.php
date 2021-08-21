@@ -18,9 +18,9 @@
             @csrf
             
                 @if($l->favorito == 1)
-                    <button name = "editar" value = "Editar"class = "fav btn btn-warning bi bi-star-fill" onclick ="confirma(form.id,'removerFav')" ></button>
+                    <button name = "favoritar" value = "Favoritar" class = "fav btn btn-warning bi bi-star-fill" onclick ="confirma(form.id,'removerFav')" ></button>
                 @else
-                    <button name = "editar" value = "Editar"class = " fav btn btn-warning bi bi-star" onclick ="confirma(form.id,'adicionarFav')" ></button>
+                    <button name = "favoritar" value = "Favoritar"class = " fav btn btn-warning bi bi-star" onclick ="confirma(form.id,'adicionarFav')" ></button>
                 @endif
                 
                 <img id = "thumb" class="card-img-top" src="{{$l->thumb}}" alt="Card image cap">
