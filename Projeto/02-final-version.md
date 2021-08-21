@@ -23,8 +23,8 @@
   
 ### 2. Funcionalidades previstas e não implementadas
 <!-- Descrever as funcionalidades que eram previstas e não foram implementas, apresentando uma breve justificativa do porquê elas não foram incluídas -->
-
-### 4. Principais desafios e dificuldades
+      Todas as funcionalidades previstas foram implementadas.
+### 3. Principais desafios e dificuldades
 <!-- Descrever os principais desafios encontrados no desenvolvimento do trabalho, quais foram as dificuldades e como elas foram superadas e resolvidas. -->
 
  Os principais desafios foram:
@@ -37,14 +37,14 @@
     
     - Não atualizar a página ao fazer submit do formulário: esse problema foi resolvido com a criação de um inframe e definindo o target do formulário para esse inframe.
 
-### 5. Instruções para instalação e execução
+### 4. Instruções para instalação e execução
 <!-- Descrever o que deve ser feito para instalar (ou baixar) a aplicação, o que precisa ser configurando (parâmetros, banco de dados e afins) e como executá-la. -->
   
   -Executar o comando php artisan serve dentro da pasta sistema.
   
   -Utilizar o banco de dados SQLite.
 
-### 6. Referências
+### 5. Referências
 <!-- Referências podem ser incluídas, caso necessário. Utilize o padrão ABNT. -->
 
 KATZ, Nevin. Create a Star Rating Widget with CSS in 9 Steps. Medium. Disponível em: <https://medium.com/codex/create-a-star-rating-widget-with-css-in-9-steps-fe323352dba4>. Acesso em: 17 de ago. de 2021.
