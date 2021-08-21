@@ -85,7 +85,7 @@
                 <script>
                     setTimeout(function() { 
                         document.getElementById("msg").style = "display:none";
-                    },3000);
+                    },3500);
                 </script>
 
             @endif
@@ -104,7 +104,6 @@
             </form>
 
             <iframe name="frame" style="display:none"></iframe>
-            
             
     </body>
 </html>

@@ -55,7 +55,7 @@ h2{
 }
 
 #grid{
-    margin-top: 450px;
+    margin-top: 520px;
     display: grid;  
     grid-template-columns: repeat( 5, 1fr);
     grid-gap: 40px;

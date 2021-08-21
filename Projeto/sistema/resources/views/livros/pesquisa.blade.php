@@ -16,7 +16,7 @@
                     </div>
 
                     <div class="invalid-feedback">
-                        Por favor, informe o nome do livro que deseja pesquisar!
+                        Por favor, informe o título do livro que deseja pesquisar!
                     </div>
 
                 </div>
