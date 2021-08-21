@@ -35,7 +35,7 @@
     - Adicionar o token @csrf em um formulário criado dinamicamente em Java Script: esse problema não foi resolvido, mas foi contornado criando o formulário na página principal
       em HTML e preenchendo e realizando o submit do mesmo via JS.
     
-    - Não atualizar a página ao fazer submit do formulário: esse problema foi com a criação de um inframe e definindo o target do formulário para esse inframe.
+    - Não atualizar a página ao fazer submit do formulário: esse problema foi resolvido com a criação de um inframe e definindo o target do formulário para esse inframe.
 
 ### 5. Instruções para instalação e execução
 <!-- Descrever o que deve ser feito para instalar (ou baixar) a aplicação, o que precisa ser configurando (parâmetros, banco de dados e afins) e como executá-la. -->
