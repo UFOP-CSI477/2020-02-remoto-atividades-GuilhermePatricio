@@ -67,7 +67,7 @@ function criaCard(titulo,autor,thumb,index,url,id){
 
     btAdicionar.onclick = function(){
 
-        if(confirm('Deseja adicionar esse livro')){
+        if(confirm('Deseja adicionar esse livro?')){
             
             document.getElementById("livroID").value = id;
             document.getElementById("titulo").value = titulo;
