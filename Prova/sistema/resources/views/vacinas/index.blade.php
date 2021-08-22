@@ -4,7 +4,7 @@
 
 <a href="{{ route('vacinas.create') }}"><button class=" botoes btn btn-danger">Cadastrar</button></a>
 
-<table id ="tabelaEquip" class = "table table-bordered table-hover table-striped">
+<table id ="tabela" class = "table table-bordered table-hover table-striped">
         
         <thead >
 

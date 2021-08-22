@@ -14,7 +14,8 @@ class PessoaController extends Controller
      */
     public function index()
     {
-        //
+        $pessoas = Pessoa::orderby('nome',)->get();
+        return view('pessoas.index', ['pessoas' => $pessoas]);
     }
 
     /**
@@ -24,8 +25,9 @@ class PessoaController extends Controller
      */
     public function create()
     {
-        //
+        return view('pessoas.create');
     }
+    
 
     /**
      * Store a newly created resource in storage.
@@ -33,10 +35,19 @@ class PessoaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+   
     public function store(Request $request)
     {
-        //
+        if($request->nome == ""){
+            session()->flash('mensagem', 'Digite o nome da pessoa!');
+            return $this->create();
+        }
+     
+        Pessoa::create($request->all());
+        session()->flash('mensagem', 'pessoa inserida com sucesso!');
+        return redirect()->route('pessoas.index');
     }
+
 
     /**
      * Display the specified resource.
