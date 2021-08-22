@@ -36,9 +36,10 @@ th{
     margin: 10px 375px !important;
 }
 
-#doses{
+#doses,#data{
     width: 300px;
 }
+
 .btInserirReg{
 
     margin: 10px 78px !important;
