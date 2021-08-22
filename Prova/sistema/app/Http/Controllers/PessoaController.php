@@ -44,7 +44,7 @@ class PessoaController extends Controller
         }
      
         Pessoa::create($request->all());
-        session()->flash('mensagem', 'pessoa inserida com sucesso!');
+        session()->flash('mensagem', 'Pessoa inserida com sucesso!');
         return redirect()->route('pessoas.index');
     }
 

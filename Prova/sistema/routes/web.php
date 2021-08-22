@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 use App\Http\Controllers\VacinaController;  
-
+use App\Http\Controllers\PessoaController;  
+use App\Http\Controllers\UnidadeController;  
 
 Route::get('/', function () {
     return view('principal');
@@ -22,5 +23,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route:: resource('/vacinas', VacinaController::class);
+Route:: resource('/pessoas', PessoaController::class);
+Route:: resource('/unidades', UnidadeController::class);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
