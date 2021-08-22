@@ -17,7 +17,7 @@ class CreateVacinasTable extends Migration
             $table->id();
             $table->string('nome',100);
             $table->string('fabricante',100);
-            $table->TinyInteger('doses');
+            $table->tinyInteger('doses');
             $table->timestamps();
         });
     }

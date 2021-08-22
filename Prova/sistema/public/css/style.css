@@ -36,10 +36,9 @@ th{
     margin: 10px 375px !important;
 }
 
-.form-control{
-    width: 200px;   
+#doses{
+    width: 300px;
 }
-
 .btInserirReg{
 
     margin: 10px 78px !important;

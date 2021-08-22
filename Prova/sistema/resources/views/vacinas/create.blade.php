@@ -10,7 +10,7 @@
 
     @csrf
 
-    <div class = "row">
+    <div class = "row linha">
 
         <div class = "col">
             
@@ -47,8 +47,9 @@
     
         <div class = "col">
 
-            <label for ="dose"><strong>Doses:</strong></label>
-            <select name="dose" id="equip" class="form-control" required>
+            <label for ="doses"><strong>Doses:</strong></label>
+           
+            <select name="doses" id="doses" class="form-control" required>
 
                 <option value = "">Selecione</option>
                 <option value = "0">0-Dose única</option>

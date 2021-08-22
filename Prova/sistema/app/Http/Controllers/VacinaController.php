@@ -36,7 +36,14 @@ class VacinaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request->nome == ""){
+            session()->flash('mensagem', 'Digite o nome da vacina!');
+            return $this->create();
+        }
+     
+        Vacina::create($request->all());
+        session()->flash('mensagem', 'Vacina inserida com sucesso!');
+        return redirect()->route('vacinas.index');
     }
 
     /**

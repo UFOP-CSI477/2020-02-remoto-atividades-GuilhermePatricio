@@ -9,7 +9,7 @@ class Vacina extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nome','fabricante','doses','doses'];
+    protected $fillable = ['nome','fabricante','doses'];
 
     public function registro() {
         return $this->belogsTo(Registro::class);
