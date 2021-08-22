@@ -91,5 +91,6 @@ class UnidadeController extends Controller
         }
        
         return redirect()->route('unidades.index');
+
     }
 }
