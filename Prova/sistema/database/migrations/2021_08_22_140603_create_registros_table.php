@@ -14,8 +14,26 @@ class CreateRegistrosTable extends Migration
     public function up()
     {
         Schema::create('registros', function (Blueprint $table) {
+            
             $table->id();
+            $table->unsignedBigInteger('pessoa_id');
+            $table->unsignedBigInteger('unidade_id');
+            $table->unsignedBigInteger('vacina_id');
+            $table->TinyInteger('dose');
+            $table->date('data');
             $table->timestamps();
+
+            $table->foreign('pessoa_id')
+            ->references('id')
+            ->on('pessoas');
+
+            $table->foreign('unidade_id')
+            ->references('id')
+            ->on('unidades');
+
+            $table->foreign('vacina_id')
+            ->references('id')
+            ->on('vacinas');
         });
     }
 

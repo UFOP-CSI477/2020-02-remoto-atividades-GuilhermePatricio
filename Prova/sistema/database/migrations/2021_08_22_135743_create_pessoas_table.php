@@ -15,6 +15,10 @@ class CreatePessoasTable extends Migration
     {
         Schema::create('pessoas', function (Blueprint $table) {
             $table->id();
+            $table->string('nome',100);
+            $table->string('bairro',100);
+            $table->string('cidade',100);
+            $table->date('data_nascimento');
             $table->timestamps();
         });
     }

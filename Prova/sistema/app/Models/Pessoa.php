@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Pessoa extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['nome','bairro','cidade','data_nascimento'];
+
+    public function registro() {
+        return $this->belogsTo(Registro::class);
+    }
+
 }

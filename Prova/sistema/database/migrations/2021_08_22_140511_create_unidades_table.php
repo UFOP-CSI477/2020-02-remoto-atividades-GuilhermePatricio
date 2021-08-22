@@ -15,6 +15,9 @@ class CreateUnidadesTable extends Migration
     {
         Schema::create('unidades', function (Blueprint $table) {
             $table->id();
+            $table->string('nome',100);
+            $table->string('bairro',100);
+            $table->string('cidade',100);
             $table->timestamps();
         });
     }
