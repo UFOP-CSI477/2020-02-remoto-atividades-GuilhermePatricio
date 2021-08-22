@@ -1,0 +1,81 @@
+h2{
+    padding: 20px;
+}
+
+.linha{
+    width: 1500px;
+}
+
+.navbar{
+    padding: 10px;
+}
+
+#perfil{
+    margin-left: 730px;
+}
+
+#tabelaRegis{
+    margin-top: 5px!important;
+    width: 90% !important;
+    margin: auto;
+}
+
+#tabelaEquip{
+    margin-top: 5px!important;
+    width: 50% !important;
+    margin: auto;
+}
+
+th{
+    background-color: black!important;
+    color: white;
+    font-weight: bold;
+}
+
+.botoes{
+    margin: 10px 375px !important;
+}
+
+.form-control{
+    width: 200px;   
+}
+
+.btInserirReg{
+
+    margin: 10px 78px !important;
+}
+
+.voltar{
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-bottom: -10px;
+    font-size: 14px;
+    width: auto;
+    height: 32px;
+}
+
+#addEquip{
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 500px;
+ 
+}
+
+.container{
+    margin-top: 100px;
+   
+}
+
+.form-group{
+    padding: 5px;
+}
+
+#btnCadastrar,#btnAtualizar{
+    margin-top: 15px;
+}
+
+.bt{
+    font-size: 12.5px;
+    width: auto;
+    height: 32px;
+}
