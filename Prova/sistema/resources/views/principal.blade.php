@@ -74,7 +74,7 @@
 
                                     <a class="dropdown-item" href="{{route('vacinas.index')}}">Vacinas</a>       
                                     <a class="dropdown-item" href="{{route('pessoas.index')}}">Pessoas</a>
-                                    <a class="dropdown-item" href="{{route('principal')}}">Unidades</a>
+                                    <a class="dropdown-item" href="{{route('unidades.index')}}">Unidades</a>
                                     <a class="dropdown-item" href="{{route('principal')}}">Registros</a>
                                     
                                     <li id = "perfil" class="nav-item dropdown">

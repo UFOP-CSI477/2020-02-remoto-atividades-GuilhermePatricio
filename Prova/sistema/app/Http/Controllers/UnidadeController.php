@@ -80,6 +80,16 @@ class UnidadeController extends Controller
      */
     public function destroy(Unidade $unidade)
     {
-        //
+
+        if ($unidade->registro->count() > 0 ) {
+            session()->flash('mensagem', 'Exclusão não permitida! Existem registros associados.');
+        }
+        
+        else {
+            $unidade->delete();
+            session()->flash('mensagem', 'unidade excluida com sucesso!');
+        }
+       
+        return redirect()->route('unidades.index');
     }
 }
