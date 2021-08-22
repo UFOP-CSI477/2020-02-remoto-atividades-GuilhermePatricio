@@ -29,11 +29,10 @@
 
  Os principais desafios foram:
  
-    - Criar uma interface apropriada e funcional: esse problema foi resolvido obser-vando interfaces de outras aplicações que ofereciam funcionalidades similares, além da 
-      tentativa e erro, para observar como a interface se encaixaria da melhor forma.
+    - Criar uma interface apropriada e funcional: esse problema foi resolvido observando interfaces de outras aplicações que ofereciam funcionalidades parecidas e através de             tentativa e erro, para observar como a interface poderia se encaixar melhor.
     
-    - Adicionar o token @csrf em um formulário criado dinamicamente em Java Script: esse problema não foi resolvido, mas foi contornado criando o formulário na página principal
-      em HTML e preenchendo e realizando o submit do mesmo via JS.
+    - Adicionar o token "csrf" em um formulário criado dinamicamente em Java Script: esse problema não foi resolvido, mas foi contornado criando o formulário na página principal
+      em HTML e em seguida preenchendo e realizando o submit do mesmo via JS.
     
     - Não atualizar a página ao fazer submit do formulário: esse problema foi resolvido com a criação de um inframe e definindo o target do formulário para esse inframe.
 
