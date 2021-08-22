@@ -27,7 +27,8 @@
                     <td>{{$p->nome}}</td>
                     <td>{{$p->bairro}}</td>
                     <td>{{$p->cidade}}</td>
-                    <td>{{$p->data_nascimento}}</td> 
+                    <td>{{$p->data_nascimento}}</td>
+                    <td><a type = "button" class = "btn btn-secondary bt" href="{{route('pessoas.edit',$p->id)}}">Editar</a></td>
                 </tr>
 
             @endforeach
