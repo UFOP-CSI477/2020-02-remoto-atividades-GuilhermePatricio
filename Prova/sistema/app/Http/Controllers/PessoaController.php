@@ -38,7 +38,8 @@ class PessoaController extends Controller
    
     public function store(Request $request)
     {
-        if($request->nome == ""){
+        
+        /*if($request->nome == ""){
             session()->flash('mensagem', 'Digite o nome da pessoa!');
             return $this->create();
         }
@@ -46,6 +47,7 @@ class PessoaController extends Controller
         Pessoa::create($request->all());
         session()->flash('mensagem', 'Pessoa inserida com sucesso!');
         return redirect()->route('pessoas.index');
+        */
     }
 
 
@@ -68,7 +70,7 @@ class PessoaController extends Controller
      */
     public function edit(Pessoa $pessoa)
     {
-        //
+        return view('pessoas.edit', ['pessoa' => $pessoa]);
     }
 
     /**
@@ -80,7 +82,11 @@ class PessoaController extends Controller
      */
     public function update(Request $request, Pessoa $pessoa)
     {
-        //
+        $pessoa->fill($request->all());
+        $pessoa->save();
+
+            session()->flash('mensagem', 'Pessoa atualizada com sucesso!');
+            return redirect()->route('pessoas.index');
     }
 
     /**
