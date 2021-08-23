@@ -12,7 +12,7 @@ class Vacina extends Model
     protected $fillable = ['nome','fabricante','doses'];
 
     public function registro() {
-        return $this->belogsTo(Registro::class);
+        return $this->belongsTo(Registro::class);
     }
 
 }

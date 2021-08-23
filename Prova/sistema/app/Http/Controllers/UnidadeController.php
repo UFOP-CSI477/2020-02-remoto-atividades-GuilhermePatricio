@@ -14,7 +14,8 @@ class UnidadeController extends Controller
      */
     public function index()
     {
-        //
+        $unidades = Unidade::orderby('nome')->get();
+        return view('unidades.index', ['unidades' => $unidades]);
     }
 
     /**
@@ -87,7 +88,7 @@ class UnidadeController extends Controller
         
         else {
             $unidade->delete();
-            session()->flash('mensagem', 'unidade excluida com sucesso!');
+            session()->flash('mensagem', 'Unidade excluida com sucesso!');
         }
        
         return redirect()->route('unidades.index');
