@@ -86,4 +86,29 @@ class VacinaController extends Controller
     {
         //
     }
+
+     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function appPorVacinas()
+    {   
+        $vacinas = Vacina::orderby('nome')->get();
+         return view('vacinas.appPorVacinas', ['vacinas' => $vacinas]);
+
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function appGeral()
+    {   
+        $vacinas = Vacina::orderby('nome')->get();
+         return view('vacinas.appGeral', ['vacinas' => $vacinas]);
+
+    }
+
 }

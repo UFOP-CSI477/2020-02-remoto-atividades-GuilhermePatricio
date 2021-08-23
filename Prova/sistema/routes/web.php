@@ -28,4 +28,8 @@ Route:: resource('/pessoas', PessoaController::class)->middleware('auth');;
 Route:: resource('/unidades', UnidadeController::class)->middleware('auth');;
 Route:: resource('/registros', RegistroController::class)->middleware('auth');;
 
+
+Route::get('/appGeral','App\Http\Controllers\VacinaController@appGeral')->name('vacinas.appGeral');
+Route::get('/appPorVacinas','App\Http\Controllers\VacinaController@appPorVacinas')->name('vacinas.appPorVacinas');
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
