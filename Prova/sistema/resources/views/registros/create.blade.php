@@ -69,7 +69,7 @@
                    
                     let e = document.getElementById("vacina_id");
                     let dose = e.options[e.selectedIndex].id;
-                    document.getElementById("doses").value = dose;
+                    document.getElementById("dose").value = dose;
                 }
 
             </script>
@@ -99,9 +99,9 @@
         <div class = "col">
 
             
-            <label for ="doses"><strong>Doses:</strong></label>
+            <label for ="dose"><strong>Doses:</strong></label>
            
-            <select readonly = "readonly" name="doses" id="doses" class="form-control" required>
+            <select readonly = "readonly" name="dose" id="dose" class="form-control" required>
 
                 <option value = "">Selecione</option>
                 <option value = "0">0-Dose única</option>

@@ -18,6 +18,7 @@ class RegistroController extends Controller
     public function index()
     {
         $registro = Registro::orderby('data_limite')->get();
+        //dd($registro);
         return view('registros.index', ['registros' => $registro]);
     }
 
@@ -32,7 +33,7 @@ class RegistroController extends Controller
         $unidades = Unidade::orderBy('nome')->get();
         $pessoas = Pessoa::orderBy('nome')->get();
 
-        return view('registros.create',['vacinas' => $vacinas,'unidades' => $unidades,'pessoas' => $pessoas]);
+        return view('registros.create',['pessoas' => $pessoas,'unidades' => $unidades,'vacinas' => $vacinas]);
     }
 
     /**
@@ -42,7 +43,7 @@ class RegistroController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
         Registro::create($request->all());
         session()->flash('mensagem', 'Registro inserido com sucesso!');
         return redirect()->route('registros.index');
@@ -101,6 +102,6 @@ class RegistroController extends Controller
         $registro->delete();
         session()->flash('mensagem', 'Registro excluido com sucesso!');
 
-        return redirect()->route('registros.indexAdmin');
+        return redirect()->route('registros.index');
     }
 }

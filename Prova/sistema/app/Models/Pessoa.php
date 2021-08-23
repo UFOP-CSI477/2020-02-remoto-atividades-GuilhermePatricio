@@ -12,7 +12,7 @@ class Pessoa extends Model
     protected $fillable = ['nome','bairro','cidade','data_nascimento'];
 
     public function registro() {
-        return $this->belongsTo(Registro::class);
+        return $this->hasMany(Registro::class);
     }
 
 }

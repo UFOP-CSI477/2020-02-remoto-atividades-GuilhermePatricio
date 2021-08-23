@@ -32,8 +32,12 @@ th{
     font-weight: bold;
 }
 
-.botoes{
+.botao{
     margin: 10px 375px !important;
+}
+
+.botaoR{
+    margin: 10px 75px !important;
 }
 
 #doses,#data{

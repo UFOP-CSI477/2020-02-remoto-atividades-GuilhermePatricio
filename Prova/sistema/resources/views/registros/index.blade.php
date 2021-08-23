@@ -2,7 +2,7 @@
 
 @section('conteudo')
 
-<a href="{{ route('registros.create') }}"><button class=" botoes btn btn-danger">Cadastrar</button></a>
+<a href="{{ route('registros.create') }}"><button class=" botaoR btn btn-danger">Cadastrar</button></a>
 
 <table id ="tabelaMaior" class = "table table-bordered table-hover table-striped">
         
@@ -30,7 +30,21 @@
                     <td>{{$r->pessoa->nome}}</td>
                     <td>{{$r->unidade->nome}}</td>
                     <td>{{$r->vacina->nome}}</td>
-                    <td>{{$r->doses}}</td>
+                    
+                    @if($r->doses == 0)
+
+                        <td>0 - Dose única</td>
+
+                    @elseif($r->doses == 1)
+
+                        <td>1 - Primeira Dose</td>
+
+                    @elseif($r->doses == 2)
+
+                        <td>2 - Segunda Dose"</td>
+                        
+                    @endif
+
                     <td>{{$r->data}}</td>
                     <td><a type = "button" class = "btn btn-secondary bt" href="{{route('registros.edit',$r->id)}}">Editar</a></td>
 

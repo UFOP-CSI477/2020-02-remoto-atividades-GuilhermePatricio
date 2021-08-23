@@ -11,16 +11,16 @@ class Registro extends Model
 
     protected $fillable = ['pessoa_id','unidade_id','vacina_id','dose','data'];
 
-    public function pessoas() {
-        return $this->hasMany(Pessoa::class);
+    public function pessoa() {
+        return $this->belongsTo(Pessoa::class);
     }
 
-    public function unidades() {
-        return $this->hasMany(Unidade::class);
+    public function unidade() {
+        return $this->belongsTo(Unidade::class);
     }
 
-    public function vacinas() {
-        return $this->hasMany(Vacina::class);
+    public function vacina() {
+        return $this->belongsTo(Vacina::class);
     }
 }
 

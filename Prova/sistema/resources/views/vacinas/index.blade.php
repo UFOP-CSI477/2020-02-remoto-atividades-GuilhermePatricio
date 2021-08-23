@@ -2,7 +2,7 @@
 
 @section('conteudo')
 
-<a href="{{ route('vacinas.create') }}"><button class=" botoes btn btn-danger">Cadastrar</button></a>
+<a href="{{ route('vacinas.create') }}"><button class=" botao btn btn-danger">Cadastrar</button></a>
 
 <table id ="tabela" class = "table table-bordered table-hover table-striped">
         
