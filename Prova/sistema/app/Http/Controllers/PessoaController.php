@@ -25,7 +25,7 @@ class PessoaController extends Controller
      */
     public function create()
     {
-        return view('pessoas.create');
+    
     }
     
 
@@ -39,15 +39,6 @@ class PessoaController extends Controller
     public function store(Request $request)
     {
         
-        /*if($request->nome == ""){
-            session()->flash('mensagem', 'Digite o nome da pessoa!');
-            return $this->create();
-        }
-     
-        Pessoa::create($request->all());
-        session()->flash('mensagem', 'Pessoa inserida com sucesso!');
-        return redirect()->route('pessoas.index');
-        */
     }
 
 

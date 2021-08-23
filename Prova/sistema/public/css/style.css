@@ -2,6 +2,9 @@ h2{
     padding: 20px;
 }
 
+th,td{
+    text-align:center;
+}
 .linha{
     width: 1500px;
 }
@@ -16,7 +19,7 @@ h2{
 
 #tabelaMaior{
     margin-top: 5px!important;
-    width: 90% !important;
+    width: 95% !important;
     margin: auto;
 }
 
@@ -37,7 +40,7 @@ th{
 }
 
 .botaoR{
-    margin: 10px 75px !important;
+    margin: 10px 40px !important;
 }
 
 #doses,#data{

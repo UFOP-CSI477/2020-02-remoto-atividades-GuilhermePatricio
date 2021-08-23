@@ -67,7 +67,7 @@
                                 @endif
 
                                 @if (Route::has('login'))
-                                    <a class="dropdown-item" href="{{ route('login') }}">{{ __('Acesso') }}</a>
+                                    <a class="dropdown-item" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 @endif
                                 
                                 @else   

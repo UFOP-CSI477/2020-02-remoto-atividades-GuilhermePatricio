@@ -24,8 +24,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route:: resource('/vacinas', VacinaController::class);
-Route:: resource('/pessoas', PessoaController::class);
-Route:: resource('/unidades', UnidadeController::class);
-Route:: resource('/registros', RegistroController::class);
+Route:: resource('/pessoas', PessoaController::class)->middleware('auth');;
+Route:: resource('/unidades', UnidadeController::class)->middleware('auth');;
+Route:: resource('/registros', RegistroController::class)->middleware('auth');;
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

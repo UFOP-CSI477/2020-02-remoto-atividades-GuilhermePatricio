@@ -22,7 +22,7 @@ class PessoaFactory extends Factory
     public function definition()
     {
         return [
-            'nome' => $this->faker->name,
+            'nome' => $this->faker->unique()->name,
             'bairro' => $this->faker->streetName ,
             'cidade' => $this->faker->city,
             'data_nascimento' => $this->faker->date
