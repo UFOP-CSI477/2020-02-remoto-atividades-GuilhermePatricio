@@ -2,15 +2,13 @@
 
 @section('conteudo')
 
-<a href="{{ route('unidades.create') }}"><button class=" botoes btn btn-danger">Cadastrar</button></a>
-
-<table id ="tabela" class = "table table-bordered table-hover table-striped">
+<table id ="tabelaMaior" class = "table table-bordered table-hover table-striped">
         
         <thead>
 
             <tr>
                 <th style="width:20px">ID</th>
-                <th style="width:100px">Nome</th>
+                <th style="width:150px">Nome</th>
                 <th style="width:100px">Bairro</th>
                 <th style="width:100px">Cidade</th>
                 <th style="width:20px">Excluir</th>

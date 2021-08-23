@@ -14,7 +14,7 @@ class PessoaController extends Controller
      */
     public function index()
     {
-        $pessoas = Pessoa::orderby('nome',)->get();
+        $pessoas = Pessoa::orderby('nome')->get();
         return view('pessoas.index', ['pessoas' => $pessoas]);
     }
 
