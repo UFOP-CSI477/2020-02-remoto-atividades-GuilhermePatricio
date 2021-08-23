@@ -2,7 +2,7 @@
 
 @section('conteudo')
 
-<table id ="tabelaPessoa" class = "table table-bordered table-hover table-striped">
+<table id ="tabelaMaior" class = "table table-bordered table-hover table-striped">
         
         <thead >
 
