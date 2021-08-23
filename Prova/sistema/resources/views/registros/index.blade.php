@@ -2,15 +2,20 @@
 
 @section('conteudo')
 
-<table id ="tabela" class = "table table-bordered table-hover table-striped">
+<a href="{{ route('registros.create') }}"><button class=" botoes btn btn-danger">Cadastrar</button></a>
+
+<table id ="tabelaMaior" class = "table table-bordered table-hover table-striped">
         
         <thead>
 
             <tr>
                 <th style="width:20px">ID</th>
-                <th style="width:100px">Nome</th>
-                <th style="width:100px">Bairro</th>
-                <th style="width:100px">Cidade</th>
+                <th style="width:150px">Pessoa</th>
+                <th style="width:100px">Unidade</th>
+                <th style="width:100px">Vacina</th>
+                <th style="width:20px">Dose</th>
+                <th style="width:20px">Data</th>
+                <th style="width:20px">Editar</th>
                 <th style="width:20px">Excluir</th>
             </tr>
 
@@ -18,17 +23,20 @@
 
         <tbody>
         
-            @foreach($unidades as $u)
+            @foreach($registros as $r)
 
                 <tr>
-                    <td>{{$u->id}}</td>
-                    <td>{{$u->nome}}</td>
-                    <td>{{$u->bairro}}</td>
-                    <td>{{$u->cidade}}</td>
+                    <td>{{$r->id}}</td>
+                    <td>{{$r->pessoa->nome}}</td>
+                    <td>{{$r->unidade->nome}}</td>
+                    <td>{{$r->vacina->nome}}</td>
+                    <td>{{$r->doses}}</td>
+                    <td>{{$r->data}}</td>
+                    <td><a type = "button" class = "btn btn-secondary bt" href="{{route('registros.edit',$r->id)}}">Editar</a></td>
 
-                      <td>
+                    <td>
 
-                        <form action="{{route('unidades.destroy',$u->id)}}"  method="post" onsubmit="return confirm('Deseja excluir essa unidade?')">
+                        <form action="{{route('registros.destroy',$r->id)}}"  method="post" onsubmit="return confirm('Deseja excluir esse registro?')">
 
                         @csrf
                         @method('DELETE')

@@ -75,7 +75,7 @@
                                     <a class="dropdown-item" href="{{route('vacinas.index')}}">Vacinas</a>       
                                     <a class="dropdown-item" href="{{route('pessoas.index')}}">Pessoas</a>
                                     <a class="dropdown-item" href="{{route('unidades.index')}}">Unidades</a>
-                                    <a class="dropdown-item" href="{{route('principal')}}">Registros</a>
+                                    <a class="dropdown-item" href="{{route('registros.index')}}">Registros</a>
                                     
                                     <li id = "perfil" class="nav-item dropdown">
                                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

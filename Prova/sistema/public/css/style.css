@@ -37,12 +37,17 @@ th{
 }
 
 #doses,#data{
-    width: 300px;
+    width: 250px;
 }
 
 .btInserirReg{
 
     margin: 10px 78px !important;
+}
+
+select[readonly] {
+    pointer-events: none;
+    touch-action: none;
 }
 
 .voltar{
