@@ -23,6 +23,12 @@ th,td{
     margin: auto;
 }
 
+#tabelaUnidade{
+    margin-top: 5px!important;
+    width: 80% !important;
+    margin: auto;
+}
+
 #tabela{
     margin-top: 5px!important;
     width: 50% !important;

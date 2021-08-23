@@ -2,16 +2,16 @@
 
 @section('conteudo')
 
-<table id ="tabelaMaior" class = "table table-bordered table-hover table-striped">
+<table id ="tabelaUnidade" class = "table table-bordered table-hover table-striped">
         
         <thead>
 
             <tr>
-                <th style="width:20px">ID</th>
-                <th style="width:150px">Nome</th>
-                <th style="width:100px">Bairro</th>
-                <th style="width:100px">Cidade</th>
-                <th style="width:20px">Excluir</th>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Bairro</th>
+                <th>Cidade</th>
+                <th>Excluir</th>
             </tr>
 
         </thead>
@@ -33,7 +33,7 @@
                         @csrf
                         @method('DELETE')
 
-                            <button type = "submit" class = "btn btn-secondary bt">Excluir</button>
+                            <button type = "submit" class = "btn btn-danger bt">Excluir</button>
 
                         </form>
 

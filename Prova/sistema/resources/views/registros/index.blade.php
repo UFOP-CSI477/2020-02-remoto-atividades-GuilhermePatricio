@@ -9,14 +9,14 @@
         <thead>
 
             <tr>
-                <th style="width:20px">ID</th>
-                <th style="width:150px">Pessoa</th>
-                <th style="width:100px">Unidade</th>
-                <th style="width:100px">Vacina</th>
-                <th style="width:20px">Dose</th>
-                <th style="width:20px">Data</th>
-                <th style="width:20px">Editar</th>
-                <th style="width:20px">Excluir</th>
+                <th>ID</th>
+                <th>Pessoa</th>
+                <th>Unidade</th>
+                <th>Vacina</th>
+                <th>Dose</th>
+                <th>Data</th>
+                <th>Editar</th>
+                <th>Excluir</th>
             </tr>
 
         </thead>
@@ -55,7 +55,7 @@
                         @csrf
                         @method('DELETE')
 
-                            <button type = "submit" class = "btn btn-secondary bt">Excluir</button>
+                            <button type = "submit" class = "btn btn-danger bt">Excluir</button>
 
                         </form>
 

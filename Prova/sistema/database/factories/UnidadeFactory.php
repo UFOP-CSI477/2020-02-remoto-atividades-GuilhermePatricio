@@ -22,8 +22,8 @@ class UnidadeFactory extends Factory
     public function definition()
     {
         return [
-            'nome' => "Hospital - ".strtoupper($this->faker->randomLetter),
-            'bairro' => $this->faker->streetName ,
+            'nome' => "Hospital - ".strtoupper($this->faker->unique()->randomLetter),
+            'bairro' => $this->faker->streetName,
             'cidade' => $this->faker->city
         ];
     }
