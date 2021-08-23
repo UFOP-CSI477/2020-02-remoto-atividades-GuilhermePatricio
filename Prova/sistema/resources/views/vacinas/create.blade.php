@@ -6,7 +6,7 @@
 
 <a href="{{ route('vacinas.index') }}"><button class="voltar btn btn-danger bi bi-arrow-left"></button></a>
 
-<form  id = "addEquip" action = "{{ route('vacinas.store') }}" method = "POST" class="was-validated">
+<form  id = "form" action = "{{ route('vacinas.store') }}" method = "POST" class="was-validated">
 
     @csrf
 

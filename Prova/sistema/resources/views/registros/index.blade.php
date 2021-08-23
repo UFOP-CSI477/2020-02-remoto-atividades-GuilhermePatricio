@@ -31,15 +31,15 @@
                     <td>{{$r->unidade->nome}}</td>
                     <td>{{$r->vacina->nome}}</td>
                     
-                    @if($r->doses == 0)
+                    @if($r->dose == 0)
 
                         <td>0 - Dose única</td>
 
-                    @elseif($r->doses == 1)
+                    @elseif($r->dose == 1)
 
                         <td>1 - Primeira Dose</td>
 
-                    @elseif($r->doses == 2)
+                    @elseif($r->dose == 2)
 
                         <td>2 - Segunda Dose"</td>
                         

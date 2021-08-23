@@ -2,11 +2,11 @@
 
 @section('conteudo')
 
-<h2 class="pb-2 border-bottom">Adicionar registro</h2>
+<h2 class="pb-2 border-bottom">Editar registro</h2>
 
-<a href="{{ route('registros.indexAdmin') }}"><button class="voltar btn btn-danger bi bi-arrow-left"></button></a>
+<a href="{{ route('registros.index') }}"><button class="voltar btn btn-danger bi bi-arrow-left"></button></a>
 
-<form id = "addEquip" action = "{{ route('registros.update', $registro->id) }}" method = "POST" class="was-validated">
+<form  id = "form" action = "{{route('registros.update', $registro->id) }}" method = "POST" class="was-validated">
 
     @csrf
     @method('PUT')
@@ -14,38 +14,23 @@
     <div class = "row linha">
 
         
-        <div class="col">
-
-            <label for ="data"><strong>Data limite:</strong></label>
-            <input type="date" name = "data_limite" class="form-control" placeholder="dd/mm/aaaa" id="data" min="2000-01-01" max="2050-01-01" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" value = "{{$registro->data_limite}}" required>
-            
-            <div class="valid-feedback">
-                Tudo certo!
-            </div>
-        
-            <div class="invalid-feedback">
-                Por favor, informe a data da manutenção!
-            </div>
-
-        </div>
-        
         <div class = "col">
 
-            <label for="equip"><strong>Equipamento:</strong></label>
-            <select name="equipamento_id" id="equip" class="form-control" value ="{{$registro->equipamento->nome}}"required>
-
-                @foreach($equipamentos as $e)
-                    <option value="{{$e->id}}">{{$e->nome}}</option>
+            <label for="pessoa_id"><strong>Pessoa:</strong></label>
+            <select name="pessoa_id" class="form-control" value ="{{$registro->pessoa->nome}}"required>
+            
+                @foreach($pessoas as $p)
+                    <option value="{{$p->id}}">{{$p->nome}}</option>
                 @endforeach
 
             </select>
 
-            <div class="valid-feedback">    
+            <div class="valid-feedback">
                 Tudo certo!
             </div>
 
             <div class="invalid-feedback">
-                Por favor, selecione o equipamento!
+                Por favor, selecione uma pessoa!
             </div>
 
         </div>
@@ -53,11 +38,11 @@
     
         <div class = "col">
 
-            <label for="equip"><strong>Usuário:</strong></label>
-            <select name="user_id" id="user" class="form-control" value ="{{$registro->user->nome}}" required>
-
-                @foreach($users as $u)
-                    <option value="{{$u->id}}">{{$u->name}}</option>
+            <label for="equip"><strong>Unidade:</strong></label>
+            <select name="unidade_id" class="form-control" value = "{{$registro->unidade->nome}}" required>
+        
+                @foreach($unidades as $u)
+                    <option value="{{$u->id}}">{{$u->nome}}</option>
                 @endforeach
 
             </select>
@@ -67,56 +52,82 @@
             </div>
 
             <div class="invalid-feedback">
-                Por favor, selecione o usuario!
+                Por favor, selecione a unidade!
             </div>
 
         </div>
+
 
         <div class = "col">
 
-            <label for ="tipo"><strong>Tipo de manutenção:</strong></label>
+            <script>
+
+                function alterDose(){
+                   
+                    let e = document.getElementById("vacina_id");
+                    let dose = e.options[e.selectedIndex].id;
+                    document.getElementById("dose").value = dose;
+                }
+
+            </script>
+
+            <label for="equip"><strong>Vacina:</strong></label>
+            <select id = "vacina_id" name="vacina_id" class="form-control" onchange = "alterDose()" 
+            value = "{{$registro->vacina->nome}}" required>
+        
+                @foreach($vacinas as $v)
+                    <option id = "{{$v->doses}}" value="{{$v->id}}">{{$v->nome}}</option>
+                @endforeach
+
+            </select>
+
+            <div class="valid-feedback">
+                Tudo certo!
+            </div>
+
+            <div class="invalid-feedback">
+                Por favor, selecione a unidade!
+            </div>
+
+        </div>
+
+        
+        <div class = "col">
+
             
-            <select name="tipo" id="equip" class="form-control" required>
-
-                <option value="{{$registro->tipo}}">{{$registro->tipo}}</option>
-                <option value = "1">1-Preventiva</option>
-                <option value = "2">2-Corretiva</option>
-                <option value = "3">3-Urgente</option>
-
+            <label for ="dose"><strong>Doses:</strong></label>
+           
+            <select readonly = "readonly" name="dose" id="dose" class="form-control" value = "">
+                
+                <option value = "{{$registro->dose}}">{{$registro->dose}}</option>
+                <option value = "0">0-Dose única</option>
+                <option value = "1">1-Primeira Dose</option>
+                <option value = "2">2-Segunda Dose</option>
             
             </select>
-                 
-            <div class="valid-feedback">
-                Tudo certo!
-            </div>
-            
-            <div class="invalid-feedback">
-                Por favor, informe qual o tipo de manutenção!
-            </div>             
-            
         </div>
 
+        
+        <div class="col">
 
-        <div >
-
-            <label for ="desc"><strong>Descrição:</strong></label>
-            
-            <input type="text" name = "descricao" class="form-control" placeholder="Descrição da manutenção/problema" id="desc" value ="{{$registro->descricao}}" required>
+            <label for ="data"><strong>Data:</strong></label>
+            <input type="date" name = "data" class="form-control" placeholder="dd/mm/aaaa" id="data" min="2020-01-01" max="2050-01-01" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" value = "{{$registro->data}}"required>
             
             <div class="valid-feedback">
                 Tudo certo!
             </div>
         
             <div class="invalid-feedback">
-                Por favor, informe a descrição da manutenção!
+                Por favor, informe a data da vacinação!
             </div>
-        
+
         </div>
+
     
     </div>
 
     <div>
-        <input id = "btnCadastrar" class="btn btn-secondary" type="submit" value="Atualizar" name="btnAdicionar">
+        <input id = "btnCadastrar" class="btn btn-secondary" type="submit" value="Editar" name="btnAdicionar">
     </div>
         
 

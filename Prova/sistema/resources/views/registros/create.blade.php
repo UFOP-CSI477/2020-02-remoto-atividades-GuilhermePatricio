@@ -6,7 +6,7 @@
 
 <a href="{{ route('registros.index') }}"><button class="voltar btn btn-danger bi bi-arrow-left"></button></a>
 
-<form  id = "addEquip" action = "{{ route('registros.store') }}" method = "POST" class="was-validated">
+<form  id = "form" action = "{{ route('registros.store') }}" method = "POST" class="was-validated">
 
     @csrf
 
