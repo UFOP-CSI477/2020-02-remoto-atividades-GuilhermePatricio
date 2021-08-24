@@ -104,4 +104,18 @@ class RegistroController extends Controller
 
         return redirect()->route('registros.index');
     }
+
+      /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function appGeral()
+    {   
+        $registros = Registro::orderby('nome')->get();
+         return view('registros.appGeral', ['registros' => $registros]);
+
+    }
+
 }
+

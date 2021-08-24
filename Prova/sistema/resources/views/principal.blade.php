@@ -47,7 +47,7 @@
 
                         <div class="dropdown-menu">
 
-                            <a class="dropdown-item" href="{{route('vacinas.appGeral')}}">Total geral de vacinas aplicadas</a>
+                            <a class="dropdown-item" href="{{route('registros.appGeral')}}">Total geral de vacinas aplicadas</a>
                             <a class="dropdown-item" href="{{route('vacinas.appPorVacinas')}}">Total de aplicações por vacinas</a>
                                 
                         </div>
