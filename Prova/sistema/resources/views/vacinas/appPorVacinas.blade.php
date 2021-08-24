@@ -36,14 +36,14 @@
 
             @endforeach
             <tr>
-                <td>TOTAL GERAL</td>
-                <td>{{$total}}</td>
-                <td>{{$total*100/$total}}%</td>
+                <td><strong>TOTAL GERAL</strong></td>
+                <td><strong>{{$total}}</strong></td>
+                <td><strong>{{$total*100/$total}}%</strong></td>
             </tr>
             
             
             
-
+           
         </tbody>
       
     </table>
