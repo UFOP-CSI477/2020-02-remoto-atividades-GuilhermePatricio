@@ -2,12 +2,12 @@
 
 @section('conteudo')
 
-<a href="{{ route('registros.create') }}"><button class=" botaoR btn btn-danger">Cadastrar</button></a>
+<a href="{{ route('registros.create') }}"><button class=" botaoR btn btn-danger">Adicionar</button></a>
 
 <table id ="tabelaMaior" class = "table table-bordered table-hover table-striped">
         
         <thead>
-
+            <tr><th class = "titulo" colspan="8">Registros</th></tr>
             <tr>
                 <th>ID</th>
                 <th>Pessoa</th>

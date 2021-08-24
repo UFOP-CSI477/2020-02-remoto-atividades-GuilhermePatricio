@@ -4,7 +4,7 @@
 
 <h2 class="pb-2 border-bottom">Adicionar registro</h2>
 
-<a href="{{ route('registros.index') }}"><button class="voltar btn btn-danger bi bi-arrow-left"></button></a>
+<a href="{{ route('registros.index') }}"><button class="voltar btn btn-secondary bi bi-arrow-left"></button></a>
 
 <form  id = "form" action = "{{ route('registros.store') }}" method = "POST" class="was-validated">
 
@@ -131,7 +131,7 @@
     </div>
 
     <div>
-        <input id = "btnCadastrar" class="btn btn-secondary" type="submit" value="Adicionar" name="btnAdicionar">
+        <input id = "btnCadastrar" class="btn btn-danger" type="submit" value="Salvar" name="btnAdicionar">
     </div>
         
 

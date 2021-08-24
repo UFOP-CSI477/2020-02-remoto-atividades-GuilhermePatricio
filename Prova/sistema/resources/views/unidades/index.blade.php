@@ -5,7 +5,7 @@
 <table id ="tabelaUnidade" class = "table table-bordered table-hover table-striped">
         
         <thead>
-
+            <tr><th class = "titulo" colspan="5">Unidades</th></tr>
             <tr>
                 <th>ID</th>
                 <th>Nome</th>

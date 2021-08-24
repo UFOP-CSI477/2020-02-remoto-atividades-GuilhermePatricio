@@ -23,10 +23,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route:: resource('/vacinas', VacinaController::class);
-Route:: resource('/pessoas', PessoaController::class)->middleware('auth');;
-Route:: resource('/unidades', UnidadeController::class)->middleware('auth');;
-Route:: resource('/registros', RegistroController::class)->middleware('auth');;
+Route:: resource('/vacinas', VacinaController::class)->middleware('auth');
+Route:: resource('/pessoas', PessoaController::class)->middleware('auth');
+Route:: resource('/unidades', UnidadeController::class)->middleware('auth');
+Route:: resource('/registros', RegistroController::class)->middleware('auth');
 
 
 Route::get('/appGeral','App\Http\Controllers\RegistroController@appGeral')->name('registros.appGeral');

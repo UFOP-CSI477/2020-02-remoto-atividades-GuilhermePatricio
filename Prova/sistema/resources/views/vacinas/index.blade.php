@@ -2,17 +2,17 @@
 
 @section('conteudo')
 
-<a href="{{ route('vacinas.create') }}"><button class=" botao btn btn-danger">Cadastrar</button></a>
+<a href="{{ route('vacinas.create') }}"><button class=" botao btn btn-danger">Adicionar</button></a>
 
 <table id ="tabela" class = "table table-bordered table-hover table-striped">
         
         <thead >
-
+            <tr><th class = "titulo" colspan="4">Vacinas</th></tr>
             <tr>
-                <th style="width:20px">ID</th>
-                <th style="width:100px">Nome</th>
-                <th style="width:100px">Fabricante</th>
-                <th style="width:100px">Doses</th>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Fabricante</th>
+                <th>Doses</th>
             </tr>
 
         </thead>

@@ -7,8 +7,9 @@
         <thead >
 
             <tr>
-                <th style="width:20px">Vacina</th>
-                <th style="width:100px">Quantidade</th>
+                <tr><th class = "titulo" colspan="2">Total geral vacinadas aplicadas</th></tr>
+                <th>Vacina</th>
+                <th>Quantidade</th>
             </tr>
 
         </thead>

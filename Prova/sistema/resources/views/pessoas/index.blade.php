@@ -5,7 +5,7 @@
 <table id ="tabelaMaior" class = "table table-bordered table-hover table-striped">
         
         <thead >
-
+            <tr><th class = "titulo" colspan="6">Pessoas</th></tr>
             <tr>
                 <th>ID</th>
                 <th>Nome</th>

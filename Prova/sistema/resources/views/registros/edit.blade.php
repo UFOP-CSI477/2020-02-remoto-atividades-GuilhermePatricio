@@ -4,7 +4,7 @@
 
 <h2 class="pb-2 border-bottom">Editar registro</h2>
 
-<a href="{{ route('registros.index') }}"><button class="voltar btn btn-danger bi bi-arrow-left"></button></a>
+<a href="{{ route('registros.index') }}"><button class="voltar btn btn-secondary bi bi-arrow-left"></button></a>
 
 <form  id = "form" action = "{{route('registros.update', $registro->id) }}" method = "POST" class="was-validated">
 
@@ -17,8 +17,10 @@
         <div class = "col">
 
             <label for="pessoa_id"><strong>Pessoa:</strong></label>
-            <select name="pessoa_id" class="form-control" value ="{{$registro->pessoa->nome}}"required>
-            
+            <select name="pessoa_id" class="form-control" required>
+                
+                <option value = "{{$registro->pessoa->id}}">{{$registro->pessoa->nome}}</option>
+
                 @foreach($pessoas as $p)
                     <option value="{{$p->id}}">{{$p->nome}}</option>
                 @endforeach
@@ -39,8 +41,10 @@
         <div class = "col">
 
             <label for="equip"><strong>Unidade:</strong></label>
-            <select name="unidade_id" class="form-control" value = "{{$registro->unidade->nome}}" required>
+            <select name="unidade_id" class="form-control" required>
         
+                <option value = "{{$registro->unidade->id}}">{{$registro->unidade->nome}}</option>
+
                 @foreach($unidades as $u)
                     <option value="{{$u->id}}">{{$u->nome}}</option>
                 @endforeach
@@ -72,9 +76,10 @@
             </script>
 
             <label for="equip"><strong>Vacina:</strong></label>
-            <select id = "vacina_id" name="vacina_id" class="form-control" onchange = "alterDose()" 
-            value = "{{$registro->vacina->nome}}" required>
-        
+            <select id = "vacina_id" name="vacina_id" class="form-control" onchange = "alterDose()" required>
+
+            <option value = "{{$registro->vacina->id}}"> {{$registro->vacina->nome}}</option>
+           
                 @foreach($vacinas as $v)
                     <option id = "{{$v->doses}}" value="{{$v->id}}">{{$v->nome}}</option>
                 @endforeach
@@ -127,7 +132,7 @@
     </div>
 
     <div>
-        <input id = "btnCadastrar" class="btn btn-secondary" type="submit" value="Editar" name="btnAdicionar">
+        <input id = "btnCadastrar" class="btn btn-danger" type="submit" value="Atualizar" name="btnAdicionar">
     </div>
         
 

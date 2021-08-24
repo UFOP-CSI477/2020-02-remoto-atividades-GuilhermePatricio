@@ -4,7 +4,7 @@
 
 <h2 class="pb-2 border-bottom">Editar Pessoa</h2>
 
-<a href="{{ route('pessoas.index') }}"><button class="voltar btn btn-danger bi bi-arrow-left"></button></a>
+<a href="{{ route('pessoas.index') }}"><button class="voltar btn btn-secondary bi bi-arrow-left"></button></a>
 
 <form  id = "form" action = "{{ route('pessoas.update',$pessoa->id) }}" method = "POST" class="was-validated">
 
@@ -31,23 +31,6 @@
 
 
         <div class = "col">
-            
-            <label for ="cidade"><strong>Cidade:</strong></label>
-
-            <input value = "{{$pessoa->cidade}}" type="text" name = "cidade" class="form-control" placeholder="Nome do cidade" id="cidade" required>
-
-            <div class="valid-feedback">
-                Tudo certo!
-            </div>
-
-            <div class="invalid-feedback">
-                Por favor, informe o nome da cidade!
-            </div>
-
-        </div>
-
-
-        <div class = "col">
         
             <label for ="bairro"><strong>Bairro:</strong></label>
 
@@ -64,6 +47,23 @@
         </div>
 
 
+        <div class = "col">
+            
+            <label for ="cidade"><strong>Cidade:</strong></label>
+
+            <input value = "{{$pessoa->cidade}}" type="text" name = "cidade" class="form-control" placeholder="Nome do cidade" id="cidade" required>
+
+            <div class="valid-feedback">
+                Tudo certo!
+            </div>
+
+            <div class="invalid-feedback">
+                Por favor, informe o nome da cidade!
+            </div>
+
+        </div>
+
+        
         <div class = "col">
         
             <label for ="data"><strong>Data de nascimento:</strong></label>
@@ -82,7 +82,7 @@
     </div>
        
         <div>
-            <input id = "btnCadastrar" class="btn btn-secondary" type="submit" value="Atualizar" name="btnAdicionar">
+            <input id = "btnCadastrar" class="btn btn-danger" type="submit" value="Alterar" name="btnAdicionar">
         </div>
         
 
