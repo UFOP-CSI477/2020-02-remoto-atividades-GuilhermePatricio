@@ -33,7 +33,7 @@
                     <tr>
                         <td>{{$v->nome}}</td>
                         <td>{{$v->registro->count()}}</td>
-                        <td>{{ number_format($v->registro->count()*100/$total, 2, '.')}}%</td>
+                        <td>{{ number_format($v->registro->count()*100/$total, 2)}}%</td>
                     </tr>
 
                 @endforeach
